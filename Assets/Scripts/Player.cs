@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Cloning player");
             cloneScript.gameObject.SetActive(true);
-            cloneScript.transform.position = cloneScript.initialPosition;
+            cloneScript.resetPosition();
         }
     }
 }
