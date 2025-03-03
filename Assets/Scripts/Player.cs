@@ -9,12 +9,14 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded;
+    private int isGravityInverted;
 
     [SerializeField] private Clone cloneScript;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        isGravityInverted = 1;
     }
 
     void Update()
@@ -28,7 +30,8 @@ public class Player : MonoBehaviour
         // Jump with up arrow key
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            Debug.Log("Jumping");
+            rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
             isGrounded = false;
         }
     }
@@ -57,5 +60,11 @@ public class Player : MonoBehaviour
             cloneScript.gameObject.SetActive(true);
             cloneScript.resetPosition();
         }
+    }
+
+    public void invertGravity()
+    {
+        // Flag as invert gravity when called
+        isGravityInverted *= -1;
     }
 }
