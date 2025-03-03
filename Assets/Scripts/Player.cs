@@ -65,6 +65,7 @@ public class Player : MonoBehaviour
         {
             winText.SetActive(true);
             Debug.Log("You win!");
+            Invoke("LoadNextScene", 1f);
         }
 
         if (collider.gameObject.CompareTag("PlayerPlatform"))
@@ -78,5 +79,9 @@ public class Player : MonoBehaviour
     public void invertGravity()
     {
         isGravityInverted *= -1;
+    }
+    private void LoadNextScene()
+    {
+        SceneManager.LoadScene("Level1");
     }
 }
