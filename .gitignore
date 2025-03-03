@@ -73,3 +73,5 @@ crashlytics-build.properties
 
 # User added files
 .vscode/
+
+*.DS_Store
