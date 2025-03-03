@@ -5,17 +5,33 @@ using UnityEngine;
 public class Button : MonoBehaviour
 {
     // Reference to the Gate game object
-    public GameObject gate;
+    public Transform gate;
+    private float openHeight = 3.0f;
+    private float speed = 2.0f;
+    private Vector3 initialPosition;
+    private Vector3 targetPosition;
+    private bool isOpening = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        initialPosition = gate.position; 
+        targetPosition = initialPosition + new Vector3(0, openHeight, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isOpening)
+        {
+            // Move UP
+            gate.position = Vector3.MoveTowards(gate.position, targetPosition, speed * Time.deltaTime);
+        }
+        else
+        {
+            // Move BACK DOWN when button is released
+            gate.position = Vector3.MoveTowards(gate.position, initialPosition, speed * Time.deltaTime);
+        }
 
     }
 
@@ -25,7 +41,7 @@ public class Button : MonoBehaviour
         if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Clone"))
         {
             // Open the gate
-            gate.SetActive(false);
+            isOpening = true;
             Debug.Log("Gate opened");
         }
     }
@@ -35,7 +51,7 @@ public class Button : MonoBehaviour
         if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Clone"))
         {
             // Close the gate
-            gate.SetActive(true);
+            isOpening = false;
             Debug.Log("Gate closed");
         }
     }
