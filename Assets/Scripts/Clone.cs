@@ -12,7 +12,7 @@ public class Clone : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded;
-    public Vector2 initialPosition;
+    private Vector2 initialPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -52,5 +52,10 @@ public class Clone : MonoBehaviour
         {
             isGrounded = true;
         }
+    }
+
+    public void resetPosition() {
+        // Reset the clone's position to the initial position
+        transform.position = initialPosition;
     }
 }
