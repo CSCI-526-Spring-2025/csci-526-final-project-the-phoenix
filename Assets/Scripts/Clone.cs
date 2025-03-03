@@ -53,6 +53,8 @@ public class Clone : MonoBehaviour
         // Check if player is touching the ground
         if (collision.gameObject.CompareTag("Floor"))
         {
+
+            Debug.Log("heresss");
             isGrounded = true;
         }
     }
@@ -62,6 +64,7 @@ public class Clone : MonoBehaviour
         // Check if player is no longer touching the ground
         if (collision.gameObject.CompareTag("Floor"))
         {
+            Debug.Log("here");
             isGrounded = false;
         }
     }
@@ -75,6 +78,8 @@ public class Clone : MonoBehaviour
     public void invertGravity()
     {
         // Flag as invert gravity when called
+        Debug.Log("gravity is inverted");
+        Debug.Log(isGrounded);
         isGravityInverted *= -1;
     }
 }
