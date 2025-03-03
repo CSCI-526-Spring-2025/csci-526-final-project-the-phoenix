@@ -12,12 +12,15 @@ public class Clone : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded;
+    private int isGravityInverted;
     private Vector2 initialPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        isGravityInverted = 1;
+        isGrounded = true;
         moveSpeed = playerScript.moveSpeed;
         jumpForce = playerScript.jumpForce;
 
@@ -40,8 +43,8 @@ public class Clone : MonoBehaviour
         // Jump with W key
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            isGrounded = false;
+            Debug.Log("Jumping");
+            rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 
@@ -54,8 +57,24 @@ public class Clone : MonoBehaviour
         }
     }
 
-    public void resetPosition() {
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        // Check if player is no longer touching the ground
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            isGrounded = false;
+        }
+    }
+
+    public void resetPosition()
+    {
         // Reset the clone's position to the initial position
         transform.position = initialPosition;
+    }
+
+    public void invertGravity()
+    {
+        // Flag as invert gravity when called
+        isGravityInverted *= -1;
     }
 }
