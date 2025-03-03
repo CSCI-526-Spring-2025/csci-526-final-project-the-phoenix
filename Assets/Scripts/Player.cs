@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private int isGravityInverted;
 
     [SerializeField] private Clone cloneScript;
+    public GameObject winText;
 
     void Start()
     {
@@ -59,6 +60,7 @@ public class Player : MonoBehaviour
         // Check if player has reached the goal
         if (collider.gameObject.CompareTag("Finish"))
         {
+            winText.SetActive(true);
             Debug.Log("You win!");
         }
 
