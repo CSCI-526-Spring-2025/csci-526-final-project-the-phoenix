@@ -8,6 +8,7 @@ TagManager:
   - PlayerPlatform
   - ClonePlatform
   - Button
+  - Clone
   layers:
   - Default
   - TransparentFX
