@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         isGravityInverted = 1;
         isGrounded = true;
+
+        // Disable the win text object
+        winText.SetActive(false);
     }
 
     void Update()
