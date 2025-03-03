@@ -296,7 +296,7 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 10
   cloneScript: {fileID: 988840424}
-  winText: {fileID: 0}
+  winText: {fileID: 1419134870}
 --- !u!1 &67053889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,7 +1829,7 @@ GameObject:
   - component: {fileID: 1419134873}
   - component: {fileID: 1419134872}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: WinText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
