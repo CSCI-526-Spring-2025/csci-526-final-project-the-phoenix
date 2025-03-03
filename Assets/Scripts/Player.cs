@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         isGravityInverted = 1;
+        isGrounded = true;
     }
 
     void Update()
@@ -32,7 +33,6 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Jumping");
             rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
-            isGrounded = false;
         }
     }
 
@@ -42,6 +42,15 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             isGrounded = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        // Check if player is no longer touching the ground
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            isGrounded = false;
         }
     }
 
