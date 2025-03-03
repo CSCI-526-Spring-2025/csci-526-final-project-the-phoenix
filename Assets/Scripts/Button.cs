@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; // Import SceneManager
 
 public class Button : MonoBehaviour
 {
@@ -11,36 +12,48 @@ public class Button : MonoBehaviour
     private Vector3 initialPosition;
     private Vector3 targetPosition;
     private bool isOpening = false;
+    private bool openUpward = true; // Default to opening upwards
 
-    // Start is called before the first frame update
     void Start()
     {
-        initialPosition = gate.position; 
-        targetPosition = initialPosition + new Vector3(0, openHeight, 0);
+        initialPosition = gate.position;
+
+        // Hardcoded scene-based opening direction
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName == "Level1")
+        {
+            openUpward = false; // Open downward in Level1
+        }
+
+        // Determine target position based on openUpward
+        if (openUpward)
+        {
+            targetPosition = initialPosition + new Vector3(0, openHeight, 0); // Move upwards
+        }
+        else
+        {
+            targetPosition = initialPosition - new Vector3(0, openHeight, 0); // Move downwards
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isOpening)
         {
-            // Move UP
+            // Move towards target position (up or down)
             gate.position = Vector3.MoveTowards(gate.position, targetPosition, speed * Time.deltaTime);
         }
         else
         {
-            // Move BACK DOWN when button is released
+            // Move back to initial position when button is released
             gate.position = Vector3.MoveTowards(gate.position, initialPosition, speed * Time.deltaTime);
         }
-
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        // Check if the button is pressed
         if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Clone"))
         {
-            // Open the gate
             isOpening = true;
             Debug.Log("Gate opened");
         }
@@ -50,7 +63,6 @@ public class Button : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Clone"))
         {
-            // Close the gate
             isOpening = false;
             Debug.Log("Gate closed");
         }
