@@ -11,8 +11,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
     private int isGravityInverted;
-    private bool canJump; 
-    
+    private bool canJump;
+
     [SerializeField] private Clone cloneScript;
     public GameObject winText;
 
@@ -22,9 +22,7 @@ public class Player : MonoBehaviour
         isGravityInverted = 1;
         isGrounded = true;
         winText.SetActive(false);
-
-        string sceneName = SceneManager.GetActiveScene().name;
-        canJump = sceneName != "Level1"; 
+        canJump = true;
     }
 
     void Update()
@@ -80,6 +78,12 @@ public class Player : MonoBehaviour
     {
         isGravityInverted *= -1;
     }
+
+    public void disableJump()
+    {
+        canJump = false;
+    }
+
     private void LoadNextScene()
     {
         SceneManager.LoadScene("Level1");
