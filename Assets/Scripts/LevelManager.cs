@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
 
     public void TrackLevelCompletion(string levelName, float completionTime)
     {
-        string playerID = SystemInfo.deviceUniqueIdentifier; // Unique identifier for player
+        string playerID = Guid.NewGuid().ToString();
         string timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
 
         // Create JSON payload
