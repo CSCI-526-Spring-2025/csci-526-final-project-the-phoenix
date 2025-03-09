@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Finish"))
         {
+            LevelManager.Instance.TrackLevelCompletion("Level1", Time.timeSinceLevelLoad);
             winText.SetActive(true);
             Debug.Log("You win!");
             Invoke("LoadNextScene", 1f);
