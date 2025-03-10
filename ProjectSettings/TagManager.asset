@@ -10,6 +10,7 @@ TagManager:
   - Button
   - Clone
   - Win
+  - gravityPortal
   layers:
   - Default
   - TransparentFX

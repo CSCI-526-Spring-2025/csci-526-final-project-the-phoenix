@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private bool isGrounded;
     private int isGravityInverted;
     private bool canJump;
+    private bool canToggleGravity = false;
 
     [SerializeField] private Clone cloneScript;
     public GameObject winText;
@@ -38,6 +39,12 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Jumping");
             rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+        if (canToggleGravity && Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Gravity Shifted");
+            invertGravity();
+            rb.gravityScale *= -1;
         }
     }
 
@@ -72,6 +79,22 @@ public class Player : MonoBehaviour
             Debug.Log("Cloning player");
             cloneScript.gameObject.SetActive(true);
             cloneScript.resetPosition();
+        }
+
+        if (collider.gameObject.CompareTag("gravityPortal"))
+        {
+            Debug.Log("Entered Gravity Portal");
+            canToggleGravity = true;
+            
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("gravityPortal"))
+        {
+            Debug.Log("Exited Gravity Portal");
+            canToggleGravity = false; 
         }
     }
 

@@ -15,6 +15,7 @@ public class Clone : MonoBehaviour
     private int isGravityInverted;
     private Vector2 initialPosition;
     private bool canJump;
+    private bool canToggleGravity = false;
 
     void Start()
     {
@@ -46,6 +47,12 @@ public class Clone : MonoBehaviour
             Debug.Log("Jumping");
             rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+        if (canToggleGravity && Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Gravity Shifted");
+            invertGravity();
+            rb.gravityScale *= -1;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -61,6 +68,22 @@ public class Clone : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             isGrounded = false;
+        }
+    }
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("gravityPortal"))
+        {
+            Debug.Log("Entered Gravity Portal");
+            canToggleGravity = true; // Allow gravity toggle while inside portal
+        }
+    }
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("gravityPortal"))
+        {
+            Debug.Log("Exited Gravity Portal");
+            canToggleGravity = false; 
         }
     }
 
