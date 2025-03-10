@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ArrowBounce : MonoBehaviour
+public class Bounce : MonoBehaviour
 {
     public float bounceSpeed = 2f;  
     public float bounceAmount = 0.2f; 

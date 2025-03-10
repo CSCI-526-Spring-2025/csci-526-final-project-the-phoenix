@@ -13,7 +13,6 @@ public class Button : MonoBehaviour
     private Vector3 initialPosition;
     private Vector3 targetPosition;
     private bool isOpening = false;
-    private bool openUpward = true; // Default to opening upwards
 
     void Start()
     {
