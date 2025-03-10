@@ -6,17 +6,16 @@ using System;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager Instance; // Singleton instance
+    public static LevelManager Instance; 
 
-    private string firebaseURL = "https://doppledash-2a42c-default-rtdb.firebaseio.com/"; // Replace with your Firebase URL
+    private string firebaseURL = "https://doppledash-2a42c-default-rtdb.firebaseio.com/"; 
 
     void Awake()
     {
-        // Ensure there's only one instance of LevelManager
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Keep this object alive across scenes
+            DontDestroyOnLoad(gameObject); 
         }
         else
         {
@@ -29,10 +28,8 @@ public class LevelManager : MonoBehaviour
         string playerID = Guid.NewGuid().ToString();
         string timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
 
-        // Create JSON payload
         string json = $"{{\"player_id\":\"{playerID}\", \"level_name\":\"{levelName}\", \"completion_time\":{completionTime}, \"timestamp\":\"{timestamp}\"}}";
 
-        // Start the coroutine to send data
         StartCoroutine(SendDataToFirebase(json));
     }
 

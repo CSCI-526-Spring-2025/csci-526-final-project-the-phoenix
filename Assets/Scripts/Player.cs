@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Clone cloneScript;
     public GameObject winText;
+    public GameObject arrow1;
+    public GameObject arrow2;
 
     void Start()
     {
@@ -71,6 +73,8 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Cloning player");
             cloneScript.gameObject.SetActive(true);
+            arrow2.SetActive(true);
+            arrow1.SetActive(false);
             cloneScript.resetPosition();
         }
     }

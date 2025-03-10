@@ -10,6 +10,7 @@ TagManager:
   - Button
   - Clone
   - Win
+  - Arrow
   layers:
   - Default
   - TransparentFX
