@@ -3192,6 +3192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gate: {fileID: 1800280638}
+  direction: up
 --- !u!1 &2043267743
 GameObject:
   m_ObjectHideFlags: 0
