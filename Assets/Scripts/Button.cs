@@ -7,6 +7,7 @@ public class Button : MonoBehaviour
 {
     // Reference to the Gate game object
     public Transform gate;
+    public string direction;
     private float openHeight = 3.0f;
     private float speed = 2.0f;
     private Vector3 initialPosition;
@@ -18,21 +19,24 @@ public class Button : MonoBehaviour
     {
         initialPosition = gate.position;
 
-        // Hardcoded scene-based opening direction
-        string sceneName = SceneManager.GetActiveScene().name;
-        if (sceneName == "Level1")
-        {
-            openUpward = false; // Open downward in Level1
-        }
+        gate.position = Vector3.MoveTowards(gate.position, targetPosition, speed * Time.deltaTime);
 
         // Determine target position based on openUpward
-        if (openUpward)
+        if (direction == "up")
         {
             targetPosition = initialPosition + new Vector3(0, openHeight, 0); // Move upwards
         }
-        else
+        else if (direction == "down")
         {
             targetPosition = initialPosition - new Vector3(0, openHeight, 0); // Move downwards
+        }
+        else if (direction == "left")
+        {
+            targetPosition = initialPosition - new Vector3(openHeight, 0, 0); // Move left
+        }
+        else if (direction == "right")
+        {
+            targetPosition = initialPosition + new Vector3(openHeight, 0, 0); // Move right
         }
     }
 
@@ -42,6 +46,7 @@ public class Button : MonoBehaviour
         {
             // Move towards target position (up or down)
             gate.position = Vector3.MoveTowards(gate.position, targetPosition, speed * Time.deltaTime);
+            Debug.Log("Gate moving" + gate.position);
         }
         else
         {
