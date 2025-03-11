@@ -135,6 +135,7 @@ public class Player : MonoBehaviour
         else
         {
             Debug.Log("Game Completed!");
+            winText.SetActive(true);
         }
     }
 
