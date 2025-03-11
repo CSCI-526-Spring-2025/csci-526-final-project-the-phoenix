@@ -935,7 +935,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -730, y: -386}
+  m_AnchoredPosition: {x: -553, y: -386}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &178098568
@@ -1347,9 +1347,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9188086792991634208, guid: cdc895c3106574c6f92e73d10b4e83df, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1202515973}
-    - targetCorrespondingSourceObject: {fileID: 4756790265395622948, guid: cdc895c3106574c6f92e73d10b4e83df, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 112399705}
   m_SourcePrefab: {fileID: 100100000, guid: cdc895c3106574c6f92e73d10b4e83df, type: 3}
 --- !u!4 &318948064 stripped
 Transform:
@@ -1966,9 +1963,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 724010520286328335, guid: cdc895c3106574c6f92e73d10b4e83df, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 176485948}
     - targetCorrespondingSourceObject: {fileID: 6575156211477172058, guid: cdc895c3106574c6f92e73d10b4e83df, type: 3}
       insertIndex: -1
       addedObject: {fileID: 330376263}
@@ -1979,6 +1973,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 758794120}
   m_SourcePrefab: {fileID: 100100000, guid: cdc895c3106574c6f92e73d10b4e83df, type: 3}
+--- !u!4 &566067656 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7002801961980778980, guid: cdc895c3106574c6f92e73d10b4e83df, type: 3}
+  m_PrefabInstance: {fileID: 566067655}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &656232398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2170,13 +2169,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 661134938}
-  - {fileID: 176485949}
   - {fileID: 318948064}
   - {fileID: 1760865574}
   - {fileID: 436462470}
   - {fileID: 24427447}
   - {fileID: 1345274350}
   - {fileID: 1268692063}
+  - {fileID: 566067656}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &758794117 stripped

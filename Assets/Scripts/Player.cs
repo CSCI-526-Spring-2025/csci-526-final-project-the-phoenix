@@ -102,7 +102,6 @@ public class Player : MonoBehaviour
         if (collider.gameObject.CompareTag("Shock"))
         {
             Debug.Log("PLAYER DIED!");
-            // Restart Level
             RestartGame();
         }
     }
@@ -135,6 +134,7 @@ public class Player : MonoBehaviour
         else
         {
             Debug.Log("Game Completed!");
+            winText.SetActive(true);
         }
     }
 
