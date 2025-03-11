@@ -40,7 +40,14 @@ public class Clone : MonoBehaviour
         if (canJump && Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             Debug.Log("Jumping");
-            rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
+            // rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+        if (canJump && Input.GetKeyDown(KeyCode.S) && isGrounded)
+        {
+            Debug.Log("Jumping");
+            // rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rb.AddForce( Vector2.down * jumpForce, ForceMode2D.Impulse);
         }
         if (canToggleGravity && Input.GetKeyDown(KeyCode.Space))
         {
@@ -78,7 +85,7 @@ public class Clone : MonoBehaviour
         if (collider.gameObject.CompareTag("GravityPortal"))
         {
             Debug.Log("Exited Gravity Portal");
-            canToggleGravity = false; 
+            canToggleGravity = false;
         }
     }
 
@@ -91,6 +98,13 @@ public class Clone : MonoBehaviour
     {
         Debug.Log("Gravity is inverted");
         isGravityInverted *= -1;
+    }
+
+    public void resetGravity()
+    {
+        Debug.Log("Gravity reset");
+        isGravityInverted = 1;
+        rb.gravityScale = 1;
     }
 
     public void disableJump()

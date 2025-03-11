@@ -40,7 +40,14 @@ public class Player : MonoBehaviour
         if (canJump && Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
             Debug.Log("Jumping");
-            rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
+            // rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+        if (canJump && Input.GetKeyDown(KeyCode.DownArrow) && isGrounded)
+        {
+            Debug.Log("Jumping");
+            // rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.down * jumpForce, ForceMode2D.Impulse);
         }
         if (canToggleGravity && Input.GetKeyDown(KeyCode.Space))
         {
@@ -80,6 +87,7 @@ public class Player : MonoBehaviour
             Debug.Log("Cloning player");
             cloneScript.gameObject.SetActive(true);
             cloneScript.resetPosition();
+            cloneScript.resetGravity();
             if (arrow1 != null)
             {
                 arrow1.SetActive(false);
