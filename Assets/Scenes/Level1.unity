@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceSpeed: 2
-  bounceAmount: 0.2
+  bounceAmount: 0.75
   isVertical: 1
 --- !u!1 &50407285
 GameObject:
@@ -935,7 +935,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -730, y: -386}
+  m_AnchoredPosition: {x: -555, y: -386}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &178098568
@@ -1347,9 +1347,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9188086792991634208, guid: cdc895c3106574c6f92e73d10b4e83df, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1202515973}
-    - targetCorrespondingSourceObject: {fileID: 4756790265395622948, guid: cdc895c3106574c6f92e73d10b4e83df, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 112399705}
   m_SourcePrefab: {fileID: 100100000, guid: cdc895c3106574c6f92e73d10b4e83df, type: 3}
 --- !u!4 &318948064 stripped
 Transform:
@@ -1374,7 +1371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceSpeed: 2
-  bounceAmount: 0.2
+  bounceAmount: 0.75
   isVertical: 1
 --- !u!1 &330376260 stripped
 GameObject:
@@ -1624,7 +1621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceSpeed: 2
-  bounceAmount: 0.2
+  bounceAmount: 0.75
   isVertical: 1
 --- !u!4 &436462470 stripped
 Transform:
@@ -1761,6 +1758,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &536925617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 724010520286328335, guid: cdc895c3106574c6f92e73d10b4e83df, type: 3}
+  m_PrefabInstance: {fileID: 566067655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &536925618 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7002801961980778980, guid: cdc895c3106574c6f92e73d10b4e83df, type: 3}
+  m_PrefabInstance: {fileID: 566067655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &536925619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536925617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a0cb293d88a84f4ab5e8894cdfff332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceSpeed: 2
+  bounceAmount: 0.75
+  isVertical: 1
 --- !u!1001 &547647251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1968,7 +1990,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 724010520286328335, guid: cdc895c3106574c6f92e73d10b4e83df, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 176485948}
+      addedObject: {fileID: 536925619}
     - targetCorrespondingSourceObject: {fileID: 6575156211477172058, guid: cdc895c3106574c6f92e73d10b4e83df, type: 3}
       insertIndex: -1
       addedObject: {fileID: 330376263}
@@ -2043,6 +2065,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6856874116512052775, guid: b7db2831ee0ee4f3492bc68c13d1b5ad, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 7094284094518713589, guid: b7db2831ee0ee4f3492bc68c13d1b5ad, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.20720172
@@ -2083,7 +2109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceSpeed: 2
-  bounceAmount: 0.2
+  bounceAmount: 0.75
   isVertical: 1
 --- !u!4 &661134938 stripped
 Transform:
@@ -2169,8 +2195,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 536925618}
   - {fileID: 661134938}
-  - {fileID: 176485949}
   - {fileID: 318948064}
   - {fileID: 1760865574}
   - {fileID: 436462470}
@@ -3300,7 +3326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceSpeed: 2
-  bounceAmount: 0.2
+  bounceAmount: 0.75
   isVertical: 1
 --- !u!1 &1281341824
 GameObject:
@@ -3536,7 +3562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceSpeed: 2
-  bounceAmount: 0.2
+  bounceAmount: 0.75
   isVertical: 1
 --- !u!4 &1345274350 stripped
 Transform:
@@ -4444,7 +4470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceSpeed: 2
-  bounceAmount: 0.2
+  bounceAmount: 0.75
   isVertical: 1
 --- !u!1 &1764199266
 GameObject:
@@ -4587,7 +4613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6358453306694601822, guid: 186abf19314664f0fa9b9f59ac214213, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.67
+      value: 11.67
       objectReference: {fileID: 0}
     - target: {fileID: 6358453306694601822, guid: 186abf19314664f0fa9b9f59ac214213, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5264,7 +5290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3007813393375855066, guid: f08da5fb2c500406fada07e42a223b24, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9070426924429358348, guid: f08da5fb2c500406fada07e42a223b24, type: 3}
       propertyPath: clone
