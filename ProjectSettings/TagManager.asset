@@ -12,6 +12,7 @@ TagManager:
   - Win
   - Arrow
   - GravityPortal
+  - Shock
   layers:
   - Default
   - TransparentFX

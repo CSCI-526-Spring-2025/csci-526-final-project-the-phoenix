@@ -70,10 +70,9 @@ public class Player : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Finish"))
         {
+            Debug.Log("Player Won!");
             LevelManager.Instance.TrackLevelCompletion(SceneManager.GetActiveScene().name, Time.timeSinceLevelLoad);
-            winText.SetActive(true);
-            Debug.Log("You win!");
-            Invoke("LoadNextScene", 1f);
+            LoadNextLevel();
         }
 
         if (collider.gameObject.CompareTag("PlayerPlatform"))
@@ -115,8 +114,21 @@ public class Player : MonoBehaviour
         canJump = false;
     }
 
-    private void LoadNextScene()
+    void LoadNextLevel()
     {
-        SceneManager.LoadScene("Level1");
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            Debug.Log("Game Completed!");
+        }
+    }
+
+    void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

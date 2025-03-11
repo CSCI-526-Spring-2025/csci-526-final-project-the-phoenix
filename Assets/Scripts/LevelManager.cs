@@ -30,12 +30,22 @@ public class LevelManager : MonoBehaviour
 
         string json = $"{{\"player_id\":\"{playerID}\", \"level_name\":\"{levelName}\", \"completion_time\":{completionTime}, \"timestamp\":\"{timestamp}\"}}";
 
-        StartCoroutine(SendDataToFirebase(json));
+        StartCoroutine(SendDataToFirebase(json, "level_completion"));
     }
 
-    IEnumerator SendDataToFirebase(string json)
+    public void TrackPlayerDeath(string levelName, Vector3 deathPosition)
     {
-        using (UnityWebRequest uwr = new UnityWebRequest(firebaseURL + "level_completion.json", "POST"))
+        string playerID = Guid.NewGuid().ToString();
+        string timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
+
+        string json = $"{{\"player_id\":\"{playerID}\", \"level_name\":\"{levelName}\", \"death_x\":{deathPosition.x}, \"death_y\":{deathPosition.y}, \"timestamp\":\"{timestamp}\"}}";
+
+        StartCoroutine(SendDataToFirebase(json, "player_deaths"));
+    }
+
+    IEnumerator SendDataToFirebase(string json, string endpoint)
+    {
+        using (UnityWebRequest uwr = new UnityWebRequest(firebaseURL + endpoint + ".json", "POST"))
         {
             byte[] jsonToSend = Encoding.UTF8.GetBytes(json);
             uwr.uploadHandler = new UploadHandlerRaw(jsonToSend);
