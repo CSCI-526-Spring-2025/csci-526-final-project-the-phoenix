@@ -33,12 +33,12 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(SendDataToFirebase(json, "level_completion"));
     }
 
-    public void TrackPlayerDeath(string levelName, Vector3 deathPosition)
+    public void TrackPlayerDeath(string levelName, Vector3 deathPosition, string playerType)
     {
         string playerID = Guid.NewGuid().ToString();
         string timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
 
-        string json = $"{{\"player_id\":\"{playerID}\", \"level_name\":\"{levelName}\", \"death_x\":{deathPosition.x}, \"death_y\":{deathPosition.y}, \"timestamp\":\"{timestamp}\"}}";
+        string json = $"{{\"player_id\":\"{playerID}\", \"level_name\":\"{levelName}\", \"player_type\":\"{playerType}\", \"death_x\":{deathPosition.x}, \"death_y\":{deathPosition.y}, \"timestamp\":\"{timestamp}\"}}";
 
         StartCoroutine(SendDataToFirebase(json, "player_deaths"));
     }

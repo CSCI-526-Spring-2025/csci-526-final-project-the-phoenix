@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Clone : MonoBehaviour
 {
@@ -83,6 +84,7 @@ public class Clone : MonoBehaviour
         if (collider.gameObject.CompareTag("Shock"))
         {
             Debug.Log("CLONE DIED!");
+            LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "clone");
             // Destroy clone
             gameObject.SetActive(false);
         }

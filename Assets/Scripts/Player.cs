@@ -102,6 +102,7 @@ public class Player : MonoBehaviour
         if (collider.gameObject.CompareTag("Shock"))
         {
             Debug.Log("PLAYER DIED!");
+            LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player");
             RestartGame();
         }
     }
