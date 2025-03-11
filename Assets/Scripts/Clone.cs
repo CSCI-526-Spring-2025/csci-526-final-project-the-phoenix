@@ -79,6 +79,13 @@ public class Clone : MonoBehaviour
             Debug.Log("Entered Gravity Portal");
             canToggleGravity = true;
         }
+
+        if (collider.gameObject.CompareTag("Shock"))
+        {
+            Debug.Log("CLONE DIED!");
+            // Destroy clone
+            gameObject.SetActive(false);
+        }
     }
     void OnTriggerExit2D(Collider2D collider)
     {

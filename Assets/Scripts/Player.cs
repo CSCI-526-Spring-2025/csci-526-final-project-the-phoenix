@@ -39,13 +39,11 @@ public class Player : MonoBehaviour
         // Jump only if it's allowed in the scene
         if (canJump && Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
-            Debug.Log("Jumping");
             // rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
         if (canJump && Input.GetKeyDown(KeyCode.DownArrow) && isGrounded)
         {
-            Debug.Log("Jumping");
             // rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
             rb.AddForce(Vector2.down * jumpForce, ForceMode2D.Impulse);
         }
@@ -97,9 +95,15 @@ public class Player : MonoBehaviour
 
         if (collider.gameObject.CompareTag("GravityPortal"))
         {
-            Debug.Log("Entered Gravity Portal");
             canToggleGravity = true;
             
+        }
+
+        if (collider.gameObject.CompareTag("Shock"))
+        {
+            Debug.Log("PLAYER DIED!");
+            // Restart Level
+            RestartGame();
         }
     }
 
@@ -107,7 +111,6 @@ public class Player : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("GravityPortal"))
         {
-            Debug.Log("Exited Gravity Portal");
             canToggleGravity = false; 
         }
     }
