@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         float moveDirection = 0;
         if (Input.GetKey(KeyCode.LeftArrow)) moveDirection = -1;
         if (Input.GetKey(KeyCode.RightArrow)) moveDirection = 1;
-        rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(moveDirection * moveSpeed, rb.linearVelocity.y);
 
         // Jump only if it's allowed in the scene
         if (canJump && Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
