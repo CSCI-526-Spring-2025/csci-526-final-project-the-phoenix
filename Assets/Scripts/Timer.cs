@@ -5,26 +5,31 @@ public class Timer : MonoBehaviour
 {
     public float lifetime = 20f;
     private float countdown;
-    private Text timerText;
+    public Text timerText;
 
     void OnEnable()
     {
         countdown = lifetime;
-        timerText = GetComponentInChildren<Text>();
+        UpdateTimerText();
     }
 
     void Update()
     {
         countdown -= Time.deltaTime;
 
-        if (timerText != null)
+        if (countdown > 0f)
         {
-            timerText.text = Mathf.CeilToInt(countdown).ToString();
+            UpdateTimerText();
         }
+        else
+        {
+            timerText.text = "0";
+            gameObject.SetActive(false);
+        }
+    }
 
-        if (countdown <= 0f)
-        {
-            Destroy(gameObject);
-        }
+    void UpdateTimerText()
+    {
+        timerText.text = "Clone decay time:" + Mathf.CeilToInt(countdown).ToString();
     }
 }
