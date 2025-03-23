@@ -36,7 +36,7 @@ public class Clone : MonoBehaviour
         float moveDirection = 0;
         if (Input.GetKey(KeyCode.A)) moveDirection = -1;
         if (Input.GetKey(KeyCode.D)) moveDirection = 1;
-        rb.linearVelocity = new Vector2(moveDirection * moveSpeed, rb.linearVelocity.y);
+        rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
 
         if (canJump && Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
