@@ -49,9 +49,10 @@ public class Player : MonoBehaviour
         }
         if (canToggleGravity && Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Gravity Shifted");
             invertGravity();
             rb.gravityScale *= -1;
+            SpaceBarLogger.LogSpacePress("Player", transform.position);
+           
         }
     }
 
@@ -75,14 +76,15 @@ public class Player : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Finish"))
         {
-            Debug.Log("Player Won!");
             LevelManager.Instance.TrackLevelCompletion(SceneManager.GetActiveScene().name, Time.timeSinceLevelLoad);
+            LevelManager.Instance.TrackGravityCount();
             LoadNextLevel();
+
         }
 
         if (collider.gameObject.CompareTag("PlayerPlatform"))
         {
-            Debug.Log("Cloning player");
+           
             cloneScript.gameObject.SetActive(true);
             cloneScript.resetPosition();
             cloneScript.resetGravity();
@@ -101,7 +103,7 @@ public class Player : MonoBehaviour
 
         if (collider.gameObject.CompareTag("Shock"))
         {
-            Debug.Log("PLAYER DIED!");
+           
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player");
             RestartGame();
         }
@@ -134,7 +136,6 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Debug.Log("Game Completed!");
             winText.SetActive(true);
         }
     }

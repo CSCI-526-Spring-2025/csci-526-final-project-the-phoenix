@@ -40,21 +40,20 @@ public class Clone : MonoBehaviour
 
         if (canJump && Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
-            Debug.Log("Jumping");
+            
             // rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
         if (canJump && Input.GetKeyDown(KeyCode.S) && isGrounded)
         {
-            Debug.Log("Jumping");
             // rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
             rb.AddForce( Vector2.down * jumpForce, ForceMode2D.Impulse);
         }
         if (canToggleGravity && Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Gravity Shifted");
             invertGravity();
             rb.gravityScale *= -1;
+            SpaceBarLogger.LogSpacePress("Clone", transform.position);
         }
     }
 
@@ -77,13 +76,11 @@ public class Clone : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("GravityPortal"))
         {
-            Debug.Log("Entered Gravity Portal");
             canToggleGravity = true;
         }
 
         if (collider.gameObject.CompareTag("Shock"))
         {
-            Debug.Log("CLONE DIED!");
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "clone");
             // Destroy clone
             gameObject.SetActive(false);
@@ -93,7 +90,6 @@ public class Clone : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("GravityPortal"))
         {
-            Debug.Log("Exited Gravity Portal");
             canToggleGravity = false;
         }
     }
@@ -105,13 +101,12 @@ public class Clone : MonoBehaviour
 
     public void invertGravity()
     {
-        Debug.Log("Gravity is inverted");
+ 
         isGravityInverted *= -1;
     }
 
     public void resetGravity()
     {
-        Debug.Log("Gravity reset");
         isGravityInverted = 1;
         rb.gravityScale = 1;
     }

@@ -45,7 +45,6 @@ public class Button : MonoBehaviour
         {
             // Move towards target position (up or down)
             gate.position = Vector3.MoveTowards(gate.position, targetPosition, speed * Time.deltaTime);
-            Debug.Log("Gate moving" + gate.position);
         }
         else
         {

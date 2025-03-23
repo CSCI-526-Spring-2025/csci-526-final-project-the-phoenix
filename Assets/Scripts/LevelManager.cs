@@ -3,6 +3,7 @@ using UnityEngine.Networking;
 using System.Collections;
 using System.Text;
 using System;
+using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour
 {
@@ -42,6 +43,67 @@ public class LevelManager : MonoBehaviour
 
         StartCoroutine(SendDataToFirebase(json, "player_deaths"));
     }
+    
+
+// public void TrackGravityCount()
+// {
+//     string timestamp = System.DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
+//     string playerArrayJson = JsonUtility.ToJson(new SpaceBarLogger.GravityWrapper(SpaceBarLogger.playerLogs));
+//     string cloneArrayJson = JsonUtility.ToJson(new SpaceBarLogger.GravityWrapper(SpaceBarLogger.cloneLogs));
+
+//     string json = "{" +
+//         $"\"player_id\":\"{SpaceBarLogger.playerId}\"," +
+//         $"\"level_name\":\"{SpaceBarLogger.levelName}\"," +
+//         $"\"timestamp\":\"{timestamp}\"," +
+//         $"\"totalCount\":{SpaceBarLogger.totalCount}," +
+//         $"\"player\":{playerArrayJson}," +
+//         $"\"clone\":{cloneArrayJson}" +
+//         "}";
+
+
+//     StartCoroutine(SendDataToFirebase(json, "gravity_logs"));
+//     SpaceBarLogger.ResetLogger();
+// }
+
+[System.Serializable]
+public class GravityEventList
+{
+    public List<SpaceBarLogger.GravityEvent> player;
+    public List<SpaceBarLogger.GravityEvent> clone;
+}
+
+public void TrackGravityCount()
+{
+    List<SpaceBarLogger.GravityEvent> playerList = new List<SpaceBarLogger.GravityEvent>(SpaceBarLogger.playerLogs.Values);
+    List<SpaceBarLogger.GravityEvent> cloneList = new List<SpaceBarLogger.GravityEvent>(SpaceBarLogger.cloneLogs.Values);
+
+    GravityEventList eventList = new GravityEventList
+    {
+        player = playerList,
+        clone = cloneList
+    };
+
+    string eventsJson = JsonUtility.ToJson(eventList);
+    string json = "{" +
+        $"\"player_id\":\"{SpaceBarLogger.playerId}\"," +
+        $"\"level_name\":\"{SpaceBarLogger.levelName}\"," +
+        $"\"timestamp\":\"{System.DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")}\"," +
+        $"\"totalCount\":{SpaceBarLogger.totalCount}," +
+        eventsJson.TrimStart('{') 
+    ;
+
+    StartCoroutine(SendDataToFirebase(json, "gravity_logs"));
+    SpaceBarLogger.ResetLogger();
+}
+
+
+
+
+
+
+
+
+
 
     IEnumerator SendDataToFirebase(string json, string endpoint)
     {
