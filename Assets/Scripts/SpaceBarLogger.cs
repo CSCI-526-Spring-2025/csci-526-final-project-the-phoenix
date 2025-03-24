@@ -15,8 +15,6 @@ public static class SpaceBarLogger
 
     public static void LogSpacePress(string source, Vector2 position)
     {
-        Debug.Log("Logging from: " + source + " at position: " + position);
-
         if (string.IsNullOrEmpty(levelName))
         {
             levelName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;

@@ -1,17 +1,13 @@
 
-
-
-
 using UnityEngine;
 
 public class Bounce : MonoBehaviour
 {
-    public float bounceSpeed = 2f;               // Slower movement
-    public float bounceAmountFactor = 0.5f;      // Scale movement inside portal bounds
+    public float bounceSpeed = 2f;               
+    public float bounceAmountFactor = 0.5f;    
     private Vector3 startLocalPos;
     public bool isVertical = true;
 
-    // These match portal's visual size
     private float portalX = 0.0729f;
     private float portalY = 0.0650f;
 

@@ -58,7 +58,6 @@ public class Button : MonoBehaviour
         if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Clone"))
         {
             isOpening = true;
-            Debug.Log("Gate opened");
         }
     }
 
@@ -67,7 +66,6 @@ public class Button : MonoBehaviour
         if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Clone"))
         {
             isOpening = false;
-            Debug.Log("Gate closed");
         }
     }
 }

@@ -30,6 +30,6 @@ public class Timer : MonoBehaviour
 
     void UpdateTimerText()
     {
-        timerText.text = "Clone decay time:" + Mathf.CeilToInt(countdown).ToString();
+        timerText.text = "Clone decay:" + Mathf.CeilToInt(countdown).ToString();
     }
 }
