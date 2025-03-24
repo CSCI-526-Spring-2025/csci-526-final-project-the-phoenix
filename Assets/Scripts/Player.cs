@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
             
         }
 
-        if (collider.gameObject.CompareTag("Shock"))
+        if (collider.gameObject.CompareTag("Shock") || collider.gameObject.CompareTag("Laser"))
         {
            
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player");

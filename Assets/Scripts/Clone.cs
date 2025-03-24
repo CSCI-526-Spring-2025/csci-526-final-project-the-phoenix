@@ -79,7 +79,7 @@ public class Clone : MonoBehaviour
             canToggleGravity = true;
         }
 
-        if (collider.gameObject.CompareTag("Shock"))
+        if (collider.gameObject.CompareTag("Shock") || collider.gameObject.CompareTag("Laser"))
         {
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "clone");
             // Destroy clone

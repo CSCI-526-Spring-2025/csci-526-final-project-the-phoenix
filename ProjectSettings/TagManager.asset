@@ -15,6 +15,7 @@ TagManager:
   - Shock
   - Passway
   - Slab
+  - Laser
   layers:
   - Default
   - TransparentFX
