@@ -4329,7 +4329,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 863.87354, y: 490.7296}
+  m_AnchoredPosition: {x: 801, y: 486}
   m_SizeDelta: {x: 258.2527, y: 76.5408}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1279320927
@@ -4365,7 +4365,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00:00
+  m_Text: 'Clone decay: 20'
 --- !u!222 &1279320928
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7268,6 +7268,7 @@ SceneRoots:
   - {fileID: 580732047}
   - {fileID: 77324456}
   - {fileID: 542418915}
+  - {fileID: 4634327752783388024}
   - {fileID: 1261902117}
   - {fileID: 407358318}
   - {fileID: 1949718243}
