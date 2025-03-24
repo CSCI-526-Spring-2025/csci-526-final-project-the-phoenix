@@ -514,7 +514,6 @@ GameObject:
   - component: {fileID: 260688059}
   - component: {fileID: 260688061}
   - component: {fileID: 260688060}
-  - component: {fileID: 260688062}
   m_Layer: 0
   m_Name: Wedge-Room3-4
   m_TagString: Passway
@@ -634,18 +633,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &260688062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260688058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbb3e9981207842ac875f3b13bba9932, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &277750499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2985,7 +2972,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 823689629}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c2755ca75007943eca12f7f7d8ae57a0, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3303,7 +3290,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 882747932}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c2755ca75007943eca12f7f7d8ae57a0, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3568,7 +3555,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 941477387}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c2755ca75007943eca12f7f7d8ae57a0, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3716,7 +3703,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 992942525}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c2755ca75007943eca12f7f7d8ae57a0, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3840,7 +3827,6 @@ GameObject:
   - component: {fileID: 1130377518}
   - component: {fileID: 1130377520}
   - component: {fileID: 1130377519}
-  - component: {fileID: 1130377521}
   m_Layer: 0
   m_Name: Wedge-Room2-3
   m_TagString: Passway
@@ -3960,18 +3946,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1130377521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1130377517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbb3e9981207842ac875f3b13bba9932, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1142228429
 GameObject:
   m_ObjectHideFlags: 0
@@ -4607,7 +4581,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1283371363}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c2755ca75007943eca12f7f7d8ae57a0, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5870,7 +5844,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 10.2300005, y: 10.51, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 777271414}
@@ -5887,7 +5861,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b3bf9911a3f640a2914c9c82e4d31d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  moveSpeed: 2
+  rotateSpeed: 100
 --- !u!58 &1610517310
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5897,7 +5872,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1610517306}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c2755ca75007943eca12f7f7d8ae57a0, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -6141,7 +6116,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1666865239}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c2755ca75007943eca12f7f7d8ae57a0, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -6883,7 +6858,6 @@ GameObject:
   - component: {fileID: 1915850853}
   - component: {fileID: 1915850855}
   - component: {fileID: 1915850854}
-  - component: {fileID: 1915850856}
   m_Layer: 0
   m_Name: Wedge-Room1-2
   m_TagString: Passway
@@ -7003,18 +6977,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1915850856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1915850852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbb3e9981207842ac875f3b13bba9932, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1932870567
 GameObject:
   m_ObjectHideFlags: 0
@@ -7373,7 +7335,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3471077449894270507, guid: b7db2831ee0ee4f3492bc68c13d1b5ad, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4954266493668473448, guid: b7db2831ee0ee4f3492bc68c13d1b5ad, type: 3}
       propertyPath: m_LocalScale.x

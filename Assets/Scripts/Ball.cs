@@ -1,21 +1,38 @@
 using UnityEngine;
 
-public class BallController : MonoBehaviour
+public class WallHugBall : MonoBehaviour
 {
-    public float speed = 7f;
+    public float moveSpeed = 2f;
+    public float rotateSpeed = 100f;
     private Rigidbody2D rb;
+
+    // Directional movement around the room
+    private Vector2 currentDirection = Vector2.right;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        float randomAngle = Random.Range(-15f, 15f);
-        Vector2 baseDirection = new Vector2(1, 1).normalized;
-        Vector2 initialDirection = Quaternion.Euler(0, 0, randomAngle) * baseDirection;
-        rb.velocity = initialDirection * speed;
+        rb.gravityScale = 0;
     }
 
     void FixedUpdate()
     {
-        rb.velocity = rb.velocity.normalized * speed;
+        rb.velocity = currentDirection * moveSpeed;
+        rb.MoveRotation(rb.rotation - rotateSpeed * Time.fixedDeltaTime); // Roll effect
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Change direction when hitting a wall
+        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Passway"))
+        {
+            Vector2 normal = collision.contacts[0].normal;
+
+            // Rotate movement direction clockwise
+            if (normal == Vector2.down) currentDirection = Vector2.left;
+            else if (normal == Vector2.left) currentDirection = Vector2.up;
+            else if (normal == Vector2.up) currentDirection = Vector2.right;
+            else if (normal == Vector2.right) currentDirection = Vector2.down;
+        }
     }
 }
