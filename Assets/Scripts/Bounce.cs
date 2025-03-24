@@ -1,22 +1,39 @@
+
+
+
+
 using UnityEngine;
 
 public class Bounce : MonoBehaviour
 {
-    public float bounceSpeed = 2f;  
-    public float bounceAmount = 0.2f; 
-    private Vector3 startPos;
-    public bool isVertical = true; 
+    public float bounceSpeed = 2f;               // Slower movement
+    public float bounceAmountFactor = 0.5f;      // Scale movement inside portal bounds
+    private Vector3 startLocalPos;
+    public bool isVertical = true;
+
+    // These match portal's visual size
+    private float portalX = 0.0729f;
+    private float portalY = 0.0650f;
+
     void Start()
     {
-        startPos = transform.position; 
+        startLocalPos = transform.localPosition;
     }
 
     void Update()
     {
-        float movement = Mathf.Sin(Time.time * bounceSpeed) * bounceAmount;
-        if (isVertical)
-            transform.position = startPos + new Vector3(0, movement, 0); 
-        else
-            transform.position = startPos + new Vector3(movement, 0, 0);
+        float movement = Mathf.Sin(Time.time * bounceSpeed);
+
+        float maxOffset = isVertical
+            ? portalY * bounceAmountFactor
+            : portalX * bounceAmountFactor;
+
+        float offsetAmount = movement * maxOffset;
+
+        Vector3 offset = isVertical
+            ? new Vector3(0f, offsetAmount, 0f)
+            : new Vector3(offsetAmount, 0f, 0f);
+
+        transform.localPosition = startLocalPos + offset;
     }
 }
