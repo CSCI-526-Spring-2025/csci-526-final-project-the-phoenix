@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07b9ebb7feaf4c2e920519c031b01f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSquare: {fileID: 1949718244}
+  targetSquare: {fileID: 407358319}
 --- !u!1 &77324455
 GameObject:
   m_ObjectHideFlags: 0
@@ -2550,7 +2550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceSpeed: 4
-  bounceAmount: 1
+  bounceAmountFactor: 0.5
   isVertical: 0
 --- !u!1 &775843084
 GameObject:
@@ -3077,7 +3077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceSpeed: 4
-  bounceAmount: 1
+  bounceAmountFactor: 0.5
   isVertical: 0
 --- !u!1 &861099738
 GameObject:
@@ -6306,7 +6306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceSpeed: 4
-  bounceAmount: 1
+  bounceAmountFactor: 0.5
   isVertical: 0
 --- !u!1 &1867334437
 GameObject:
@@ -6620,7 +6620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07b9ebb7feaf4c2e920519c031b01f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSquare: {fileID: 407358319}
+  targetSquare: {fileID: 1949718244}
 --- !u!1 &1949718241
 GameObject:
   m_ObjectHideFlags: 0
