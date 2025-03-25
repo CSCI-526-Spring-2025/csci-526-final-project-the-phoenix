@@ -19,7 +19,7 @@ public class Level3Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -53,12 +53,10 @@ public class Level3Controller : MonoBehaviour
         if (room3.currentAngle == 0f && room4.currentAngle == 180f)
         {
             wedge3_4.SetActive(false);
-            room3Portal.SetActive(true);
         }
         else
         {
             wedge3_4.SetActive(true);
-            room3Portal.SetActive(false);
         }
     }
 }
