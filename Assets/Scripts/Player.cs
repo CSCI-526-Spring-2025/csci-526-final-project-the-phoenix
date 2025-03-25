@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
             invertGravity();
             rb.gravityScale *= -1;
             SpaceBarLogger.LogSpacePress("Player", transform.position);
-           
+
         }
     }
 
@@ -54,6 +54,11 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             isGrounded = true;
+        }
+        if (collision.gameObject.CompareTag("Shock") || collision.gameObject.CompareTag("Laser"))
+        {
+            LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player");
+            RestartGame();
         }
     }
 
@@ -77,7 +82,7 @@ public class Player : MonoBehaviour
 
         if (collider.gameObject.CompareTag("PlayerPlatform"))
         {
-           
+
             cloneScript.gameObject.SetActive(true);
             cloneScript.resetPosition();
             cloneScript.resetGravity();
@@ -91,12 +96,12 @@ public class Player : MonoBehaviour
         if (collider.gameObject.CompareTag("GravityPortal"))
         {
             canToggleGravity = true;
-            
+
         }
 
         if (collider.gameObject.CompareTag("Shock") || collider.gameObject.CompareTag("Laser"))
         {
-           
+            Debug.Log("Player died");
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player");
             RestartGame();
         }
@@ -106,7 +111,7 @@ public class Player : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("GravityPortal"))
         {
-            canToggleGravity = false; 
+            canToggleGravity = false;
         }
     }
 

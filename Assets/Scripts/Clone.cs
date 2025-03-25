@@ -54,6 +54,12 @@ public class Clone : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (collision.gameObject.CompareTag("Shock"))
+        {
+            LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "clone");
+            // Destroy clone
+            gameObject.SetActive(false);
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
@@ -92,7 +98,7 @@ public class Clone : MonoBehaviour
 
     public void invertGravity()
     {
- 
+
         isGravityInverted *= -1;
     }
 
