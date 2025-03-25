@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SquareRotator : MonoBehaviour
 {
-    private float currentAngle = 0f;
+    public float currentAngle = 0f;
 
     public void Rotate90Clockwise()
     {
