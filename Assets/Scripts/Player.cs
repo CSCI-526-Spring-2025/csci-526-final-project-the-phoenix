@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
     private int isGravityInverted;
-    private bool canJump;
     private bool canToggleGravity = false;
 
     [SerializeField] private Clone cloneScript;
@@ -25,7 +24,6 @@ public class Player : MonoBehaviour
         isGravityInverted = 1;
         isGrounded = true;
         winText.SetActive(false);
-        canJump = true;
     }
 
     void Update()
@@ -37,15 +35,10 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
 
         // Jump only if it's allowed in the scene
-        if (canJump && Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
             // rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
-        if (canJump && Input.GetKeyDown(KeyCode.DownArrow) && isGrounded)
-        {
-            // rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
-            rb.AddForce(Vector2.down * jumpForce, ForceMode2D.Impulse);
+            rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
         if (canToggleGravity && Input.GetKeyDown(KeyCode.Space))
         {
@@ -120,11 +113,6 @@ public class Player : MonoBehaviour
     public void invertGravity()
     {
         isGravityInverted *= -1;
-    }
-
-    public void disableJump()
-    {
-        canJump = false;
     }
 
     void LoadNextLevel()

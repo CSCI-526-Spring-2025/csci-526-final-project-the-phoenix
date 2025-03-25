@@ -14,7 +14,6 @@ public class Clone : MonoBehaviour
     private bool isGrounded;
     private int isGravityInverted;
     private Vector2 initialPosition;
-    private bool canJump;
     private bool canToggleGravity = false;
 
     void Start()
@@ -24,7 +23,6 @@ public class Clone : MonoBehaviour
         isGrounded = true;
         moveSpeed = playerScript.moveSpeed;
         jumpForce = playerScript.jumpForce;
-        canJump = true;
 
         initialPosition = transform.position;
 
@@ -38,16 +36,9 @@ public class Clone : MonoBehaviour
         if (Input.GetKey(KeyCode.D)) moveDirection = 1;
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
 
-        if (canJump && Input.GetKeyDown(KeyCode.W) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
-            
-            // rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
-        if (canJump && Input.GetKeyDown(KeyCode.S) && isGrounded)
-        {
-            // rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
-            rb.AddForce( Vector2.down * jumpForce, ForceMode2D.Impulse);
+            rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
         if (canToggleGravity && Input.GetKeyDown(KeyCode.Space))
         {
@@ -109,10 +100,5 @@ public class Clone : MonoBehaviour
     {
         isGravityInverted = 1;
         rb.gravityScale = 1;
-    }
-
-    public void disableJump()
-    {
-        canJump = false;
     }
 }
