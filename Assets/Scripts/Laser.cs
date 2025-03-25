@@ -3,10 +3,10 @@ using UnityEngine;
 public class Laser : MonoBehaviour
 {
     public GameObject laserObject;
-    public float swingAngle = 20f;
+    public float swingAngle = 10f;
     public float swingSpeed = 1f;
 
-    public float showInterval = 3f;
+    public float showInterval = 7f;
     public float visibleDuration = 3f;
 
     private bool isVisible = true;

@@ -16,6 +16,7 @@ TagManager:
   - Passway
   - Slab
   - Laser
+  - Square
   layers:
   - Default
   - TransparentFX

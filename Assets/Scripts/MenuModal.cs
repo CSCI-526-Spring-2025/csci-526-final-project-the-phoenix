@@ -13,7 +13,7 @@ public class MenuModal : MonoBehaviour
     {
         if (menuPanel != null)
         {
-            menuPanel.SetActive(true);
+            // menuPanel.SetActive(true);
         }
         instructionsPanel.SetActive(false); 
     }
