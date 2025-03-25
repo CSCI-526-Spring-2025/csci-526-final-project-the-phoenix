@@ -6955,7 +6955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceSpeed: 4
-  bounceAmountFactor: 0.5
+  bounceAmountFactor: 1.5
   isVertical: 0
 --- !u!1 &1867334437
 GameObject:
