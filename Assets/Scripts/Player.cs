@@ -28,14 +28,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // Horizontal movement using left and right arrow keys
+        // Horizontal movement using A and D keys
         float moveDirection = 0;
-        if (Input.GetKey(KeyCode.LeftArrow)) moveDirection = -1;
-        if (Input.GetKey(KeyCode.RightArrow)) moveDirection = 1;
+        if (Input.GetKey(KeyCode.A)) moveDirection = -1;
+        if (Input.GetKey(KeyCode.D)) moveDirection = 1;
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
 
         // Jump only if it's allowed in the scene
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             // rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
             rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);

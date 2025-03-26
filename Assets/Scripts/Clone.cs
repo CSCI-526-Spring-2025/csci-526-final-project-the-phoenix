@@ -32,11 +32,11 @@ public class Clone : MonoBehaviour
     void Update()
     {
         float moveDirection = 0;
-        if (Input.GetKey(KeyCode.A)) moveDirection = -1;
-        if (Input.GetKey(KeyCode.D)) moveDirection = 1;
+        if (Input.GetKey(KeyCode.LeftArrow)) moveDirection = -1;
+        if (Input.GetKey(KeyCode.RightArrow)) moveDirection = 1;
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
             rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
