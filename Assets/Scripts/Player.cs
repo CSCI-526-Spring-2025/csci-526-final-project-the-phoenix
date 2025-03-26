@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
+            Debug.Log("Player is grounded");
             isGrounded = true;
         }
         if (collision.gameObject.CompareTag("Shock") || collision.gameObject.CompareTag("Laser"))
