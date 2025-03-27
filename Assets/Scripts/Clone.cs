@@ -97,6 +97,11 @@ public class Clone : MonoBehaviour
         transform.position = initialPosition;
     }
 
+    public void changeInitialPosition(Vector2 newPosition)
+    {
+        initialPosition = newPosition;
+    }
+
     public void invertGravity()
     {
 
