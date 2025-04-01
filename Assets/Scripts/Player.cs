@@ -53,7 +53,6 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
-            Debug.Log("Player is grounded");
             isGrounded = true;
         }
         if (collision.gameObject.CompareTag("Shock") || collision.gameObject.CompareTag("Laser"))
@@ -102,7 +101,6 @@ public class Player : MonoBehaviour
 
         if (collider.gameObject.CompareTag("Shock") || collider.gameObject.CompareTag("Laser"))
         {
-            Debug.Log("Player died");
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player");
             RestartGame();
         }

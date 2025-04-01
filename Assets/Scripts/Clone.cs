@@ -52,7 +52,6 @@ public class Clone : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
-            Debug.Log("Clone is grounded");
             isGrounded = true;
         }
         if (collision.gameObject.CompareTag("Shock"))

@@ -22,7 +22,7 @@ public class Button : MonoBehaviour
 
         // Determine target position based on openUpward
         if (direction == "up")
-        {
+        {   
             targetPosition = initialPosition + new Vector3(0, openHeight, 0); // Move upwards
         }
         else if (direction == "down")
