@@ -5,14 +5,21 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     [SerializeField] private Clone cloneScript;
-    [SerializeField] private GameObject prevPlatform;
-    [SerializeField] private GameObject nextPlatform;
+    [SerializeField] private GameObject prevPlatform_clone;
+    [SerializeField] private GameObject nextPlatform_clone;
+    [SerializeField] private GameObject prevPlatform_player;
+    [SerializeField] private GameObject nextPlatform_player;
 
     // Start is called before the first frame update
     void Start()
     {
-        nextPlatform.SetActive(false);
+        nextPlatform_clone.SetActive(false);
+        if (nextPlatform_player != null)
+        {
+            nextPlatform_player.SetActive(false);
+        }
     }
+        
 
     // Update is called once per frame
     void Update()
@@ -25,10 +32,15 @@ public class Checkpoint : MonoBehaviour
         if (collider.gameObject.CompareTag("Clone"))
         {
             // Initialize the clone's position to the next platform + a small offset vertically
-            cloneScript.changeInitialPosition(nextPlatform.transform.position + new Vector3(0, 0.5f, 0));
+            cloneScript.changeInitialPosition(nextPlatform_clone.transform.position + new Vector3(0, 0.5f, 0));
 
-            nextPlatform.SetActive(true);
-            prevPlatform.SetActive(false);
+            nextPlatform_clone.SetActive(true);
+            prevPlatform_clone.SetActive(false);
+            if (nextPlatform_player != null)
+            {
+                nextPlatform_player.SetActive(true);
+                prevPlatform_player.SetActive(false);
+            }
         }
     }
 }
