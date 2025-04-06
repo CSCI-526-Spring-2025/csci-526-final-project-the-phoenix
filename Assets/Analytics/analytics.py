@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 cred = credentials.Certificate(
-    "Assets/Data/doppledash-2a42c-firebase-adminsdk-fbsvc-7181bb7724.json")
+    "Assets/Analytics/doppledash-2a42c-firebase-adminsdk-fbsvc-951ff5d51d.json")
 firebase_admin.initialize_app(cred, {
     "databaseURL": "https://doppledash-2a42c-default-rtdb.firebaseio.com/"
 })
