@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4923996292449518652
+--- !u!1 &3328728640101856806
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4391112018744381459}
-  - component: {fileID: 5110715326534954694}
+  - component: {fileID: 2677197739029609892}
+  - component: {fileID: 8859357118153886370}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4391112018744381459
+--- !u!4 &2677197739029609892
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4923996292449518652}
+  m_GameObject: {fileID: 3328728640101856806}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.5465336, y: -0.40082166, z: -0.20944661}
@@ -32,15 +32,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5110715326534954694
+--- !u!114 &8859357118153886370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4923996292449518652}
+  m_GameObject: {fileID: 3328728640101856806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddc4514107ff14a53bae4e49f61980ec, type: 3}
+  m_Script: {fileID: 11500000, guid: 0319af38424114ed1b21f3b74a82906e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firebaseURL: https://doppledash-2a42c-default-rtdb.firebaseio.com/
