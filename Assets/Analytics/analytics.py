@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Initialize Firebase
-cred_path = "Assets/Analytics/doppledash-2a42c-firebase-adminsdk-fbsvc-951ff5d51d.json"
+cred_path = "/Users/namrathasairam/Phoenix/Assets/Analytics/doppledash-2a42c-firebase-adminsdk-fbsvc-951ff5d51d.json"
 cred = credentials.Certificate(cred_path)
 firebase_admin.initialize_app(cred, {
     "databaseURL": "https://doppledash-2a42c-default-rtdb.firebaseio.com/"
@@ -63,36 +63,46 @@ def plot_completion_rate(total_players, deaths_per_level):
     plt.show()
 
 
-def plot_heatmap(df, player_type, title):
-    deaths = df[df['player_type'] == player_type]
+def plot_heatmap(df, player_type, title_prefix):
+    # Filter by player type first
+    filtered_data = df[df['player_type'] == player_type]
 
-    if deaths.empty:
-        print(f"No death data for {player_type}. Skipping heatmap.")
-        return
-
+    # Custom color map
     custom_cmap = LinearSegmentedColormap.from_list(
-        'custom_cmap', ['green', 'yellow', 'red'])
-    plt.figure(figsize=(10, 6))
-    plot = sns.kdeplot(
-        x=deaths['death_x'],
-        y=deaths['death_y'],
-        fill=True,
-        cmap=custom_cmap,
-        bw_adjust=0.5,
-        levels=100,
-        thresh=0
+        'custom_cmap', ['green', 'yellow', 'red']
     )
-    plt.title(title)
-    plt.xlabel('X Position')
-    plt.ylabel('Y Position')
-    plt.xlim(0, 20)
-    plt.ylim(0, 20)
-    plt.xticks(range(0, 21, 2))
-    plt.yticks(range(0, 21, 2))
-    mappable = plot.get_children()[0]
-    plt.colorbar(mappable, label="Density of Deaths")
-    plt.tight_layout()
-    plt.show()
+
+    # Group by level
+    levels = filtered_data['level_name'].unique()
+
+    for level in levels:
+        level_data = filtered_data[filtered_data['level_name'] == level]
+
+        if level_data.empty:
+            print(f"No data for {title_prefix} - {level}. Skipping heatmap.")
+            continue
+
+        plt.figure(figsize=(10, 6))
+        plot = sns.kdeplot(
+            x=level_data['death_x'],
+            y=level_data['death_y'],
+            fill=True,
+            cmap=custom_cmap,
+            bw_adjust=0.5,
+            levels=100,
+            thresh=0
+        )
+
+        plt.title(f'{title_prefix} Heatmap - {level}')
+        plt.xlabel('X Position')
+        plt.ylabel('Y Position')
+        plt.xlim(0, 20)
+        plt.ylim(0, 20)
+        plt.xticks(range(0, 21, 2))
+        plt.yticks(range(0, 21, 2))
+
+        plt.tight_layout()
+        plt.show()
 
 
 def process_gravity_shift(df, title, cmap):
@@ -100,36 +110,50 @@ def process_gravity_shift(df, title, cmap):
         print(f"No gravity shift data for {title}. Skipping heatmap.")
         return
 
-    df['x_bin'] = (df['x'] // 2) * 2
-    df['y_bin'] = (df['y'] // 2) * 2
+    print("DF is", df)
+    levels = df['level_name'].unique()
 
-    pivot = df.pivot_table(
-        index='y_bin',
-        columns='x_bin',
-        values='gravity_count',
-        aggfunc='sum',
-        fill_value=0
-    )
+    for level in levels:
+        level_data = df[df['level_name'] == level]
 
-    plt.figure(figsize=(8, 6))
-    sns.heatmap(pivot, annot=True, fmt="d",
-                cmap=cmap, cbar=True, linewidths=0.5)
-    plt.title(title)
-    plt.xlabel('X Position (binned)')
-    plt.ylabel('Y Position (binned)')
-    plt.tight_layout()
-    plt.show()
+        if level_data.empty:
+            print(f"No data for {title} - {level}. Skipping heatmap.")
+            continue
+
+        # Bin the positions
+        level_data['x_bin'] = (level_data['x'] // 2) * 2
+        level_data['y_bin'] = (level_data['y'] // 2) * 2
+
+        # Create pivot table
+        pivot = level_data.pivot_table(
+            index='y_bin',
+            columns='x_bin',
+            values='gravity_count',
+            aggfunc='sum',
+            fill_value=0
+        )
+
+        plt.figure(figsize=(8, 6))
+        sns.heatmap(pivot, annot=True, fmt="d",
+                    cmap=cmap, cbar=True, linewidths=0.5)
+        plt.title(f'{title} - {level}')
+        plt.xlabel('X Position (binned)')
+        plt.ylabel('Y Position (binned)')
+        plt.tight_layout()
+        plt.show()
 
 
 def extract_gravity_data(df, entity_type):
     records = []
     for _, row in df.iterrows():
+        level = row.get('level_name')
         if isinstance(row.get(entity_type), list):
             for entry in row[entity_type]:
                 records.append({
                     'x': entry['x'],
                     'y': entry['y'],
-                    'gravity_count': entry['gravity_count']
+                    'gravity_count': entry['gravity_count'],
+                    'level_name': level
                 })
     return pd.DataFrame(records)
 
@@ -162,8 +186,8 @@ else:
     plot_completion_rate(total_players, deaths_per_level)
 
     # Heatmaps
-    plot_heatmap(df_deaths, 'player', 'Heatmap of Player Deaths')
-    plot_heatmap(df_deaths, 'clone', 'Heatmap of Clone Deaths')
+    plot_heatmap(df_deaths, "player", "Player")
+    plot_heatmap(df_deaths, "clone", "Clone")
 
     # Gravity shift analysis
     df_player = extract_gravity_data(df_gravity_shift_counts, 'player')
