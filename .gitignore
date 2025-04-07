@@ -82,4 +82,6 @@ venv/
 
 # Secret files
 *.json
+*.json.meta
+*.meta
 Assets/Data/*.json.meta

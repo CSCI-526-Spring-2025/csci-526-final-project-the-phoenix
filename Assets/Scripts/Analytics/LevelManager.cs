@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class LevelManager : MonoBehaviour
 {
@@ -39,6 +40,17 @@ public class LevelManager : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
+    public void TrackPlayerStart(string levelName)
+    {
+        string playerID = Guid.NewGuid().ToString();
+        string timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
+
+        string json = $"{{\"player_id\":\"{playerID}\", \"level_name\":\"{levelName}\", \"timestamp\":\"{timestamp}\"}}";
+
+        StartCoroutine(FirebaseUtility.SendDataToFirebase(json, "players"));
+
+    }
 
     public void TrackLevelCompletion(string levelName, float completionTime)
     {

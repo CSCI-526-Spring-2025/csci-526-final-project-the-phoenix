@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
         isGravityInverted = 1;
         isGrounded = true;
         winText.SetActive(false);
+        LevelManager.Instance.TrackPlayerStart(SceneManager.GetActiveScene().name);
     }
 
     void Update()
@@ -55,11 +56,6 @@ public class Player : MonoBehaviour
         {
             isGrounded = true;
         }
-        // if (collision.gameObject.CompareTag("Shock") || collision.gameObject.CompareTag("Laser"))
-        // {
-        //     LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player");
-        //     RestartGame();
-        // }
     }
 
     void OnCollisionExit2D(Collision2D collision)

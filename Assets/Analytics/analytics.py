@@ -6,11 +6,17 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Initialize Firebase
-cred_path = "/Users/namrathasairam/Phoenix/Assets/Analytics/doppledash-2a42c-firebase-adminsdk-fbsvc-951ff5d51d.json"
+cred_path = "Assets/Analytics/doppledash-2a42c-firebase-adminsdk-fbsvc-951ff5d51d.json"
 cred = credentials.Certificate(cred_path)
 firebase_admin.initialize_app(cred, {
     "databaseURL": "https://doppledash-2a42c-default-rtdb.firebaseio.com/"
 })
+
+
+def clean_dataframe(df):
+    if 'level_name' in df.columns:
+        return df[df['level_name'] != 'q']
+    return df
 
 
 def fetch_firebase_data(db_name):
@@ -20,8 +26,9 @@ def fetch_firebase_data(db_name):
         print(f"No data found in Firebase for {db_name}!")
         return pd.DataFrame()
     df = pd.DataFrame.from_dict(data, orient="index")
+
     print(f"Fetched {len(df)} records from {db_name}")
-    return df
+    return clean_dataframe(df)
 
 
 def plot_histogram(df):
@@ -32,9 +39,9 @@ def plot_histogram(df):
     plt.ylabel('Completion Time (seconds)')
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.show()
     plt.savefig(
         "Assets/Analytics/Graphs/LevelCompletion/LevelCompletionTime.png")
+    # plt.show()
 
 
 def plot_countplot(df):
@@ -45,14 +52,14 @@ def plot_countplot(df):
     plt.xlabel("Level Name")
     plt.ylabel("Number of Completions")
     plt.tight_layout()
-    plt.show()
     plt.savefig(
         "Assets/Analytics/Graphs/LevelCompletion/LevelCompletion.png")
+    # plt.show()
 
 
-def plot_completion_rate(total_players, deaths_per_level):
+def plot_completion_rate(completed_players, total_players):
     completion_rate = (
-        total_players - deaths_per_level).fillna(0) / total_players * 100
+        completed_players / total_players) * 100
 
     plt.figure(figsize=(8, 5))
     sns.barplot(x=completion_rate.index,
@@ -63,9 +70,9 @@ def plot_completion_rate(total_players, deaths_per_level):
     plt.ylim(0, 100)
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.show()
     plt.savefig(
         "Assets/Analytics/Graphs/LevelCompletion/LevelCompletionRate.png")
+    # plt.show()
 
 
 def plot_heatmap(df, player_type, title_prefix):
@@ -107,10 +114,15 @@ def plot_heatmap(df, player_type, title_prefix):
         plt.yticks(range(0, 21, 2))
 
         plt.tight_layout()
-        plt.show()
+        plt.savefig(
+            "Assets/Analytics/Graphs/PlayerDeaths/{player_type}/{level} DeathHeatmap.png".format(
+                player_type=player_type, level=level
+            )
+        )
+        # plt.show()
 
 
-def process_gravity_shift(df, title, cmap):
+def process_gravity_shift(df, title, cmap, player_type):
     if df.empty:
         print(f"No gravity shift data for {title}. Skipping heatmap.")
         return
@@ -145,7 +157,12 @@ def process_gravity_shift(df, title, cmap):
         plt.xlabel('X Position (binned)')
         plt.ylabel('Y Position (binned)')
         plt.tight_layout()
-        plt.show()
+        plt.savefig(
+            "Assets/Analytics/Graphs/GravityShift/{player_type}/{level} DeathHeatmap.png".format(
+                player_type=player_type, level=level
+            )
+        )
+        # plt.show()
 
 
 def extract_gravity_data(df, entity_type):
@@ -164,11 +181,34 @@ def extract_gravity_data(df, entity_type):
 
 
 def clone_usage(df):
-    clone_counts = df.groupby('level_name')['clone'].sum()
-    clone_counts = clone_counts[clone_counts > 0]
-    print("Levels with Clone Usage:")
-    print(clone_counts)
-    return clone_counts
+    clone_counts = df.groupby('level_name')['clone_usage_count'].sum()
+
+    plt.figure(figsize=(8, 5))
+    sns.barplot(x=clone_counts.index, y=clone_counts.values)
+    plt.title('Clone Usage per Level')
+    plt.xlabel('Level Name')
+    plt.ylabel('Number of Clones Used')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.savefig(
+        "Assets/Analytics/Graphs/CloneUsage/CloneUsage.png")
+    # plt.show()
+
+
+def clone_usage_boxplot(df):
+    sns.boxplot(x='level_name', y='first_activation_time', data=df)
+    plt.title('First Clone Activation Time per Level')
+    plt.xlabel('Level')
+    plt.ylabel('Time to First Clone Activation (seconds)')
+    plt.xticks(rotation=45)
+    medians = df.groupby('level_name')['first_activation_time'].median()
+    for i, median in enumerate(medians):
+        plt.text(i, median + 0.5, f"{median:.1f}s",
+                 horizontalalignment='center', color='black')
+    plt.tight_layout()
+    plt.savefig(
+        "Assets/Analytics/Graphs/CloneUsage/FirstActivationTime.png")
+    # plt.show()
 
 
 # Fetch data
@@ -176,33 +216,36 @@ df_completion = fetch_firebase_data("level_completion")
 df_deaths = fetch_firebase_data("player_deaths")
 df_gravity_shift_counts = fetch_firebase_data("gravity_logs")
 df_clone_usage = fetch_firebase_data("clone_usage")
+df_players = fetch_firebase_data("players")
 
 # Check data
 if df_completion.empty or df_deaths.empty:
     print("Required data missing. Exiting.")
 else:
     # Analysis
-    total_players = df_completion.groupby("level_name").size()
-    deaths_per_level = df_deaths[
-        (df_deaths["player_type"] == "clone") & (
-            df_deaths["level_name"] == "Level3")
-    ].groupby("level_name").size()
-    print(deaths_per_level)
-    print(total_players)
-    deaths_per_level["Tutorial"] = deaths_per_level.get("Tutorial", 0)
+    completed_players = df_completion.groupby("level_name").size()
+    total_players = df_players.groupby("level_name").size()
 
     plot_histogram(df_completion)
     plot_countplot(df_completion)
-    plot_completion_rate(total_players, deaths_per_level)
+    plot_completion_rate(completed_players, total_players)
 
     # Heatmaps
     plot_heatmap(df_deaths, "player", "Player")
     plot_heatmap(df_deaths, "clone", "Clone")
+
+    # Clone usage analysis
+    clone_usage(df_clone_usage)
+    clone_activation_times = df_clone_usage.groupby(
+        'level_name')['first_activation_time'].median()
+
+    clone_usage_boxplot(df_clone_usage)
 
     # Gravity shift analysis
     df_player = extract_gravity_data(df_gravity_shift_counts, 'player')
     df_clone = extract_gravity_data(df_gravity_shift_counts, 'clone')
 
     process_gravity_shift(
-        df_player, 'Gravity Shift Heatmap - Player', "YlOrRd")
-    process_gravity_shift(df_clone, 'Gravity Shift Heatmap - Clone', "Blues")
+        df_player, 'Gravity Shift Heatmap - Player', "YlOrRd", "player")
+    process_gravity_shift(
+        df_clone, 'Gravity Shift Heatmap - Clone', "Blues", "clone")
