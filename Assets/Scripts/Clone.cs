@@ -54,7 +54,7 @@ public class Clone : MonoBehaviour
         {
             isGrounded = true;
         }
-        if (collision.gameObject.CompareTag("Shock"))
+        if (collision.gameObject.CompareTag("Boulder"))
         {
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "clone");
             // Destroy clone
@@ -76,7 +76,7 @@ public class Clone : MonoBehaviour
             canToggleGravity = true;
         }
 
-        if (collider.gameObject.CompareTag("Shock") || collider.gameObject.CompareTag("Laser"))
+        if (collider.gameObject.CompareTag("Laser") || collider.gameObject.CompareTag("Shock"))
         {
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "clone");
             // Destroy clone

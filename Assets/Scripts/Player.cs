@@ -55,11 +55,11 @@ public class Player : MonoBehaviour
         {
             isGrounded = true;
         }
-        if (collision.gameObject.CompareTag("Shock") || collision.gameObject.CompareTag("Laser"))
-        {
-            LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player");
-            RestartGame();
-        }
+        // if (collision.gameObject.CompareTag("Shock") || collision.gameObject.CompareTag("Laser"))
+        // {
+        //     LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player");
+        //     RestartGame();
+        // }
     }
 
     void OnCollisionExit2D(Collision2D collision)

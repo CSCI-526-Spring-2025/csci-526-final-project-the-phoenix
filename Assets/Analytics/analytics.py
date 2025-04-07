@@ -26,12 +26,15 @@ def fetch_firebase_data(db_name):
 
 def plot_histogram(df):
     plt.figure(figsize=(8, 5))
-    sns.histplot(df["completion_time"], bins=10, kde=True)
-    plt.title("Distribution of Level Completion Times")
-    plt.xlabel("Completion Time (seconds)")
-    plt.ylabel("Number of Players")
+    sns.boxplot(x='level_name', y='completion_time', data=df)
+    plt.title('Distribution of Level Completion Time')
+    plt.xlabel('Level')
+    plt.ylabel('Completion Time (seconds)')
+    plt.xticks(rotation=45)
     plt.tight_layout()
     plt.show()
+    plt.savefig(
+        "Assets/Analytics/Graphs/LevelCompletion/LevelCompletionTime.png")
 
 
 def plot_countplot(df):
@@ -43,13 +46,13 @@ def plot_countplot(df):
     plt.ylabel("Number of Completions")
     plt.tight_layout()
     plt.show()
+    plt.savefig(
+        "Assets/Analytics/Graphs/LevelCompletion/LevelCompletion.png")
 
 
 def plot_completion_rate(total_players, deaths_per_level):
     completion_rate = (
         total_players - deaths_per_level).fillna(0) / total_players * 100
-    print("Level Completion Rate (%)")
-    print(completion_rate)
 
     plt.figure(figsize=(8, 5))
     sns.barplot(x=completion_rate.index,
@@ -61,6 +64,8 @@ def plot_completion_rate(total_players, deaths_per_level):
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.show()
+    plt.savefig(
+        "Assets/Analytics/Graphs/LevelCompletion/LevelCompletionRate.png")
 
 
 def plot_heatmap(df, player_type, title_prefix):
@@ -178,7 +183,12 @@ if df_completion.empty or df_deaths.empty:
 else:
     # Analysis
     total_players = df_completion.groupby("level_name").size()
-    deaths_per_level = df_deaths.groupby("level_name").size()
+    deaths_per_level = df_deaths[
+        (df_deaths["player_type"] == "clone") & (
+            df_deaths["level_name"] == "Level3")
+    ].groupby("level_name").size()
+    print(deaths_per_level)
+    print(total_players)
     deaths_per_level["Tutorial"] = deaths_per_level.get("Tutorial", 0)
 
     plot_histogram(df_completion)

@@ -5473,7 +5473,7 @@ GameObject:
   - component: {fileID: 1610517309}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Shock
+  m_TagString: Boulder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
