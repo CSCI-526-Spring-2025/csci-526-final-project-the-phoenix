@@ -76,13 +76,14 @@ public class Player : MonoBehaviour
         {
             LevelManager.Instance.TrackLevelCompletion(SceneManager.GetActiveScene().name, Time.timeSinceLevelLoad);
             LevelManager.Instance.TrackGravityCount();
+            LevelManager.Instance.TrackCloneUsageData(SceneManager.GetActiveScene().name);
             LoadNextLevel();
 
         }
 
         if (collider.gameObject.CompareTag("PlayerPlatform"))
         {
-
+            LevelManager.Instance.TrackCloneUsage();
             cloneScript.gameObject.SetActive(true);
             cloneScript.resetPosition();
             cloneScript.resetGravity();

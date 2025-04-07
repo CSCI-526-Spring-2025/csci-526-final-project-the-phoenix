@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     private LevelCompletionTracker levelCompletionTracker;
     private PlayerDeathTracker playerDeathTracker;
     private GravityShiftTracker gravityShiftTracker;
+    private CloneUsageTracker cloneUsageTracker;
 
     void Awake()
 {
@@ -28,6 +29,10 @@ public class LevelManager : MonoBehaviour
         gravityShiftTracker = GetComponent<GravityShiftTracker>();
         if (gravityShiftTracker == null)
             gravityShiftTracker = gameObject.AddComponent<GravityShiftTracker>();
+
+        cloneUsageTracker = GetComponent<CloneUsageTracker>();
+        if (cloneUsageTracker == null)
+            cloneUsageTracker = gameObject.AddComponent<CloneUsageTracker>();
     }
     else
     {
@@ -48,5 +53,15 @@ public class LevelManager : MonoBehaviour
     public void TrackGravityCount()
     {
         gravityShiftTracker.TrackGravityCount();
+    }
+
+    public void TrackCloneUsage()
+    {
+        cloneUsageTracker.TrackCloneUsage();
+    }
+
+    public void TrackCloneUsageData(string levelName)
+    {
+        cloneUsageTracker.SendCloneUsageData(levelName);
     }
 }
