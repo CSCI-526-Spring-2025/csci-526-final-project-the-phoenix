@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public GameObject winText;
     public GameObject arrow1;
     public GameObject arrow2;
+    public GameObject arrow3;
 
     void Start()
     {
@@ -87,6 +88,7 @@ public class Player : MonoBehaviour
             {
                 arrow1.SetActive(false);
                 arrow2.SetActive(true);
+                arrow3.SetActive(true);
             }
         }
 
