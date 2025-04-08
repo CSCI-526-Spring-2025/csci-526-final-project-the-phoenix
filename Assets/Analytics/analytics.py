@@ -158,11 +158,54 @@ def process_gravity_shift(df, title, cmap, player_type):
         plt.ylabel('Y Position (binned)')
         plt.tight_layout()
         plt.savefig(
-            "Assets/Analytics/Graphs/GravityShift/{player_type}/{level} DeathHeatmap.png".format(
+            "Assets/Analytics/Graphs/GravityShift/{player_type}/{level} Heatmap.png".format(
                 player_type=player_type, level=level
             )
         )
         # plt.show()
+
+
+def plot_gravity_shift_counts(shift_counts, title, color):
+    plt.figure(figsize=(8, 5))
+    sns.barplot(x=shift_counts.index, y=shift_counts.values, palette=color)
+    plt.title(title)
+    plt.xlabel('Level Name')
+    plt.ylabel('Total Gravity Shifts')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.savefig(
+        "Assets/Analytics/Graphs/GravityShift/{title}.png".format(
+            title=title
+        )
+    )
+    plt.show()
+
+
+def plot_pie_chart(df_completion, df_deaths):
+    # Group data
+    completion_counts = df_completion.groupby('level_name').size()
+    death_counts = df_deaths.groupby('level_name').size()
+
+    # Set style
+    sns.set(style="whitegrid")
+
+    plt.figure(figsize=(6, 6))
+    plt.pie(completion_counts.values, labels=completion_counts.index,
+            autopct='%1.1f%%', startangle=140)
+    plt.title('Player Completions per Level')
+    # Equal aspect ratio ensures that pie is drawn as a circle.
+    plt.axis('equal')
+    plt.tight_layout()
+    plt.show()
+
+    # Player Deaths Pie Chart
+    plt.figure(figsize=(6, 6))
+    plt.pie(death_counts.values, labels=death_counts.index,
+            autopct='%1.1f%%', startangle=140)
+    plt.title('Player Deaths per Level')
+    plt.axis('equal')
+    plt.tight_layout()
+    plt.show()
 
 
 def extract_gravity_data(df, entity_type):
@@ -249,3 +292,24 @@ else:
         df_player, 'Gravity Shift Heatmap - Player', "YlOrRd", "player")
     process_gravity_shift(
         df_clone, 'Gravity Shift Heatmap - Clone', "Blues", "clone")
+
+    player_shifts_per_level = df_player.groupby(
+        'level_name')['gravity_count'].sum()
+    clone_shifts_per_level = df_clone.groupby(
+        'level_name')['gravity_count'].sum()
+
+    player_avg_shifts = df_player.groupby('level_name')['gravity_count'].mean()
+    clone_avg_shifts = df_clone.groupby('level_name')['gravity_count'].mean()
+
+    plot_gravity_shift_counts(player_shifts_per_level,
+                              'Total Gravity Shifts - Player', 'YlOrRd')
+    plot_gravity_shift_counts(clone_shifts_per_level,
+                              'Total Gravity Shifts - Clone', 'Blues')
+
+    plot_gravity_shift_counts(
+        player_avg_shifts, 'Average Gravity Shifts - Player', 'YlOrRd')
+    plot_gravity_shift_counts(
+        clone_avg_shifts, 'Average Gravity Shifts - Clone', 'Blues')
+
+    # Miletone analysis (piecharts)
+    plot_pie_chart(df_completion, df_deaths)
