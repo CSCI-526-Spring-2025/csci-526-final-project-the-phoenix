@@ -3075,11 +3075,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 656925828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d14bbb15175448bfaf1bc77b8296fe9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b0609914e6674514b25161d734aee56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1097123205}
-  smoothTime: 0.33
+  smoothTime: 0.2
 --- !u!1 &670779682
 GameObject:
   m_ObjectHideFlags: 0
@@ -5416,9 +5416,85 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3531607775197467871, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531607775197467871, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531607775197467871, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531607775197467871, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_FontData.m_RichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531607775197467871, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531607775197467871, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5108706648811910784, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302361623685276354, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 91.3846
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302361623685276354, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 26.7469
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302361623685276354, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302361623685276354, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.26043668
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302361623685276354, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.097816594
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302361623685276354, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 742
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302361623685276354, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 480
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302361623685276354, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848089156330104017, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848089156330104017, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848089156330104017, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848089156330104017, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848089156330104017, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 8586695138867927663, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
       propertyPath: m_Pivot.x
