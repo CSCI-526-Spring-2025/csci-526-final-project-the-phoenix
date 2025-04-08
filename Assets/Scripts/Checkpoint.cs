@@ -5,7 +5,6 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     [SerializeField] private Clone cloneScript;
-    [SerializeField] private Player playerScript;
     [SerializeField] private GameObject prevPlatform_clone;
     [SerializeField] private GameObject nextPlatform_clone;
     [SerializeField] private GameObject prevPlatform_player;
@@ -17,7 +16,7 @@ public class Checkpoint : MonoBehaviour
         nextPlatform_clone.SetActive(false);
         if (nextPlatform_player != null)
         {
-            // nextPlatform_player.SetActive(false);
+            nextPlatform_player.SetActive(false);
         }
     }
         
@@ -42,14 +41,6 @@ public class Checkpoint : MonoBehaviour
                 nextPlatform_player.SetActive(true);
                 prevPlatform_player.SetActive(false);
             }
-        }
-
-        if (collider.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Neter checkpint");
-            // Initialize the clone's position to the next platform + a small offset vertically
-            playerScript.changeInitialPosition(nextPlatform_player.transform.position + new Vector3(0, 0.5f, 0));
-
         }
     }
 }

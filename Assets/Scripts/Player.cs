@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
         isGrounded = true;
         winText.SetActive(false);
         LevelManager.Instance.TrackPlayerStart(SceneManager.GetActiveScene().name);
-        initialPosition = transform.position;
     }
 
     void Update()
@@ -105,13 +104,6 @@ public class Player : MonoBehaviour
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player");
             RestartGame();
         }
-    }
-
-
-    public void changeInitialPosition(Vector2 newPosition)
-    {   
-        Debug.Log("here");
-        initialPosition = newPosition;
     }
 
     void OnTriggerExit2D(Collider2D collider)
