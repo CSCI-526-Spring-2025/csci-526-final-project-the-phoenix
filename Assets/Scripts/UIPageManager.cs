@@ -34,6 +34,6 @@ public class UIPageManager : MonoBehaviour
 
     public void startGame()
     {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("New Tutorial");
     }
 }

@@ -3075,11 +3075,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 656925828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b0609914e6674514b25161d734aee56, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d14bbb15175448bfaf1bc77b8296fe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1097123205}
-  smoothTime: 0.2
+  smoothTime: 0.33
 --- !u!1 &670779682
 GameObject:
   m_ObjectHideFlags: 0
@@ -5505,6 +5505,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+--- !u!1 &1165842925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3849513068584501435, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+  m_PrefabInstance: {fileID: 1165842924}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1196347589
 GameObject:
   m_ObjectHideFlags: 0
@@ -9025,6 +9030,10 @@ PrefabInstance:
       propertyPath: arrow2
       value: 
       objectReference: {fileID: 995694357}
+    - target: {fileID: 641615419398956106, guid: 9d9aa1fccd44044db96ac27a9dce0a8e, type: 3}
+      propertyPath: winText
+      value: 
+      objectReference: {fileID: 1165842925}
     - target: {fileID: 641615419398956106, guid: 9d9aa1fccd44044db96ac27a9dce0a8e, type: 3}
       propertyPath: jumpForce
       value: 7.5
