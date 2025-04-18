@@ -11,11 +11,12 @@ public class MenuModal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (menuPanel != null)
-        {
-             menuPanel.SetActive(true);
-        }
         instructionsPanel.SetActive(false); 
+    }
+
+    public void OpenMenu()
+    {
+        menuPanel.SetActive(true);
     }
 
     public void OpenModal()
@@ -30,6 +31,11 @@ public class MenuModal : MonoBehaviour
     public void CloseModal()
     {
         instructionsPanel.SetActive(false);
+    }
+
+    public void CloseMenu()
+    {
+        menuPanel.SetActive(false);
     }
 
     public void StartGame()
