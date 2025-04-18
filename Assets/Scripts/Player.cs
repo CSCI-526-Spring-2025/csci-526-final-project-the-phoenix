@@ -32,15 +32,18 @@ public class Player : MonoBehaviour
     [Header("Miscellaneous")]
     [SerializeField] private Clone cloneScript;
     public GameObject winText;
+    public GameObject dieText;
     public GameObject arrow1;
     public GameObject arrow2;
     public GameObject arrow3;
 
     void Start()
     {
+        gameObject.SetActive(true);
         rb = GetComponent<Rigidbody2D>();
         isGravityInverted = 1;
         winText.SetActive(false);
+        dieText.SetActive(false);
         LevelManager.Instance.TrackPlayerStart(SceneManager.GetActiveScene().name);
     }
 
@@ -144,6 +147,14 @@ public class Player : MonoBehaviour
         if (collider.gameObject.CompareTag("Shock") || collider.gameObject.CompareTag("Laser"))
         {
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player");
+            StartCoroutine(RestartAfterDelay());
+            dieText.SetActive(true);
+        }
+
+        IEnumerator RestartAfterDelay()
+        {
+            yield return new WaitForSeconds(0.5f);
+            Destroy(gameObject);
             RestartGame();
         }
     }

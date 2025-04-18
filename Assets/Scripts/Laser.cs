@@ -18,11 +18,8 @@ public class Laser : MonoBehaviour
 
     void Update()
     {
-        if (isVisible)
-        {
-            float angle = Mathf.Sin(Time.time * swingSpeed) * swingAngle;
-            transform.localRotation = Quaternion.Euler(180f, 0f, angle);
-        }
+        float angle = Mathf.Sin(Time.time * swingSpeed) * swingAngle;
+        transform.localRotation = Quaternion.Euler(180f, 0f, angle);
     }
 
     void ToggleLaser()

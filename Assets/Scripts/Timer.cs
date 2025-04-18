@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private Coroutine blinkCoroutine;
+    public float blinkInterval = 0.6f;
 
     void OnEnable()
     {
@@ -62,7 +63,7 @@ public class Timer : MonoBehaviour
         while (true)
         {
             spriteRenderer.enabled = !spriteRenderer.enabled;
-            yield return new WaitForSeconds(0.6f); // Adjust blink speed here
+            yield return new WaitForSeconds(blinkInterval);
         }
     }
 }
