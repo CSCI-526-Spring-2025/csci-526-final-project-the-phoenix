@@ -55,7 +55,6 @@ public class Button : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("Trigger Enter: " + collider.name);
         if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Clone"))
         {
             isOpening = true;
@@ -64,7 +63,6 @@ public class Button : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collider)
     {
-        Debug.Log("Trigger Exit: " + collider.name);
         if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Clone"))
         {
             isOpening = false;
