@@ -5,15 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    [Header("Movement")]
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
+    [SerializeField] private float fallMultiplier = 2.5f;
+    [SerializeField] private float maxFallSpeed = 20f;
+
+    [Header("Ground Detection")]
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private Transform groundCheckReverse;
+    [SerializeField] private Vector2 groundCheckSize = new Vector2(0.95f, 0.03f);
+    [SerializeField] private LayerMask groundLayer;
+
+    [Header("Wall Detection")]
+    [SerializeField] private Transform leftWallCheck;
+    [SerializeField] private Transform rightWallCheck;
+    [SerializeField] private Vector2 wallCheckSize = new Vector2(0.03f, 0.95f);
 
     private Rigidbody2D rb;
     private bool isGrounded;
+    private bool isWallSliding;
     private int isGravityInverted;
     private bool canToggleGravity = false;
     private Vector2 initialPosition;
 
+    [Header("Miscellaneous")]
     [SerializeField] private Clone cloneScript;
     public GameObject winText;
     public GameObject arrow1;
@@ -24,7 +40,6 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         isGravityInverted = 1;
-        isGrounded = true;
         winText.SetActive(false);
         LevelManager.Instance.TrackPlayerStart(SceneManager.GetActiveScene().name);
     }
@@ -33,14 +48,16 @@ public class Player : MonoBehaviour
     {
         // Horizontal movement using A and D keys
         float moveDirection = 0;
-        if (Input.GetKey(KeyCode.A)) moveDirection = -1;
-        if (Input.GetKey(KeyCode.D)) moveDirection = 1;
+        if (Input.GetKey(KeyCode.A) && !Physics2D.OverlapBox(leftWallCheck.position, wallCheckSize, 0f, groundLayer)) moveDirection = -1;
+        if (Input.GetKey(KeyCode.D) && !Physics2D.OverlapBox(rightWallCheck.position, wallCheckSize, 0f, groundLayer)) moveDirection = 1;
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
 
-        // Jump only if it's allowed in the scene
+        // Ground check
+        isGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer) ||
+                     Physics2D.OverlapBox(groundCheckReverse.position, groundCheckSize, 0f, groundLayer);
+
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
-            // rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
             rb.AddForce(isGravityInverted * Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
         if (canToggleGravity && Input.GetKeyDown(KeyCode.Space))
@@ -52,19 +69,44 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void LateUpdate()
     {
-        if (collision.gameObject.CompareTag("Floor"))
-        {
-            isGrounded = true;
-        }
-    }
+        // Better feeling gravity (fall faster)
 
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Floor"))
+        // Normal Gravity
+        if (isGravityInverted == 1)
         {
-            isGrounded = false;
+            if (rb.velocity.y < 0)
+            {
+                rb.gravityScale = fallMultiplier;
+                // Limit max fall speed
+                if (rb.velocity.y < -maxFallSpeed)
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, -maxFallSpeed);
+                }
+            }
+            else
+            {
+                rb.gravityScale = 1f;
+            }
+        }
+
+        // Inverted Gravity
+        else 
+        {
+            if (rb.velocity.y > 0)
+            {
+                rb.gravityScale = -fallMultiplier;
+                // Limit max fall speed
+                if (rb.velocity.y > maxFallSpeed)
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, maxFallSpeed);
+                }
+            }
+            else
+            {
+                rb.gravityScale = -1f;
+            }
         }
     }
 
