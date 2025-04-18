@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3863636473495205813, guid: 70b98b00af3064f2ebdfb2e991bedeb2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -778,6 +782,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 641615419398956106, guid: 9d9aa1fccd44044db96ac27a9dce0a8e, type: 3}
+      propertyPath: dieText
+      value: 
+      objectReference: {fileID: 1762465359}
     - target: {fileID: 641615419398956106, guid: 9d9aa1fccd44044db96ac27a9dce0a8e, type: 3}
       propertyPath: winText
       value: 
@@ -3233,6 +3241,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5e9b5c839bc4a95aaa8699f8133d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1762465359 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5807531381353921226, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+  m_PrefabInstance: {fileID: 1762465354}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1782913630 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6586659606294929961, guid: 8ac8c37a8f89c44ed8d0c60fb1ced52f, type: 3}
@@ -4516,6 +4529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 60
   timerText: {fileID: 1762465355}
+  blinkInterval: 0.3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

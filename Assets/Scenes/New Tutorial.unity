@@ -5610,6 +5610,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1165842927 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5807531381353921226, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+  m_PrefabInstance: {fileID: 1165842924}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1196347589
 GameObject:
   m_ObjectHideFlags: 0
@@ -8354,6 +8359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 15
   timerText: {fileID: 1165842926}
+  blinkInterval: 0.3
 --- !u!1 &1930311723
 GameObject:
   m_ObjectHideFlags: 0
@@ -9019,6 +9025,10 @@ PrefabInstance:
       propertyPath: arrow2
       value: 
       objectReference: {fileID: 995694357}
+    - target: {fileID: 641615419398956106, guid: 9d9aa1fccd44044db96ac27a9dce0a8e, type: 3}
+      propertyPath: dieText
+      value: 
+      objectReference: {fileID: 1165842927}
     - target: {fileID: 641615419398956106, guid: 9d9aa1fccd44044db96ac27a9dce0a8e, type: 3}
       propertyPath: winText
       value: 
