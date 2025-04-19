@@ -126,7 +126,6 @@ public class Player : MonoBehaviour
 
         if (collider.gameObject.CompareTag("PlayerPlatform"))
         {
-            LevelManager.Instance.TrackCloneUsage();
             cloneScript.gameObject.SetActive(true);
             cloneScript.resetPosition();
             cloneScript.resetGravity();

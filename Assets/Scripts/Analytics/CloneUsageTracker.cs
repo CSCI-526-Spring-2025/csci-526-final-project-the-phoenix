@@ -16,15 +16,15 @@ public class CloneUsageTracker : MonoBehaviour
 
     public void TrackCloneUsage()
     {
-        cloneUsageCount++;
-
         if (firstCloneActivationTime < 0f)
         {
             firstCloneActivationTime = Time.time - levelStartTime;
-            Debug.Log("Time to first clone activation: " + firstCloneActivationTime + " seconds.");
         }
+    }
 
-        Debug.Log("Clone used: " + cloneUsageCount + " times in this level.");
+    public void IncrementCloneUsageCount()
+    {
+        cloneUsageCount++;
     }
 
     public void ResetCloneUsageCount()

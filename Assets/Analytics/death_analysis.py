@@ -26,10 +26,7 @@ def fetch_firebase_data(db_name):
     return clean_dataframe(df)
 
 
-def plot_death_heatmap(df, player_type, title_prefix):
-    filtered_data = df[df['player_type'] == player_type]
-
-    # Level-specific bounds [x_min, x_max, y_min, y_max]
+def plot_death_heatmap(df):
     level_bounds = {
         "Level1": [-13.5, 24, -2.5, 14.5],
         "Level2": [-13.5, 24, -2.5, 14.5],
@@ -37,10 +34,10 @@ def plot_death_heatmap(df, player_type, title_prefix):
         "Level4": [-20.5, 31.5, -3.5, 25],
     }
 
-    for level in filtered_data['level_name'].unique():
-        level_data = filtered_data[filtered_data['level_name'] == level]
+    for level in df['level_name'].unique():
+        level_data = df[df['level_name'] == level]
         if level_data.empty:
-            print(f"No data for {title_prefix} - {level}. Skipping heatmap.")
+            print(f"No data for {level}. Skipping.")
             continue
 
         bg_path = f"Assets/Analytics/LevelImages/{level}.png"
@@ -50,7 +47,6 @@ def plot_death_heatmap(df, player_type, title_prefix):
             print(f"No background image for level {level}. Skipping.")
             continue
 
-        # Bounds
         bounds = level_bounds.get(level, [-13.5, 24, -2.5, 14.5])
         x_min, x_max, y_min, y_max = bounds
 
@@ -58,7 +54,6 @@ def plot_death_heatmap(df, player_type, title_prefix):
         plt.imshow(bg_img, extent=[x_min, x_max,
                    y_min, y_max], aspect='auto', alpha=0.8)
 
-        # Heatmap: lower bins = larger blocks, higher alpha = more intense
         plt.hist2d(
             level_data['death_x'],
             level_data['death_y'],
@@ -69,15 +64,14 @@ def plot_death_heatmap(df, player_type, title_prefix):
         )
 
         plt.colorbar(label='Death Density')
-        plt.title(f'{title_prefix} Death Heatmap - {level}')
+        plt.title(f'Death Heatmap - {level}')
         plt.xlabel('X Position')
         plt.ylabel('Y Position')
         plt.xlim(x_min, x_max)
         plt.ylim(y_min, y_max)
         plt.tight_layout()
-        plt.show()
         plt.savefig(
-            f"Assets/Analytics/Graphs/PlayerDeaths/HeatMap/{player_type}/{level}_DeathHeatmap.png")
+            f"Assets/Analytics/Graphs/PlayerDeaths/HeatMap/{level}_DeathHeatmap.png")
         plt.close()
 
 
@@ -98,15 +92,15 @@ def plot_deaths_by_obstacle(df):
     plt.xticks(rotation=45)
     plt.legend(title='Obstacle Type')
     plt.tight_layout()
-    plt.savefig("Assets/Analytics/Graphs/PlayerDeaths/DeathsByObstacle.png")
+    plt.savefig(
+        "Assets/Analytics/Graphs/PlayerDeaths/Obstacle/DeathsByObstacle.png")
     plt.close()
 
 
 if __name__ == "__main__":
     df_deaths = fetch_firebase_data("player_deaths")
     if not df_deaths.empty:
-        plot_death_heatmap(df_deaths, "player", "Player")
-        plot_death_heatmap(df_deaths, "clone", "Clone")
+        plot_death_heatmap(df_deaths)
         plot_deaths_by_obstacle(df_deaths)
     else:
         print("No data to plot.")
