@@ -114,14 +114,36 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("Finish"))
-        {
-            LevelManager.Instance.TrackLevelCompletion(SceneManager.GetActiveScene().name, Time.timeSinceLevelLoad);
-            LevelManager.Instance.TrackGravityCount();
-            LevelManager.Instance.TrackCloneUsageData(SceneManager.GetActiveScene().name);
-            LoadNextLevel();
+       if (collider.gameObject.CompareTag("Finish"))
+{
+    ShipDeparture ship = collider.GetComponent<ShipDeparture>();
+    if (ship != null)
+    {
+        ship.StartFlyAndLoad(this.gameObject);  // Pass player into ship script
+    }
+}
 
-        }
+IEnumerator FlyThenLoad()
+{
+    // Let ship fly for a moment (player still visible)
+    yield return new WaitForSeconds(0.01f);
+
+    // Hide the player before level switches
+    this.gameObject.SetActive(false);
+
+    // Optional wait while ship flies up visibly
+    yield return new WaitForSeconds(2.0f);
+
+    // Log & track just before level switches
+    LevelManager.Instance.TrackLevelCompletion(SceneManager.GetActiveScene().name, Time.timeSinceLevelLoad);
+    LevelManager.Instance.TrackGravityCount();
+    LevelManager.Instance.TrackCloneUsageData(SceneManager.GetActiveScene().name);
+
+    LoadNextLevel();
+}
+
+
+
 
         if (collider.gameObject.CompareTag("PlayerPlatform"))
         {
