@@ -1529,6 +1529,17 @@ MonoBehaviour:
   bounceSpeed: 5
   bounceAmountFactor: 5
   isVertical: 1
+--- !u!114 &553706198 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3531607775197467871, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+  m_PrefabInstance: {fileID: 1753746802}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &566067655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2143,6 +2154,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3433032877048047004, guid: f8d015becc0e4aec9d3fffd90c89e63b, type: 3}
       insertIndex: 4
       addedObject: {fileID: 1272728998}
+    - targetCorrespondingSourceObject: {fileID: 3433032877048047004, guid: f8d015becc0e4aec9d3fffd90c89e63b, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 1272729001}
   m_SourcePrefab: {fileID: 100100000, guid: f8d015becc0e4aec9d3fffd90c89e63b, type: 3}
 --- !u!1001 &782959266
 PrefabInstance:
@@ -3359,6 +3373,21 @@ MonoBehaviour:
   rightWallCheck: {fileID: 134111958}
   wallCheckSize: {x: 0.03, y: 0.95}
   playerScript: {fileID: 1006994719}
+--- !u!114 &1272729001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272728992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e9521d3ddf804909a3f94902e0d01fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 20
+  timerText: {fileID: 553706198}
+  blinkInterval: 0.6
 --- !u!1 &1281341824
 GameObject:
   m_ObjectHideFlags: 0
