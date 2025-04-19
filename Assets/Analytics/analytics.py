@@ -6,7 +6,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Initialize Firebase
-cred_path = "Assets/Analytics/doppledash-2a42c-firebase-adminsdk-fbsvc-951ff5d51d.json"
+# cred_path = "Assets/Analytics/doppledash-2a42c-firebase-adminsdk-fbsvc-951ff5d51d.json"
+cred_path = "/Users/namrathasairam/Phoenix/Assets/Analytics/doppledash-2a42c-firebase-adminsdk-fbsvc-951ff5d51d.json"
+
 cred = credentials.Certificate(cred_path)
 firebase_admin.initialize_app(cred, {
     "databaseURL": "https://doppledash-2a42c-default-rtdb.firebaseio.com/"
