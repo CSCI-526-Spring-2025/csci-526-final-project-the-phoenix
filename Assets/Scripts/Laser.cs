@@ -31,4 +31,4 @@ public class Laser : MonoBehaviour
         yield return new WaitForSeconds(visibleDuration);
         laserObject.SetActive(false);
     }
-}
+}   

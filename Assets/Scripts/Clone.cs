@@ -159,6 +159,16 @@ public class Clone : MonoBehaviour
     {
 
         isGravityInverted *= -1;
+        if (isGravityInverted == -1)
+        {
+            float currentY = transform.rotation.eulerAngles.y;
+            transform.rotation = Quaternion.Euler(0f, currentY - 180f, 180f);
+        }
+        else
+        {   
+            float currentY = transform.rotation.eulerAngles.y;
+            transform.rotation = Quaternion.Euler(0f, currentY + 180f, 0f);
+        }
     }
 
     public void resetGravity()
