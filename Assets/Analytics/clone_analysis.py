@@ -27,46 +27,6 @@ def fetch_firebase_data(db_name):
     return clean_dataframe(df)
 
 
-def clone_usage_sankey(df):
-    if 'level_name' not in df.columns or 'clone_usage_count' not in df.columns:
-        print("Missing required columns.")
-        return
-
-    # Create usage bucket
-    df['usage_bucket'] = df['clone_usage_count'].apply(
-        lambda x: '0' if x == 0 else ('1' if x == 1 else '2+'))
-
-    grouped = df.groupby(['level_name', 'usage_bucket']
-                         ).size().reset_index(name='count')
-
-    labels = list(
-        pd.unique(grouped['level_name'].tolist() + grouped['usage_bucket'].tolist()))
-    label_map = {label: idx for idx, label in enumerate(labels)}
-
-    sources = grouped['level_name'].map(label_map)
-    targets = grouped['usage_bucket'].map(label_map)
-    values = grouped['count']
-
-    fig = go.Figure(data=[go.Sankey(
-        node=dict(
-            pad=15,
-            thickness=20,
-            line=dict(color="black", width=0.5),
-            label=labels
-        ),
-        link=dict(
-            source=sources,
-            target=targets,
-            value=values
-        )
-    )])
-
-    fig.update_layout(title_text="Clone Usage Flow per Level", font_size=12)
-    fig.write_html("Assets/Analytics/Graphs/CloneUsage/CloneSankey.html")
-    fig.show()
-    print("Sankey diagram saved as CloneSankey.html")
-
-
 def clone_usage(df):
     plt.figure(figsize=(10, 6))
 
