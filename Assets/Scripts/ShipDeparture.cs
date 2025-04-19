@@ -7,15 +7,21 @@ public class ShipDeparture : MonoBehaviour
     public float flySpeed = 7f;
     private bool shouldFly = false;
 
-    public GameObject launchEffectPrefab;
-    public Transform effectSpawnPoint;
+    public GameObject launchEffectPrefab;       // Drag Explosion prefab here
+    public Transform[] effectSpawnPoints;       // Drag all 3 EffectSpawnPoints here
 
     public void StartFlyAndLoad(GameObject player)
     {
-        if (launchEffectPrefab && effectSpawnPoint)
-        {
-            Instantiate(launchEffectPrefab, effectSpawnPoint.position, Quaternion.identity);
-        }
+        if (launchEffectPrefab != null && effectSpawnPoints != null && effectSpawnPoints.Length > 0)
+{
+    for (int i = 0; i < effectSpawnPoints.Length; i++)
+{
+    Debug.Log("Spawning explosion at index " + i + ": " + effectSpawnPoints[i].name);
+    Instantiate(launchEffectPrefab, effectSpawnPoints[i].position, Quaternion.identity);
+}
+
+}
+
 
         StartCoroutine(FlyThenLoad(player));
     }
@@ -24,16 +30,17 @@ public class ShipDeparture : MonoBehaviour
     {
         shouldFly = true;
 
-        yield return new WaitForSeconds(0.01f); // Let player be visible momentarily
-        player.SetActive(false);               // Player disappears
+        yield return new WaitForSeconds(0.01f);    // Slight delay before disappearing
+        player.SetActive(false);                 // Hide player
 
-        yield return new WaitForSeconds(3f); // Ship flies visibly
+        yield return new WaitForSeconds(3f);    // Let ship fly visibly
 
-        // Track level stats
+        // Track level progress before loading
         LevelManager.Instance.TrackLevelCompletion(SceneManager.GetActiveScene().name, Time.timeSinceLevelLoad);
         LevelManager.Instance.TrackGravityCount();
         LevelManager.Instance.TrackCloneUsageData(SceneManager.GetActiveScene().name);
 
+        // Load next level
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
