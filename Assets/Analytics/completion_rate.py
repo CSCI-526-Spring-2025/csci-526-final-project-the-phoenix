@@ -6,7 +6,7 @@ from firebase_admin import credentials, db
 import firebase_admin
 
 
-cred_path = "/Users/namrathasairam/Phoenix/Assets/Analytics/doppledash-2a42c-firebase-adminsdk-fbsvc-951ff5d51d.json"
+cred_path = "Assets/Analytics/doppledash-2a42c-firebase-adminsdk-fbsvc-951ff5d51d.json"
 
 cred = credentials.Certificate(cred_path)
 firebase_admin.initialize_app(cred, {
@@ -40,9 +40,10 @@ def plot_boxplot(df):
     plt.ylabel('Completion Time (seconds)')
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.show()
     plt.savefig(
         "Assets/Analytics/Graphs/LevelCompletion/LevelCompletionTime.png")
+    # plt.show()
+    plt.close()
 
 
 def plot_completion_rate(completed_players, total_players):
@@ -60,9 +61,10 @@ def plot_completion_rate(completed_players, total_players):
     plt.ylim(0, 100)
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.show()
     plt.savefig(
         "Assets/Analytics/Graphs/LevelCompletion/LevelCompletionRate.png")
+    # plt.show()
+    plt.close()
 
 
 df_players = fetch_firebase_data("players")

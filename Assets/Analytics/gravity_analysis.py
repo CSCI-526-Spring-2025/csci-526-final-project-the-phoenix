@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
 
-cred_path = "/Users/namrathasairam/Phoenix/Assets/Analytics/doppledash-2a42c-firebase-adminsdk-fbsvc-951ff5d51d.json"
+cred_path = "Assets/Analytics/doppledash-2a42c-firebase-adminsdk-fbsvc-951ff5d51d.json"
 
 cred = credentials.Certificate(cred_path)
 firebase_admin.initialize_app(cred, {
@@ -118,9 +118,9 @@ def process_gravity_shift_scatter_plot(df, title, cmap, player_type):
         plt.ylim(y_min, y_max)
         plt.grid(True)
         plt.tight_layout()
-        plt.show()
         plt.savefig(
             f"Assets/Analytics/Graphs/GravityShift/{player_type}/{level}_ScatterWithBG.png")
+        plt.show()
         plt.close()
 
 
@@ -132,7 +132,6 @@ player_shifts_per_level = df_player.groupby(
     'level_name')['gravity_count'].sum()
 clone_shifts_per_level = df_clone.groupby(
     'level_name')['gravity_count'].sum()
-
 
 plot_gravity_shift_counts(player_shifts_per_level,
                           'Total Gravity Shifts - Player', 'YlOrRd')
