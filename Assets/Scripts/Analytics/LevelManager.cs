@@ -57,9 +57,9 @@ public class LevelManager : MonoBehaviour
         levelCompletionTracker.TrackLevelCompletion(levelName, completionTime);
     }
 
-    public void TrackPlayerDeath(string levelName, Vector3 deathPosition, string playerType)
+    public void TrackPlayerDeath(string levelName, Vector3 deathPosition, string playerType, string obstacleType)
     {
-        playerDeathTracker.TrackPlayerDeath(levelName, deathPosition, playerType);
+        playerDeathTracker.TrackPlayerDeath(levelName, deathPosition, playerType, obstacleType);
     }
 
     public void TrackGravityCount()

@@ -114,7 +114,7 @@ public class Clone : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Boulder"))
         {
-            LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "clone");
+            LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "clone", collision.gameObject.tag);
             // Destroy clone
             gameObject.SetActive(false);
         }
@@ -132,7 +132,7 @@ public class Clone : MonoBehaviour
 
         if (collider.gameObject.CompareTag("Laser") || collider.gameObject.CompareTag("Shock"))
         {
-            LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "clone");
+            LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "clone", collider.gameObject.tag);
             // Destroy clone
             gameObject.SetActive(false);
         }
