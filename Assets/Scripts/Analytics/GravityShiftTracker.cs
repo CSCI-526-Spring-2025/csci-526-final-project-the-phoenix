@@ -29,7 +29,7 @@ public class GravityShiftTracker : MonoBehaviour
             $"\"totalCount\":{SpaceBarLogger.totalCount}," +
             eventsJson.TrimStart('{');
 
-        StartCoroutine(FirebaseUtility.SendDataToFirebase(json, "gravity_logs"));
+        StartCoroutine(FirebaseUtility.SendDataToFirebase(json, "gravity_logs_new"));
         SpaceBarLogger.ResetLogger();
     }
 }

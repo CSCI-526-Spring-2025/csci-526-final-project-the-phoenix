@@ -10,6 +10,6 @@ public class LevelCompletionTracker : MonoBehaviour
 
         string json = $"{{\"player_id\":\"{playerID}\", \"level_name\":\"{levelName}\", \"completion_time\":{completionTime}, \"timestamp\":\"{timestamp}\"}}";
 
-        StartCoroutine(FirebaseUtility.SendDataToFirebase(json, "level_completion"));
+        StartCoroutine(FirebaseUtility.SendDataToFirebase(json, "level_completion_new"));
     }
 }

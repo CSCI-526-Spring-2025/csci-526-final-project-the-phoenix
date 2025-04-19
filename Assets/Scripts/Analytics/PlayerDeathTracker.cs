@@ -10,6 +10,6 @@ public class PlayerDeathTracker : MonoBehaviour
 
         string json = $"{{\"player_id\":\"{playerID}\", \"level_name\":\"{levelName}\", \"player_type\":\"{playerType}\", \"obstacle_type\":\"{obstacleType}\", \"death_x\":{deathPosition.x}, \"death_y\":{deathPosition.y}, \"timestamp\":\"{timestamp}\"}}";
 
-        StartCoroutine(FirebaseUtility.SendDataToFirebase(json, "player_deaths"));
+        StartCoroutine(FirebaseUtility.SendDataToFirebase(json, "player_deaths_new"));
     }
 }

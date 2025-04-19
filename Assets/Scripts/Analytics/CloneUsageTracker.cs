@@ -47,6 +47,6 @@ public class CloneUsageTracker : MonoBehaviour
             $"\"timestamp\":\"{timestamp}\"" +
             $"}}";
 
-        StartCoroutine(FirebaseUtility.SendDataToFirebase(json, "clone_usage"));
+        StartCoroutine(FirebaseUtility.SendDataToFirebase(json, "clone_usage_new"));
     }
 }
