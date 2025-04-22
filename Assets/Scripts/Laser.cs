@@ -9,8 +9,6 @@ public class Laser : MonoBehaviour
     public float showInterval = 7f;
     public float visibleDuration = 3f;
 
-    private bool isVisible = true;
-
     void Start()
     {   
         InvokeRepeating("ToggleLaser", showInterval, showInterval);
@@ -30,9 +28,7 @@ public class Laser : MonoBehaviour
     System.Collections.IEnumerator ShowLaserTemporarily()
     {
         laserObject.SetActive(true);
-        isVisible = true;
         yield return new WaitForSeconds(visibleDuration);
         laserObject.SetActive(false);
-        isVisible = false;
     }
 }

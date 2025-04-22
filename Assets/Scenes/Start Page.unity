@@ -725,8 +725,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttons: {fileID: 440648949}
-  modal: {fileID: 0}
-  levelSelector: {fileID: 0}
+  modal: {fileID: 1466862736}
+  levelSelector: {fileID: 1037779908}
 --- !u!114 &213267735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1883,7 +1883,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 213267734}
         m_TargetAssemblyTypeName: UIPageManager, Assembly-CSharp
         m_MethodName: CloseLevelSelector
         m_Mode: 1
@@ -2016,7 +2016,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 213267734}
         m_TargetAssemblyTypeName: UIPageManager, Assembly-CSharp
         m_MethodName: CloseInstructionModal
         m_Mode: 1
