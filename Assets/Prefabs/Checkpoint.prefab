@@ -295,5 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cloneScript: {fileID: 0}
-  prevPlatform: {fileID: 0}
-  nextPlatform: {fileID: 0}
+  prevPlatform_clone: {fileID: 0}
+  nextPlatform_clone: {fileID: 0}
+  prevPlatform_player: {fileID: 0}
+  nextPlatform_player: {fileID: 0}

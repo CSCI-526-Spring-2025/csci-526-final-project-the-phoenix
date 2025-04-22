@@ -283,6 +283,7 @@ MonoBehaviour:
   wallCheckSize: {x: 0.03, y: 0.95}
   cloneScript: {fileID: 0}
   winText: {fileID: 0}
+  dieText: {fileID: 0}
   arrow1: {fileID: 0}
   arrow2: {fileID: 0}
   arrow3: {fileID: 0}
