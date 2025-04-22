@@ -53,6 +53,21 @@ public class Timer : MonoBehaviour
         }
     }
 
+    public void ResetTimer()
+    {
+        countdown = lifetime;
+        UpdateTimerText();
+
+        if (spriteRenderer != null)
+            spriteRenderer.enabled = true;
+
+        if (blinkCoroutine != null)
+        {
+            StopCoroutine(blinkCoroutine);
+            blinkCoroutine = null;
+        }
+    }
+
     void UpdateTimerText()
     {
         timerText.text = "Clone decay: " + Mathf.CeilToInt(countdown).ToString();

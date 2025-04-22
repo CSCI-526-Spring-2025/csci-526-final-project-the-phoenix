@@ -35,7 +35,6 @@ public class Player : MonoBehaviour
     public GameObject dieText;
     public GameObject arrow1;
     public GameObject arrow2;
-    public GameObject arrow3;
 
     void Start()
     {
@@ -54,6 +53,13 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A) && !Physics2D.OverlapBox(leftWallCheck.position, wallCheckSize, 0f, groundLayer)) moveDirection = -1;
         if (Input.GetKey(KeyCode.D) && !Physics2D.OverlapBox(rightWallCheck.position, wallCheckSize, 0f, groundLayer)) moveDirection = 1;
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
+
+        if (moveDirection != 0)
+        {
+            float xScale = moveDirection;
+            float yScale = isGravityInverted;
+            transform.localScale = new Vector3(xScale, yScale, 1);
+        }
 
         // Ground check
         isGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer) ||
@@ -115,35 +121,32 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
        if (collider.gameObject.CompareTag("Finish"))
-{
-    ShipDeparture ship = collider.GetComponent<ShipDeparture>();
-    if (ship != null)
-    {
-        ship.StartFlyAndLoad(this.gameObject);  // Pass player into ship script
-    }
-}
+        {
+            ShipDeparture ship = collider.GetComponent<ShipDeparture>();
+            if (ship != null)
+            {
+                ship.StartFlyAndLoad(this.gameObject);  // Pass player into ship script
+            }
+        }
 
-IEnumerator FlyThenLoad()
-{
-    // Let ship fly for a moment (player still visible)
-    yield return new WaitForSeconds(0.01f);
+        IEnumerator FlyThenLoad()
+        {
+            // Let ship fly for a moment (player still visible)
+            yield return new WaitForSeconds(0.01f);
 
-    // Hide the player before level switches
-    this.gameObject.SetActive(false);
+            // Hide the player before level switches
+            this.gameObject.SetActive(false);
 
-    // Optional wait while ship flies up visibly
-    yield return new WaitForSeconds(2.0f);
+            // Optional wait while ship flies up visibly
+            yield return new WaitForSeconds(2.0f);
 
-    // Log & track just before level switches
-    LevelManager.Instance.TrackLevelCompletion(SceneManager.GetActiveScene().name, Time.timeSinceLevelLoad);
-    LevelManager.Instance.TrackGravityCount();
-    LevelManager.Instance.TrackCloneUsageData(SceneManager.GetActiveScene().name);
+            // Log & track just before level switches
+            LevelManager.Instance.TrackLevelCompletion(SceneManager.GetActiveScene().name, Time.timeSinceLevelLoad);
+            LevelManager.Instance.TrackGravityCount();
+            LevelManager.Instance.TrackCloneUsageData(SceneManager.GetActiveScene().name);
 
-    LoadNextLevel();
-}
-
-
-
+            LoadNextLevel();
+        }
 
         if (collider.gameObject.CompareTag("PlayerPlatform"))
         {
@@ -155,8 +158,8 @@ IEnumerator FlyThenLoad()
             {
                 arrow1.SetActive(false);
                 arrow2.SetActive(true);
-                arrow3.SetActive(true);
             }
+            cloneScript.GetComponent<Timer>()?.ResetTimer();
         }
 
         if (collider.gameObject.CompareTag("GravityPortal"))
@@ -191,16 +194,6 @@ IEnumerator FlyThenLoad()
     public void invertGravity()
     {
         isGravityInverted *= -1;
-        if (isGravityInverted == -1)
-        {
-            float currentY = transform.rotation.eulerAngles.y;
-            transform.rotation = Quaternion.Euler(0f, currentY - 180f, 180f);
-        }
-        else
-        {
-            float currentY = transform.rotation.eulerAngles.y;
-            transform.rotation = Quaternion.Euler(0f, currentY + 180f, 0f);
-        }
     }
 
     void LoadNextLevel()

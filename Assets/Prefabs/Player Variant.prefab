@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 7
+  jumpForce: 10
   fallMultiplier: 2.5
   maxFallSpeed: 20
   groundCheck: {fileID: 8497578582190794957}
@@ -353,7 +353,6 @@ MonoBehaviour:
   dieText: {fileID: 0}
   arrow1: {fileID: 0}
   arrow2: {fileID: 0}
-  arrow3: {fileID: 0}
 --- !u!4 &6282576566569610168 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3433032877048046995, guid: df254403676944e786502cd04e5bc31e, type: 3}

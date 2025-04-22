@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 7
+  jumpForce: 10
   fallMultiplier: 2.5
   maxFallSpeed: 20
   groundCheck: {fileID: 5102977888677945544}
