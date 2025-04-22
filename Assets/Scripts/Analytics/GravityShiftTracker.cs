@@ -30,6 +30,7 @@ public class GravityShiftTracker : MonoBehaviour
             eventsJson.TrimStart('{');
 
         StartCoroutine(FirebaseUtility.SendDataToFirebase(json, "gravity_logs_new"));
+        StartCoroutine(FirebaseUtility.SendDataToFirebase(json, "gravity_logs"));
         SpaceBarLogger.ResetLogger();
     }
 }

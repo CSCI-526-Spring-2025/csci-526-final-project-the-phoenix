@@ -48,5 +48,6 @@ public class CloneUsageTracker : MonoBehaviour
             $"}}";
 
         StartCoroutine(FirebaseUtility.SendDataToFirebase(json, "clone_usage_new"));
+        StartCoroutine(FirebaseUtility.SendDataToFirebase(json, "clone_usage"));
     }
 }
