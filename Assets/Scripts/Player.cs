@@ -116,12 +116,16 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Finish"))
-        {
+        {   
+            ShipDeparture ship = collider.GetComponent<ShipDeparture>();
+            Debug.Log(ship);
+            if (ship != null)
+            {
+                ship.StartFlyAndLoad(gameObject);
+            }
             LevelManager.Instance.TrackLevelCompletion(SceneManager.GetActiveScene().name, Time.timeSinceLevelLoad);
             LevelManager.Instance.TrackGravityCount();
             LevelManager.Instance.TrackCloneUsageData(SceneManager.GetActiveScene().name);
-            LoadNextLevel();
-
         }
 
         if (collider.gameObject.CompareTag("PlayerPlatform"))
