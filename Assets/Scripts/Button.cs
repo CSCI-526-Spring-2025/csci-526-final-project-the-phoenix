@@ -12,14 +12,14 @@ public class Button : MonoBehaviour
     private float speed = 2.0f;
     private Vector3 initialPosition;
     private Vector3 targetPosition;
-    private bool isOpening = false;
+    private bool isOpening;
 
     void Start()
     {
         initialPosition = gate.position;
+        isOpening = false;
 
         gate.position = Vector3.MoveTowards(gate.position, targetPosition, speed * Time.deltaTime);
-
         // Determine target position based on openUpward
         if (direction == "up")
         {   
@@ -43,8 +43,8 @@ public class Button : MonoBehaviour
     {
         if (isOpening)
         {
-            // Move towards target position (up or down)
-            gate.position = Vector3.MoveTowards(gate.position, targetPosition, speed * Time.deltaTime);
+            // Move towards target position (up or down)\
+            gate.position = Vector3.MoveTowards(gate.position, initialPosition + new Vector3(0, openHeight, 0), speed * Time.deltaTime);
         }
         else
         {
@@ -54,9 +54,11 @@ public class Button : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collider)
+
     {
         if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Clone"))
         {
+            Debug.Log("Contact with button");
             isOpening = true;
         }
     }
@@ -65,6 +67,7 @@ public class Button : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Clone"))
         {
+            Debug.Log("Exit Contact with button");
             isOpening = false;
         }
     }
