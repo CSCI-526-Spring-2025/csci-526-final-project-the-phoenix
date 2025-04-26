@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -193,5 +194,20 @@ public class Player : MonoBehaviour
     void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public Transform getGroundCheck()
+    {
+        return groundCheck;
+    }
+
+    public Vector2 getGroundCheckSize()
+    {
+        return groundCheckSize;
+    }
+
+    public LayerMask getGroundLayer()
+    {
+        return groundLayer;
     }
 }
