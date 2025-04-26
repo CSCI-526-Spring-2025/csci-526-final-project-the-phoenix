@@ -149,6 +149,7 @@ public class Player : MonoBehaviour
 
         if (collider.gameObject.CompareTag("Shock") || collider.gameObject.CompareTag("Laser"))
         {
+            Debug.Log("Entered");
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player", collider.gameObject.tag);
             StartCoroutine(RestartAfterDelay());
             dieText.SetActive(true);
@@ -156,6 +157,7 @@ public class Player : MonoBehaviour
 
         IEnumerator RestartAfterDelay()
         {
+            Debug.Log("DEAD");
             yield return new WaitForSeconds(0.5f);
             Destroy(gameObject);
             RestartGame();
