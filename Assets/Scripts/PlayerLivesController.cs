@@ -6,7 +6,7 @@ public class PlayerCollisionHandler : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Shock") || other.CompareTag("Laser"))
+        if (other.CompareTag("Shocks") || other.CompareTag("Laser") || other.CompareTag("Boulder"))
         {
             livesController.LoseLife();
         }

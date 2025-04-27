@@ -41,6 +41,8 @@ public class PlayerLivesController : MonoBehaviour
 
         currentLives--;
 
+        Debug.Log("Current Lives: " + currentLives);
+
         // Disable corresponding heart
         if (currentLives >= 0 && currentLives < hearts.Length)
         {

@@ -167,7 +167,7 @@ public class Player : MonoBehaviour
 
         }
 
-        if (collider.gameObject.CompareTag("Shock") || collider.gameObject.CompareTag("Laser"))
+        if (collider.gameObject.CompareTag("Shocks") || collider.gameObject.CompareTag("Laser"))
         {
             Debug.Log("Entered");
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player", collider.gameObject.tag);
@@ -197,9 +197,9 @@ public class Player : MonoBehaviour
         isGravityInverted *= -1;
 
         if (isGravityInverted == -1)
-            transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+            spriteTransform.rotation = Quaternion.Euler(0f, 0f, 180f);
         else
-            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            spriteTransform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     void LoadNextLevel()
