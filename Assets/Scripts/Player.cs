@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform leftWallCheck;
     [SerializeField] private Transform rightWallCheck;
     [SerializeField] private Vector2 wallCheckSize = new Vector2(0.03f, 0.95f);
-    [SerializeField] public SpriteProgressBar progressBarScript;
 
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -37,7 +36,7 @@ public class Player : MonoBehaviour
     public GameObject dieText;
     public GameObject arrow1;
     public GameObject arrow2;
-    public GameObject arrow3;
+    [SerializeField] private Transform spriteTransform;
 
     void Start()
     {
@@ -58,24 +57,22 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.D) && !Physics2D.OverlapBox(rightWallCheck.position, wallCheckSize, 0f, groundLayer)) moveDirection = 1;
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
 
-        // Fix the player direction
         if (moveDirection != 0)
         {
-            Vector3 newScale = transform.localScale;
-            
+            Vector3 newScale = spriteTransform.localScale;
+
             if (isGravityInverted == 1)
             {
-                // Normal gravity
                 newScale.x = Mathf.Abs(newScale.x) * (moveDirection > 0 ? -1 : 1);
             }
             else
             {
-                // Inverted gravity
                 newScale.x = Mathf.Abs(newScale.x) * (moveDirection > 0 ? 1 : -1);
             }
 
-            transform.localScale = newScale;
+            spriteTransform.localScale = newScale;
         }
+
         // Ground check
         isGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer) ||
                      Physics2D.OverlapBox(groundCheckReverse.position, groundCheckSize, 0f, groundLayer);
@@ -152,14 +149,12 @@ public class Player : MonoBehaviour
         if (collider.gameObject.CompareTag("PlayerPlatform"))
         {
             cloneScript.gameObject.SetActive(true);
-            progressBarScript.ResetTimer();
             cloneScript.resetPosition();
             cloneScript.resetGravity();
             if (arrow1 != null)
             {
                 arrow1.SetActive(false);
                 arrow2.SetActive(true);
-                arrow3.SetActive(true);
             }
         }
 

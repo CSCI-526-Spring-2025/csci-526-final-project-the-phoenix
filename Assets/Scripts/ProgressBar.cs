@@ -1,38 +1,40 @@
 using UnityEngine;
 using System.Collections;
 
-public class SpriteProgressBar : MonoBehaviour
+public class ProgressBar : MonoBehaviour
 {
+    [Header("Timer Settings")]
     public float totalDuration = 20f;
-    private float countdown;
-    private Vector3 originalScale;
-    private bool isRunning = false;
-
-    private SpriteRenderer barRenderer;
-    private SpriteRenderer cloneRenderer;
-    private Color originalColor;
-    public Color warningColor = Color.red;
+    public float dangerTime = 10f;
     public float blinkInterval = 0.3f;
+    public Color normalColor = Color.green;
+    public Color dangerColor = Color.red;
+
+    private float countdown;
+    private bool isRunning = false;
     private Coroutine blinkCoroutine;
 
-    void OnEnable()
-    {
-        countdown = totalDuration;
-        originalScale = transform.localScale;
-        isRunning = true;
+    private SpriteRenderer cloneRenderer;    
+    private SpriteRenderer barRenderer;     
+    private Vector3 barOriginalScale;
+    private Color barOriginalColor;
 
-        barRenderer = GetComponent<SpriteRenderer>();
-        cloneRenderer = transform.parent.GetComponent<SpriteRenderer>();
+    void Awake()
+    {
+        cloneRenderer = GetComponent<SpriteRenderer>();
+        barRenderer = transform.Find("Square")?.GetComponent<SpriteRenderer>(); // Find the child bar
 
         if (barRenderer != null)
         {
-            originalColor = barRenderer.color;
-            barRenderer.color = originalColor;
+            barOriginalScale = barRenderer.transform.localScale;
+            barOriginalColor = normalColor;
+            barRenderer.color = normalColor;
         }
+    }
 
-        if (blinkCoroutine != null)
-            StopCoroutine(blinkCoroutine);
-        blinkCoroutine = null;
+    void OnEnable()
+    {
+        ResetTimer();
     }
 
     void Update()
@@ -40,20 +42,22 @@ public class SpriteProgressBar : MonoBehaviour
         if (!isRunning) return;
 
         countdown -= Time.deltaTime;
-        float progress = Mathf.Clamp01(countdown / totalDuration);
-        transform.localScale = new Vector3(originalScale.x * progress, originalScale.y, originalScale.z);
 
-        if (countdown <= 10f && blinkCoroutine == null && barRenderer != null)
+        if (barRenderer != null)
         {
-            barRenderer.color = warningColor;
+            float progress = Mathf.Clamp01(countdown / totalDuration);
+            barRenderer.transform.localScale = new Vector3(barOriginalScale.x * progress, barOriginalScale.y, barOriginalScale.z);
 
-            blinkCoroutine = StartCoroutine(BlinkBoth());
+            if (countdown <= dangerTime && blinkCoroutine == null)
+            {
+                barRenderer.color = dangerColor;
+                blinkCoroutine = StartCoroutine(BlinkBoth());
+            }
         }
 
         if (countdown <= 0f)
         {
             isRunning = false;
-
             if (blinkCoroutine != null)
                 StopCoroutine(blinkCoroutine);
 
@@ -62,29 +66,23 @@ public class SpriteProgressBar : MonoBehaviour
             if (cloneRenderer != null)
                 cloneRenderer.enabled = true;
 
-
-            transform.parent.gameObject.SetActive(false);
+            gameObject.SetActive(false);  // Deactivate clone
         }
     }
 
     public void ResetTimer()
     {
-        transform.parent.gameObject.SetActive(true);
-
         countdown = totalDuration;
-        transform.localScale = originalScale;
         isRunning = true;
 
         if (barRenderer != null)
         {
-            barRenderer.color = originalColor;
+            barRenderer.transform.localScale = barOriginalScale;
+            barRenderer.color = normalColor;
             barRenderer.enabled = true;
         }
         if (cloneRenderer != null)
-        {
-            cloneRenderer.color = Color.white;
             cloneRenderer.enabled = true;
-        }
 
         if (blinkCoroutine != null)
         {

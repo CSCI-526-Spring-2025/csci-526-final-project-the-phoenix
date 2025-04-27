@@ -5029,6 +5029,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goal
       objectReference: {fileID: 0}
+    - target: {fileID: 1274258886713709700, guid: 1cff10db1acf64828a7b64d649cba6ac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3198917929277145198, guid: 1cff10db1acf64828a7b64d649cba6ac, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.62
@@ -5236,6 +5240,10 @@ PrefabInstance:
     - target: {fileID: 5302361623685276354, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127695027217810174, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7848089156330104017, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
       propertyPath: m_UiScaleMode
@@ -7468,6 +7476,71 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: -1
   m_TargetDisplay: 0
+--- !u!1001 &1658455295
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6228045655639273623, guid: 5373ea330c58444998b52f4269bac839, type: 3}
+      propertyPath: m_Name
+      value: BlueShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176963933988503133, guid: 5373ea330c58444998b52f4269bac839, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176963933988503133, guid: 5373ea330c58444998b52f4269bac839, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176963933988503133, guid: 5373ea330c58444998b52f4269bac839, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176963933988503133, guid: 5373ea330c58444998b52f4269bac839, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -48.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176963933988503133, guid: 5373ea330c58444998b52f4269bac839, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176963933988503133, guid: 5373ea330c58444998b52f4269bac839, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176963933988503133, guid: 5373ea330c58444998b52f4269bac839, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176963933988503133, guid: 5373ea330c58444998b52f4269bac839, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176963933988503133, guid: 5373ea330c58444998b52f4269bac839, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176963933988503133, guid: 5373ea330c58444998b52f4269bac839, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176963933988503133, guid: 5373ea330c58444998b52f4269bac839, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176963933988503133, guid: 5373ea330c58444998b52f4269bac839, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5373ea330c58444998b52f4269bac839, type: 3}
 --- !u!1 &1688369691
 GameObject:
   m_ObjectHideFlags: 0
@@ -8264,12 +8337,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1906509312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e9521d3ddf804909a3f94902e0d01fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 5db3513819dd84e708c7134cb6a7d692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 15
-  timerText: {fileID: 0}
+  totalDuration: 20
+  dangerTime: 10
   blinkInterval: 0.3
+  normalColor: {r: 0, g: 1, b: 0, a: 1}
+  dangerColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1930311723
 GameObject:
   m_ObjectHideFlags: 0
@@ -9137,3 +9212,4 @@ SceneRoots:
   - {fileID: 1056216579}
   - {fileID: 1388918879}
   - {fileID: 1180369027}
+  - {fileID: 1658455295}
