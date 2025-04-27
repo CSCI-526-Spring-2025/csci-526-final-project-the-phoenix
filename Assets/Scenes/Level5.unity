@@ -3064,11 +3064,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &117612796 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5165873990781082947, guid: 8ac8c37a8f89c44ed8d0c60fb1ced52f, type: 3}
-  m_PrefabInstance: {fileID: 1220398945}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &111916235
 GameObject:
   m_ObjectHideFlags: 0
@@ -3153,6 +3148,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &117612796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5165873990781082947, guid: 8ac8c37a8f89c44ed8d0c60fb1ced52f, type: 3}
+  m_PrefabInstance: {fileID: 1220398945}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &126858621
 GameObject:
   m_ObjectHideFlags: 0
@@ -26255,15 +26255,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7088848115253403583, guid: 01c9919bd872347cbb20b7b1294348d9, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 2022257514}
+      insertIndex: -1
+      addedObject: {fileID: 1214094949}
   m_SourcePrefab: {fileID: 100100000, guid: 01c9919bd872347cbb20b7b1294348d9, type: 3}
 --- !u!114 &1214094947 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5992001294274346807, guid: 01c9919bd872347cbb20b7b1294348d9, type: 3}
   m_PrefabInstance: {fileID: 1214094946}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022257509}
+  m_GameObject: {fileID: 1214094948}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c72a2b59a3f52490ca70d5240135f107, type: 3}
@@ -39929,11 +39929,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7944999429949417717, guid: 9d9aa1fccd44044db96ac27a9dce0a8e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 195.94
+      value: -6.4
       objectReference: {fileID: 0}
     - target: {fileID: 7944999429949417717, guid: 9d9aa1fccd44044db96ac27a9dce0a8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.67
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7944999429949417717, guid: 9d9aa1fccd44044db96ac27a9dce0a8e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -44226,28 +44226,6 @@ Transform:
   - {fileID: 248913110}
   m_Father: {fileID: 2143690756}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2022257509 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7088848115253403583, guid: 01c9919bd872347cbb20b7b1294348d9, type: 3}
-  m_PrefabInstance: {fileID: 1214094946}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2022257514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022257509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5db3513819dd84e708c7134cb6a7d692, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalDuration: 20
-  dangerTime: 10
-  blinkInterval: 0.3
-  normalColor: {r: 0, g: 1, b: 0, a: 1}
-  dangerColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &2028395000
 GameObject:
   m_ObjectHideFlags: 0
