@@ -128,15 +128,28 @@ df_gravity_shift_counts = fetch_firebase_data("gravity_logs")
 df_player = extract_gravity_data(df_gravity_shift_counts, 'player')
 df_clone = extract_gravity_data(df_gravity_shift_counts, 'clone')
 
-player_shifts_per_level = df_player.groupby(
-    'level_name')['gravity_count'].sum()
-clone_shifts_per_level = df_clone.groupby(
-    'level_name')['gravity_count'].sum()
+df_gravity_shift_counts['player_count'] = df_gravity_shift_counts['player'].apply(
+    lambda x: len(x) if isinstance(x, list) else 0)
+
+df_gravity_shift_counts['clone_count'] = df_gravity_shift_counts['clone'].apply(
+    lambda x: len(x) if isinstance(x, list) else 0)
+
+player_shifts_per_level = (
+    df_gravity_shift_counts.groupby('level_name')['player_count']
+    .mean()
+)
+player_shifts_per_level = player_shifts_per_level[player_shifts_per_level > 0]
+
+clone_shifts_per_level = (
+    df_gravity_shift_counts.groupby('level_name')['clone_count']
+    .mean()
+)
+clone_shifts_per_level = clone_shifts_per_level[clone_shifts_per_level > 0]
 
 plot_gravity_shift_counts(player_shifts_per_level,
-                          'Total Gravity Shifts - Player', 'YlOrRd')
+                          'Average Gravity Shifts - Player', 'YlOrRd')
 plot_gravity_shift_counts(clone_shifts_per_level,
-                          'Total Gravity Shifts - Clone', 'Blues')
+                          'Average Gravity Shifts - Clone', 'Blues')
 
 process_gravity_shift_scatter_plot(
     df_player, 'Gravity Shift Scatterplot - Player', "YlOrRd", "player")
