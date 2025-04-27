@@ -349,4 +349,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gate: {fileID: 0}
-  direction: down
+  direction: 
