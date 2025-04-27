@@ -44,7 +44,7 @@ public class Button : MonoBehaviour
         if (isOpening)
         {
             // Move towards target position (up or down)\
-            gate.position = Vector3.MoveTowards(gate.position, initialPosition + new Vector3(0, openHeight, 0), speed * Time.deltaTime);
+            gate.position = Vector3.MoveTowards(gate.position, targetPosition, speed * Time.deltaTime);
         }
         else
         {

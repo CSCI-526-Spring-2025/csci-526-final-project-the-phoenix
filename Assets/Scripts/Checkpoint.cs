@@ -29,7 +29,7 @@ public class Checkpoint : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("Clone"))
+        if (collider.gameObject.CompareTag("Clone") || collider.gameObject.CompareTag("Player"))
         {
             // Initialize the clone's position to the next platform + a small offset vertically
             cloneScript.changeInitialPosition(nextPlatform_clone.transform.position + new Vector3(0, 0.5f, 0));

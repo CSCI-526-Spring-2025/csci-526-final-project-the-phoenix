@@ -13,7 +13,7 @@ public class VanishingBlock : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.CompareTag("Player"));
+        if (collision.gameObject.CompareTag("Player"))
         {
             if (objectToHide1 != null)
                 objectToHide1.SetActive(false);
@@ -25,8 +25,7 @@ public class VanishingBlock : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {  
-
-        if (collision.gameObject.CompareTag("Player"));
+        if (collision.gameObject.CompareTag("Player"))
         {
             if (objectToHide1 != null)
                 objectToHide1.SetActive(false);
