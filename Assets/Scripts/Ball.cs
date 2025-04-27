@@ -42,11 +42,11 @@ public class WallHugBall : MonoBehaviour
 
             else if (type == "linear")
             {
-                Debug.Log(normal);
-                if (normal == Vector2.left) 
+                if (currentDirection == Vector2.left) {
                     currentDirection = Vector2.right;
-                else if (normal == Vector2.right) 
+                } else {
                     currentDirection = Vector2.left;
+                }
             }
 
         }
