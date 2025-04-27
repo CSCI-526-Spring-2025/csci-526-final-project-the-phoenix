@@ -34,7 +34,9 @@ def fetch_firebase_data(db_name):
 
 def plot_boxplot(df):
     plt.figure(figsize=(8, 5))
-    sns.boxplot(x='level_name', y='completion_time', data=df)
+    sns.boxplot(x='level_name', y='completion_time', data=df,
+                palette='Set2',
+                )
     plt.title('Distribution of Level Completion Time')
     plt.xlabel('Level')
     plt.ylabel('Completion Time (seconds)')
@@ -42,7 +44,7 @@ def plot_boxplot(df):
     plt.tight_layout()
     plt.savefig(
         "Assets/Analytics/Graphs/LevelCompletion/LevelCompletionTime.png")
-    # plt.show()
+    plt.show()
     plt.close()
 
 
@@ -54,7 +56,6 @@ def plot_completion_rate(completed_players, total_players):
                 hue=completion_rate.index,
                 palette="viridis",
                 legend=False)
-
     plt.title("Level Completion Rate (%)")
     plt.xlabel("Level Name")
     plt.ylabel("Completion Rate (%)")
@@ -63,12 +64,18 @@ def plot_completion_rate(completed_players, total_players):
     plt.tight_layout()
     plt.savefig(
         "Assets/Analytics/Graphs/LevelCompletion/LevelCompletionRate.png")
-    # plt.show()
+    plt.show()
     plt.close()
 
 
 df_players = fetch_firebase_data("players")
 df_completion = fetch_firebase_data("level_completion")
+
+discarded_levels = ['q', 'Camera Trial', 'Tutorial', 'Test', 'Level5']
+df_players = df_players[df_players['level_name'].isin(
+    discarded_levels) == False]
+df_completion = df_completion[df_completion['level_name'].isin(
+    discarded_levels) == False]
 completed_players = df_completion.groupby("level_name").size()
 total_players = df_players.groupby("level_name").size()
 

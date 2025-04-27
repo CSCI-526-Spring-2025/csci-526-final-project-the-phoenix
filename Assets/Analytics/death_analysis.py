@@ -72,6 +72,7 @@ def plot_death_heatmap(df):
         plt.tight_layout()
         plt.savefig(
             f"Assets/Analytics/Graphs/PlayerDeaths/HeatMap/{level}_DeathHeatmap.png")
+        plt.show()
         plt.close()
 
 
@@ -94,6 +95,7 @@ def plot_deaths_by_obstacle(df):
     plt.tight_layout()
     plt.savefig(
         "Assets/Analytics/Graphs/PlayerDeaths/Obstacle/DeathsByObstacle.png")
+    plt.show()
     plt.close()
 
 
