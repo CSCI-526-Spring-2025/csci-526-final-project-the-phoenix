@@ -21,6 +21,7 @@ public class Clone : MonoBehaviour
     [SerializeField] private Transform leftWallCheck;
     [SerializeField] private Transform rightWallCheck;
     [SerializeField] private Vector2 wallCheckSize = new Vector2(0.03f, 0.95f);
+    private ProgressBar progressBarScript;
 
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -43,6 +44,11 @@ public class Clone : MonoBehaviour
         initialPosition = transform.position;
 
         gameObject.SetActive(false);
+    }
+
+    void Awake()
+    {
+        progressBarScript = GetComponentInChildren<ProgressBar>();
     }
 
     void Update()
@@ -169,6 +175,10 @@ public class Clone : MonoBehaviour
     {
         transform.position = initialPosition;
         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        if (progressBarScript != null)
+        {
+            progressBarScript.ResetTimer();
+        }
     }
 
     public void changeInitialPosition(Vector2 newPosition)

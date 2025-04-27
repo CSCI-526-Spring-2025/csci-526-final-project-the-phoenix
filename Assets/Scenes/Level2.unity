@@ -1473,7 +1473,7 @@ PrefabInstance:
       objectReference: {fileID: 1469233347}
     - target: {fileID: 278383611407501871, guid: 186abf19314664f0fa9b9f59ac214213, type: 3}
       propertyPath: direction
-      value: right
+      value: left
       objectReference: {fileID: 0}
     - target: {fileID: 6337171181635519371, guid: 186abf19314664f0fa9b9f59ac214213, type: 3}
       propertyPath: m_Layer
@@ -3518,7 +3518,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4117,7 +4117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6358453306694601822, guid: 186abf19314664f0fa9b9f59ac214213, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 25.41
+      value: 25.04
       objectReference: {fileID: 0}
     - target: {fileID: 6358453306694601822, guid: 186abf19314664f0fa9b9f59ac214213, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4309,12 +4309,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8196054494257768385}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e9521d3ddf804909a3f94902e0d01fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 5db3513819dd84e708c7134cb6a7d692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 60
-  timerText: {fileID: 0}
+  totalDuration: 20
+  dangerTime: 10
   blinkInterval: 0.3
+  normalColor: {r: 0, g: 1, b: 0, a: 1}
+  dangerColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

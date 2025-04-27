@@ -2573,12 +2573,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 775312570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e9521d3ddf804909a3f94902e0d01fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 5db3513819dd84e708c7134cb6a7d692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 100
-  timerText: {fileID: 822746096}
-  blinkInterval: 0.6
+  totalDuration: 20
+  dangerTime: 10
+  blinkInterval: 0.3
+  normalColor: {r: 0, g: 1, b: 0, a: 1}
+  dangerColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &777271413
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,6 +2628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   rotateSpeed: 100
+  type: 
 --- !u!1001 &786782654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2851,17 +2854,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &822746096 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6462776176051314835, guid: 48494c961e6d8461b9661fa5f7629af0, type: 3}
-  m_PrefabInstance: {fileID: 1492212755763245567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &848343178 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 724010520286328335, guid: cdc895c3106574c6f92e73d10b4e83df, type: 3}
@@ -5707,6 +5699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   rotateSpeed: 50
+  type: room
 --- !u!58 &1610517310
 CircleCollider2D:
   m_ObjectHideFlags: 0
