@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         isGravityInverted = 1;
         winText.SetActive(false);
-        dieText.SetActive(false);
+        // dieText.SetActive(false);
         LevelManager.Instance.TrackPlayerStart(SceneManager.GetActiveScene().name);
     }
 
@@ -152,8 +152,8 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Entered");
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player", collider.gameObject.tag);
-            StartCoroutine(RestartAfterDelay());
-            dieText.SetActive(true);
+            // StartCoroutine(RestartAfterDelay());
+            // dieText.SetActive(true);
         }
 
         IEnumerator RestartAfterDelay()
