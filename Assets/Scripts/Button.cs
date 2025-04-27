@@ -58,7 +58,6 @@ public class Button : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Clone"))
         {
-            Debug.Log("Contact with button");
             isOpening = true;
         }
     }
@@ -67,7 +66,6 @@ public class Button : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Clone"))
         {
-            Debug.Log("Exit Contact with button");
             isOpening = false;
         }
     }
