@@ -19,6 +19,7 @@ TagManager:
   - Square
   - Checkpoint
   - Boulder
+  - Rotate
   layers:
   - Default
   - TransparentFX

@@ -1,26 +1,34 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
-using UnityEngine.SceneManagement;
 
-public class Timer : MonoBehaviour
+public class SpriteProgressBar : MonoBehaviour
 {
-    public float lifetime = 20f;
+    public float totalDuration = 20f;
     private float countdown;
-    public Text timerText;
+    private Vector3 originalScale;
+    private bool isRunning = false;
 
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer barRenderer;
+    private SpriteRenderer cloneRenderer;
+    private Color originalColor;
+    public Color warningColor = Color.red;
+    public float blinkInterval = 0.3f;
     private Coroutine blinkCoroutine;
-    public float blinkInterval = 0.6f;
 
     void OnEnable()
     {
-        countdown = lifetime;
-        UpdateTimerText();
+        countdown = totalDuration;
+        originalScale = transform.localScale;
+        isRunning = true;
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null)
-            spriteRenderer.enabled = true;
+        barRenderer = GetComponent<SpriteRenderer>();
+        cloneRenderer = transform.parent.GetComponent<SpriteRenderer>();
+
+        if (barRenderer != null)
+        {
+            originalColor = barRenderer.color;
+            barRenderer.color = originalColor;
+        }
 
         if (blinkCoroutine != null)
             StopCoroutine(blinkCoroutine);
@@ -29,42 +37,70 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
+        if (!isRunning) return;
+
         countdown -= Time.deltaTime;
+        float progress = Mathf.Clamp01(countdown / totalDuration);
+        transform.localScale = new Vector3(originalScale.x * progress, originalScale.y, originalScale.z);
 
-        if (countdown <= 10f && blinkCoroutine == null && spriteRenderer != null)
+        if (countdown <= 10f && blinkCoroutine == null && barRenderer != null)
         {
-            blinkCoroutine = StartCoroutine(BlinkClone());
+            barRenderer.color = warningColor;
+
+            blinkCoroutine = StartCoroutine(BlinkBoth());
         }
 
-        if (countdown > 0f)
+        if (countdown <= 0f)
         {
-            UpdateTimerText();
-        }
-        else
-        {
-            timerText.text = "0";
-       
+            isRunning = false;
+
             if (blinkCoroutine != null)
                 StopCoroutine(blinkCoroutine);
 
-            if (spriteRenderer != null)
-                spriteRenderer.enabled = true;
+            if (barRenderer != null)
+                barRenderer.enabled = true;
+            if (cloneRenderer != null)
+                cloneRenderer.enabled = true;
 
-            gameObject.SetActive(false);
-            LevelManager.Instance.TrackCloneUsage();
+
+            transform.parent.gameObject.SetActive(false);
         }
     }
 
-    void UpdateTimerText()
+    public void ResetTimer()
     {
-        timerText.text = "Clone decay: " + Mathf.CeilToInt(countdown).ToString();
+        transform.parent.gameObject.SetActive(true);
+
+        countdown = totalDuration;
+        transform.localScale = originalScale;
+        isRunning = true;
+
+        if (barRenderer != null)
+        {
+            barRenderer.color = originalColor;
+            barRenderer.enabled = true;
+        }
+        if (cloneRenderer != null)
+        {
+            cloneRenderer.color = Color.white;
+            cloneRenderer.enabled = true;
+        }
+
+        if (blinkCoroutine != null)
+        {
+            StopCoroutine(blinkCoroutine);
+            blinkCoroutine = null;
+        }
     }
 
-    IEnumerator BlinkClone()
+    IEnumerator BlinkBoth()
     {
         while (true)
         {
-            spriteRenderer.enabled = !spriteRenderer.enabled;
+            if (barRenderer != null)
+                barRenderer.enabled = !barRenderer.enabled;
+            if (cloneRenderer != null)
+                cloneRenderer.enabled = !cloneRenderer.enabled;
             yield return new WaitForSeconds(blinkInterval);
         }
     }

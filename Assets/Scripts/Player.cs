@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform leftWallCheck;
     [SerializeField] private Transform rightWallCheck;
     [SerializeField] private Vector2 wallCheckSize = new Vector2(0.03f, 0.95f);
+    [SerializeField] public SpriteProgressBar progressBarScript;
 
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -46,6 +47,7 @@ public class Player : MonoBehaviour
         winText.SetActive(false);
         // dieText.SetActive(false);
         LevelManager.Instance.TrackPlayerStart(SceneManager.GetActiveScene().name);
+        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     void Update()
@@ -56,6 +58,24 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.D) && !Physics2D.OverlapBox(rightWallCheck.position, wallCheckSize, 0f, groundLayer)) moveDirection = 1;
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
 
+        // Fix the player direction
+        if (moveDirection != 0)
+        {
+            Vector3 newScale = transform.localScale;
+            
+            if (isGravityInverted == 1)
+            {
+                // Normal gravity
+                newScale.x = Mathf.Abs(newScale.x) * (moveDirection > 0 ? -1 : 1);
+            }
+            else
+            {
+                // Inverted gravity
+                newScale.x = Mathf.Abs(newScale.x) * (moveDirection > 0 ? 1 : -1);
+            }
+
+            transform.localScale = newScale;
+        }
         // Ground check
         isGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer) ||
                      Physics2D.OverlapBox(groundCheckReverse.position, groundCheckSize, 0f, groundLayer);
@@ -132,6 +152,7 @@ public class Player : MonoBehaviour
         if (collider.gameObject.CompareTag("PlayerPlatform"))
         {
             cloneScript.gameObject.SetActive(true);
+            progressBarScript.ResetTimer();
             cloneScript.resetPosition();
             cloneScript.resetGravity();
             if (arrow1 != null)
@@ -176,6 +197,11 @@ public class Player : MonoBehaviour
     public void invertGravity()
     {
         isGravityInverted *= -1;
+
+        if (isGravityInverted == -1)
+            transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+        else
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     void LoadNextLevel()

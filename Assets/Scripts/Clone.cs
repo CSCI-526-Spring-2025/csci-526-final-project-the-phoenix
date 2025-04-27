@@ -53,6 +53,26 @@ public class Clone : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow) && !Physics2D.OverlapBox(rightWallCheck.position, wallCheckSize, 0f, groundLayer)) moveDirection = 1;
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
 
+
+        // Fix the clone direction
+        if (moveDirection != 0)
+        {
+            Vector3 newScale = transform.localScale;
+            
+            if (isGravityInverted == 1)
+            {
+                // Normal gravity
+                newScale.x = Mathf.Abs(newScale.x) * (moveDirection > 0 ? -1 : 1);
+            }
+            else
+            {
+                // Inverted gravity
+                newScale.x = Mathf.Abs(newScale.x) * (moveDirection > 0 ? 1 : -1);
+            }
+
+            transform.localScale = newScale;
+        }
+
         // Ground check
         isGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer) ||
                      Physics2D.OverlapBox(groundCheckReverse.position, groundCheckSize, 0f, groundLayer);
@@ -148,17 +168,21 @@ public class Clone : MonoBehaviour
     public void resetPosition()
     {
         transform.position = initialPosition;
+        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     public void changeInitialPosition(Vector2 newPosition)
     {
         initialPosition = newPosition;
     }
-
     public void invertGravity()
     {
-
         isGravityInverted *= -1;
+
+        if (isGravityInverted == -1)
+            transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+        else
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     public void resetGravity()
