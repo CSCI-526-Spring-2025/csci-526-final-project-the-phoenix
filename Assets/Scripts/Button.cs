@@ -19,7 +19,7 @@ public class Button : MonoBehaviour
         initialPosition = gate.position;
         isOpening = false;
 
-        gate.position = Vector3.MoveTowards(gate.position, targetPosition, speed * Time.deltaTime);
+        // gate.position = Vector3.MoveTowards(gate.position, targetPosition, speed * Time.deltaTime);
         // Determine target position based on openUpward
         if (direction == "up")
         {   
@@ -44,7 +44,7 @@ public class Button : MonoBehaviour
         if (isOpening)
         {
             // Move towards target position (up or down)\
-            gate.position = Vector3.MoveTowards(gate.position, initialPosition + new Vector3(0, openHeight, 0), speed * Time.deltaTime);
+            gate.position = Vector3.MoveTowards(gate.position, targetPosition, speed * Time.deltaTime);
         }
         else
         {
