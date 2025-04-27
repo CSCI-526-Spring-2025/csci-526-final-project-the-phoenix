@@ -20,6 +20,7 @@ TagManager:
   - Checkpoint
   - Boulder
   - Rotate
+  - Shocks
   layers:
   - Default
   - TransparentFX
