@@ -84,7 +84,7 @@ def clone_usage_boxplot(df):
     plt.close()
 
 
-df_clone_usage = fetch_firebase_data("clone_usage")
+df_clone_usage = fetch_firebase_data("clone_usage_new")
 if not df_clone_usage.empty:
     clone_usage(df_clone_usage)
     clone_usage_boxplot(df_clone_usage)

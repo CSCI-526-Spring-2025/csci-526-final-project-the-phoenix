@@ -72,6 +72,10 @@ public class LevelManager : MonoBehaviour
         cloneUsageTracker.TrackCloneUsage();
     }
 
+    public void TrackCloneUsageCount() {
+        cloneUsageTracker.IncrementCloneUsageCount();
+    }
+
     public void TrackCloneUsageData(string levelName)
     {
         cloneUsageTracker.SendCloneUsageData(levelName);
