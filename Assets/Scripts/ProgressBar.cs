@@ -21,8 +21,9 @@ public class ProgressBar : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log(dangerTime);
         cloneRenderer = transform.Find("Sprite")?.GetComponent<SpriteRenderer>();
-        barRenderer = transform.Find("Sprite/Square1")?.GetComponent<SpriteRenderer>();
+        barRenderer = transform.Find("Sprite/Square")?.GetComponent<SpriteRenderer>();
 
         if (barRenderer != null)
         {
@@ -42,21 +43,24 @@ public class ProgressBar : MonoBehaviour
         if (!isRunning) return;
 
         countdown -= Time.deltaTime;
+        Debug.Log("here" + countdown);
 
         if (barRenderer != null)
         {
             float progress = Mathf.Clamp01(countdown / totalDuration);
             barRenderer.transform.localScale = new Vector3(barOriginalScale.x * progress, barOriginalScale.y, barOriginalScale.z);
+        }
 
-            if (countdown <= dangerTime && blinkCoroutine == null)
-            {   
-                barRenderer.color = dangerColor;
-                blinkCoroutine = StartCoroutine(BlinkBoth());
-            }
+    
+        if (countdown <= dangerTime && countdown >= 0f && blinkCoroutine == null)
+        {   
+            barRenderer.color = dangerColor;
+            blinkCoroutine = StartCoroutine(BlinkBoth());
         }
 
         if (countdown <= 0f)
         {
+            Debug.Log(countdown);
             isRunning = false;
             if (blinkCoroutine != null)
                 StopCoroutine(blinkCoroutine);
@@ -65,7 +69,8 @@ public class ProgressBar : MonoBehaviour
                 barRenderer.enabled = true;
             if (cloneRenderer != null)
                 cloneRenderer.enabled = true;
-                
+            
+            Debug.Log("Timer finished!");
             gameObject.SetActive(false); 
         }
     }

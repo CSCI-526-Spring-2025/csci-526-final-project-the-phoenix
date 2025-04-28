@@ -136,7 +136,6 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Boulder"))
         {
-            Debug.Log("Player hit by " + GetComponent<Collider>().gameObject.tag);
             livesController.LoseLife();
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player", GetComponent<Collider>().gameObject.tag);
         }

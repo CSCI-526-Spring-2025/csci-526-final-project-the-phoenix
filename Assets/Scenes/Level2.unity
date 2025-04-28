@@ -4254,6 +4254,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2995225114246302520, guid: 01c9919bd872347cbb20b7b1294348d9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5992001294274346807, guid: 01c9919bd872347cbb20b7b1294348d9, type: 3}
       propertyPath: playerScript
       value: 
@@ -4331,8 +4335,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db3513819dd84e708c7134cb6a7d692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalDuration: 25
-  dangerTime: 10
+  totalDuration: 40
+  dangerTime: 7
   blinkInterval: 0.3
   normalColor: {r: 0, g: 1, b: 0, a: 1}
   dangerColor: {r: 1, g: 0, b: 0, a: 1}

@@ -173,6 +173,7 @@ public class Clone : MonoBehaviour
     {
         transform.position = initialPosition;
         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        spriteTransform.rotation = Quaternion.Euler(0f, 0f, 0f);
         if (progressBarScript != null)
         {
             progressBarScript.ResetTimer();
