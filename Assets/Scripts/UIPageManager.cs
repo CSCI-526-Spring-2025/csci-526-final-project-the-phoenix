@@ -11,6 +11,7 @@ public class UIPageManager : MonoBehaviour
 
     public void Start(){
         GameObject[] titleObjects = GameObject.FindGameObjectsWithTag("Titles");
+        Debug.Log("Title Objects: " + titleObjects.Length);
     }
 
     public void OpenInstructionModal()
