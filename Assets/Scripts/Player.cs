@@ -184,14 +184,6 @@ public class Player : MonoBehaviour
             livesController.LoseLife();
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player", collider.gameObject.tag);
         }
-
-        IEnumerator RestartAfterDelay()
-        {
-            Debug.Log("DEAD");
-            yield return new WaitForSeconds(0.5f);
-            Destroy(gameObject);
-            RestartGame();
-        }
     }
 
     void OnTriggerExit2D(Collider2D collider)

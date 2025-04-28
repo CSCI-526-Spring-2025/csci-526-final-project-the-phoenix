@@ -452,3 +452,4 @@ MonoBehaviour:
   rightWallCheck: {fileID: 3771795616544603800}
   wallCheckSize: {x: 0.03, y: 0.95}
   playerScript: {fileID: 0}
+  spriteTransform: {fileID: 3012531700613627605}

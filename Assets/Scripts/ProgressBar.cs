@@ -21,8 +21,8 @@ public class ProgressBar : MonoBehaviour
 
     void Awake()
     {
-        cloneRenderer = GetComponent<SpriteRenderer>();
-        barRenderer = transform.Find("Square")?.GetComponent<SpriteRenderer>(); // Find the child bar
+        cloneRenderer = transform.Find("Sprite")?.GetComponent<SpriteRenderer>();
+        barRenderer = transform.Find("Sprite/Square1")?.GetComponent<SpriteRenderer>();
 
         if (barRenderer != null)
         {
@@ -49,7 +49,7 @@ public class ProgressBar : MonoBehaviour
             barRenderer.transform.localScale = new Vector3(barOriginalScale.x * progress, barOriginalScale.y, barOriginalScale.z);
 
             if (countdown <= dangerTime && blinkCoroutine == null)
-            {
+            {   
                 barRenderer.color = dangerColor;
                 blinkCoroutine = StartCoroutine(BlinkBoth());
             }
@@ -65,8 +65,8 @@ public class ProgressBar : MonoBehaviour
                 barRenderer.enabled = true;
             if (cloneRenderer != null)
                 cloneRenderer.enabled = true;
-
-            gameObject.SetActive(false);  // Deactivate clone
+                
+            gameObject.SetActive(false); 
         }
     }
 

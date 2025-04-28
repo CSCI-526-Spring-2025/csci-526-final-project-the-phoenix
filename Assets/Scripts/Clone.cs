@@ -33,6 +33,8 @@ public class Clone : MonoBehaviour
     [Header("Miscellaneous")]
     [SerializeField] private Player playerScript;
 
+    [SerializeField] private Transform spriteTransform;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -59,24 +61,20 @@ public class Clone : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow) && !Physics2D.OverlapBox(rightWallCheck.position, wallCheckSize, 0f, groundLayer)) moveDirection = 1;
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
 
-
-        // Fix the clone direction
         if (moveDirection != 0)
         {
-            Vector3 newScale = transform.localScale;
-            
+            Vector3 newScale = spriteTransform.localScale;
+
             if (isGravityInverted == 1)
             {
-                // Normal gravity
                 newScale.x = Mathf.Abs(newScale.x) * (moveDirection > 0 ? -1 : 1);
             }
             else
             {
-                // Inverted gravity
                 newScale.x = Mathf.Abs(newScale.x) * (moveDirection > 0 ? 1 : -1);
             }
 
-            transform.localScale = newScale;
+            spriteTransform.localScale = newScale;
         }
 
         // Ground check
@@ -190,9 +188,9 @@ public class Clone : MonoBehaviour
         isGravityInverted *= -1;
 
         if (isGravityInverted == -1)
-            transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+            spriteTransform.rotation = Quaternion.Euler(0f, 0f, 180f);
         else
-            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            spriteTransform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     public void resetGravity()
