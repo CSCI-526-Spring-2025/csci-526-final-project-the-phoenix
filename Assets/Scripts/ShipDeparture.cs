@@ -15,11 +15,11 @@ public class ShipDeparture : MonoBehaviour
         Debug.Log("Starting fly and load sequence");
         if (launchEffectPrefab != null && effectSpawnPoints != null && effectSpawnPoints.Length > 0)
         {
-            for (int i = 0; i < effectSpawnPoints.Length; i++)
-            {
-                Debug.Log("Spawning explosion at index " + i + ": " + effectSpawnPoints[i].name);
-                Instantiate(launchEffectPrefab, effectSpawnPoints[i].position, Quaternion.identity);
-            }
+            // for (int i = 0; i < effectSpawnPoints.Length; i++)
+            // {
+            //     Debug.Log("Spawning explosion at index " + i + ": " + effectSpawnPoints[i].name);
+            //     Instantiate(launchEffectPrefab, effectSpawnPoints[i].position, Quaternion.identity);
+            // }
 
         }
         StartCoroutine(FlyThenLoad(player));
