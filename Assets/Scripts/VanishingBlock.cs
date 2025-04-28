@@ -13,7 +13,7 @@ public class VanishingBlock : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Clone"))
         {
             if (objectToHide1 != null)
                 objectToHide1.SetActive(false);
@@ -25,13 +25,53 @@ public class VanishingBlock : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {  
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Clone"))
         {
             if (objectToHide1 != null)
                 objectToHide1.SetActive(false);
 
             if (objectToHide2 != null)
                 objectToHide2.SetActive(false);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Clone"))
+        {
+            if (objectToHide1 != null)
+                objectToHide1.SetActive(true);
+
+            if (objectToHide2 != null)
+                objectToHide2.SetActive(true);
+        }
+        else
+        {
+            if (objectToHide1 != null)
+                objectToHide1.SetActive(true);
+
+            if (objectToHide2 != null)
+                objectToHide2.SetActive(true);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Clone"))
+        {
+            if (objectToHide1 != null)
+                objectToHide1.SetActive(true);
+
+            if (objectToHide2 != null)
+                objectToHide2.SetActive(true);
+        }
+        else
+        {
+            if (objectToHide1 != null)
+                objectToHide1.SetActive(true);
+
+            if (objectToHide2 != null)
+                objectToHide2.SetActive(true);
         }
     }
 }

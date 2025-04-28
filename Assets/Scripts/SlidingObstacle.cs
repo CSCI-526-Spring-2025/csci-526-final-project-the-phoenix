@@ -1,26 +1,3 @@
-// using UnityEngine;
-
-// public class SlidingObstacle : MonoBehaviour
-// {
-//     public float slideAmount = 0.8f;     
-//     public float slideSpeed = 2.8f;        
-//     public bool invertMovement = false;    // Add this flag
-
-//     private Vector3 startPosition;
-
-//     void Start()
-//     {
-//         startPosition = transform.position;
-//     }
-
-//     void Update()
-//     {
-//         float offset = invertMovement ? Mathf.PI : 0f;  // 180 degrees phase shift
-//         float newX = startPosition.x + Mathf.Sin(Time.time * slideSpeed + offset) * slideAmount;
-//         transform.position = new Vector3(newX, startPosition.y, startPosition.z);
-//     }
-// }
-
 using UnityEngine;
 
 public class SlidingObstacle : MonoBehaviour

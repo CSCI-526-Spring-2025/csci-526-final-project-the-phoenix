@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     public GameObject arrow1;
     public GameObject arrow2;
     [SerializeField] private Transform spriteTransform;
+    public PlayerLivesController livesController;
 
     void Start()
     {
@@ -131,6 +132,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Boulder"))
+        {
+            Debug.Log("Player hit by " + GetComponent<Collider>().gameObject.tag);
+            livesController.LoseLife();
+            LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player", GetComponent<Collider>().gameObject.tag);
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Finish"))
@@ -169,10 +180,9 @@ public class Player : MonoBehaviour
 
         if (collider.gameObject.CompareTag("Shocks") || collider.gameObject.CompareTag("Laser"))
         {
-            Debug.Log("Entered");
+            Debug.Log("Player hit by " + collider.gameObject.tag);
+            livesController.LoseLife();
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player", collider.gameObject.tag);
-            // StartCoroutine(RestartAfterDelay());
-            // dieText.SetActive(true);
         }
 
         IEnumerator RestartAfterDelay()
