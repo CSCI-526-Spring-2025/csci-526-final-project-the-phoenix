@@ -629,7 +629,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7088848115253403583, guid: 01c9919bd872347cbb20b7b1294348d9, type: 3}
-      insertIndex: 4
+      insertIndex: -1
       addedObject: {fileID: 775312576}
   m_SourcePrefab: {fileID: 100100000, guid: 01c9919bd872347cbb20b7b1294348d9, type: 3}
 --- !u!1 &224268919
@@ -6132,6 +6132,10 @@ PrefabInstance:
     - target: {fileID: 2962486762521449908, guid: db765bde5083845cc9c812ab383a4b6c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227883408067659009, guid: db765bde5083845cc9c812ab383a4b6c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4000756598273811051, guid: db765bde5083845cc9c812ab383a4b6c, type: 3}
       propertyPath: m_Color.b
