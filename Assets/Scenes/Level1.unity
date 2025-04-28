@@ -4773,7 +4773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db3513819dd84e708c7134cb6a7d692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalDuration: 20
+  totalDuration: 30
   dangerTime: 10
   blinkInterval: 0.3
   normalColor: {r: 0, g: 1, b: 0, a: 1}
