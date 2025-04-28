@@ -786,7 +786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 973752734257687318, guid: 4111567f39c464fd281e52516ae8b3c6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -4.1621094
+      value: -4.162079
       objectReference: {fileID: 0}
     - target: {fileID: 1501411708251743966, guid: 4111567f39c464fd281e52516ae8b3c6, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2217,7 +2217,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11.051106
+  orthographic size: 11.785614
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4914,14 +4914,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 464689394041829752, guid: cfd784f8037b44d6a8a0288d8c0d241c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 661465771441867474, guid: cfd784f8037b44d6a8a0288d8c0d241c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 791242878772129580, guid: cfd784f8037b44d6a8a0288d8c0d241c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.28
@@ -4966,41 +4958,9 @@ PrefabInstance:
       propertyPath: dieText
       value: 
       objectReference: {fileID: 455579735}
-    - target: {fileID: 2186458081053815252, guid: cfd784f8037b44d6a8a0288d8c0d241c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2869949269991002993, guid: cfd784f8037b44d6a8a0288d8c0d241c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 26.269999
-      objectReference: {fileID: 0}
-    - target: {fileID: 2921442734108238043, guid: cfd784f8037b44d6a8a0288d8c0d241c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 24.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 3507802942026901623, guid: cfd784f8037b44d6a8a0288d8c0d241c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 28.109999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4836737469321012642, guid: cfd784f8037b44d6a8a0288d8c0d241c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 29.949999
-      objectReference: {fileID: 0}
-    - target: {fileID: 5883390566625594132, guid: cfd784f8037b44d6a8a0288d8c0d241c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6422556892045419416, guid: cfd784f8037b44d6a8a0288d8c0d241c, type: 3}
       propertyPath: m_Name
       value: PlayerLives
-      objectReference: {fileID: 0}
-    - target: {fileID: 7919139180999392257, guid: cfd784f8037b44d6a8a0288d8c0d241c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9178306039805743799, guid: cfd784f8037b44d6a8a0288d8c0d241c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 22.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
