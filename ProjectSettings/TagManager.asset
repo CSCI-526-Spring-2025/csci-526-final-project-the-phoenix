@@ -20,6 +20,7 @@ TagManager:
   - Checkpoint
   - Boulder
   - Rotate
+  - Titles
   - Shocks
   layers:
   - Default
