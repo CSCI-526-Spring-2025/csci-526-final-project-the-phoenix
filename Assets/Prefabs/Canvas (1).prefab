@@ -2930,6 +2930,7 @@ MonoBehaviour:
   buttons: {fileID: 4326608790401019793}
   modal: {fileID: 2373909235137313887}
   levelSelector: {fileID: 2981952966177649512}
+  titleObjects: []
 --- !u!114 &9165327913861152152
 MonoBehaviour:
   m_ObjectHideFlags: 0
