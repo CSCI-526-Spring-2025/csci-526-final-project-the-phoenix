@@ -8,7 +8,6 @@ public class CloneUsageTracker : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("CloneUsageTracker initialized in level: " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         ResetCloneUsageCount();
         levelStartTime = Time.time;
         firstCloneActivationTime = -1f; 

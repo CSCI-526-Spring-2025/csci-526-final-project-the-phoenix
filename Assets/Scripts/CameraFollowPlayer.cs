@@ -73,11 +73,8 @@ public class CameraFollowPlayer : MonoBehaviour
         foreach (var zoomLocation in zoomLocations)
         {
             Collider2D regionCollider = zoomLocation.region.GetComponent<Collider2D>();
-            // Debug.Log(regionCollider.bounds);
-            // Debug.Log(playerCollider.bounds);
             if (regionCollider.bounds.Intersects(playerCollider.bounds))
             {
-                Debug.Log("collision");
                 targetZoomLevel = zoomLocation.zoomLevel;
                 break;
             }

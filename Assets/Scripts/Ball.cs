@@ -29,7 +29,6 @@ public class WallHugBall : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Passway"))
         {
             Vector2 normal = collision.contacts[0].normal;
-            Debug.Log(type);
 
             if (type == "room")
             {
