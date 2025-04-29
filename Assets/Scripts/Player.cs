@@ -130,6 +130,10 @@ public class Player : MonoBehaviour
                 rb.gravityScale = -1f;
             }
         }
+
+        // Reset Z-Axis to 0
+        Vector3 playerTransform = transform.position;
+        transform.position = new Vector3(playerTransform.x, playerTransform.y, 0);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -146,7 +150,6 @@ public class Player : MonoBehaviour
         if (collider.gameObject.CompareTag("Finish"))
         {   
             ShipDeparture ship = collider.GetComponent<ShipDeparture>();
-            Debug.Log(ship);
             if (ship != null)
             {
                 ship.StartFlyAndLoad(gameObject);
@@ -179,7 +182,6 @@ public class Player : MonoBehaviour
 
         if (collider.gameObject.CompareTag("Shocks") || collider.gameObject.CompareTag("Laser"))
         {
-            Debug.Log("Player hit by " + collider.gameObject.tag);
             livesController.LoseLife();
             LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player", collider.gameObject.tag);
         }
