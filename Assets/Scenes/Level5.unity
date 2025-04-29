@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 16838919}
   - component: {fileID: 16838921}
   - component: {fileID: 16838920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (7)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -369,7 +369,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 18752116}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 22373681}
   - component: {fileID: 22373683}
   - component: {fileID: 22373682}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (15)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -934,7 +934,7 @@ GameObject:
   - component: {fileID: 28818955}
   - component: {fileID: 28818957}
   - component: {fileID: 28818956}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (9)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -985,7 +985,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -1064,7 +1064,7 @@ GameObject:
   - component: {fileID: 28918989}
   - component: {fileID: 28918991}
   - component: {fileID: 28918990}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (9)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -1356,7 +1356,7 @@ GameObject:
   - component: {fileID: 31182961}
   - component: {fileID: 31182963}
   - component: {fileID: 31182962}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (11)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -1618,7 +1618,7 @@ GameObject:
   - component: {fileID: 35875407}
   - component: {fileID: 35875409}
   - component: {fileID: 35875408}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (1)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -1781,7 +1781,7 @@ GameObject:
   - component: {fileID: 47752975}
   - component: {fileID: 47752977}
   - component: {fileID: 47752976}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (4)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -1832,7 +1832,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -1909,7 +1909,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 56169167}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2072,7 +2072,7 @@ GameObject:
   - component: {fileID: 66008527}
   - component: {fileID: 66008529}
   - component: {fileID: 66008528}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (9)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -2123,7 +2123,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -2365,7 +2365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 97991601}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2645,7 +2645,7 @@ GameObject:
   - component: {fileID: 131920981}
   - component: {fileID: 131920983}
   - component: {fileID: 131920982}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (6)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -2840,7 +2840,7 @@ GameObject:
   - component: {fileID: 145140489}
   - component: {fileID: 145140491}
   - component: {fileID: 145140490}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (7)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -2891,7 +2891,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -2975,7 +2975,7 @@ GameObject:
   - component: {fileID: 161867795}
   - component: {fileID: 161867797}
   - component: {fileID: 161867796}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (7)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -3026,7 +3026,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -3105,7 +3105,7 @@ GameObject:
   - component: {fileID: 170669813}
   - component: {fileID: 170669815}
   - component: {fileID: 170669814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (6)-sq2
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -3403,7 +3403,7 @@ GameObject:
   - component: {fileID: 184380144}
   - component: {fileID: 184380146}
   - component: {fileID: 184380145}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (1)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -3454,7 +3454,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -3533,7 +3533,7 @@ GameObject:
   - component: {fileID: 188223813}
   - component: {fileID: 188223815}
   - component: {fileID: 188223814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (3)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -3663,7 +3663,7 @@ GameObject:
   - component: {fileID: 188436314}
   - component: {fileID: 188436316}
   - component: {fileID: 188436315}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (8)-sq2
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -3923,7 +3923,7 @@ GameObject:
   - component: {fileID: 198878554}
   - component: {fileID: 198878556}
   - component: {fileID: 198878555}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (6)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -3974,7 +3974,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -4053,7 +4053,7 @@ GameObject:
   - component: {fileID: 199700464}
   - component: {fileID: 199700466}
   - component: {fileID: 199700465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -4104,7 +4104,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -4188,7 +4188,7 @@ GameObject:
   - component: {fileID: 208514113}
   - component: {fileID: 208514115}
   - component: {fileID: 208514114}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (27)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -4319,7 +4319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 227868364}
   - component: {fileID: 227868365}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallSpike1
   m_TagString: Shocks
   m_Icon: {fileID: 0}
@@ -4373,7 +4373,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.44654846, y: 0.1453448}
@@ -4398,7 +4398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 228449906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4431,7 +4431,7 @@ GameObject:
   - component: {fileID: 229546741}
   - component: {fileID: 229546743}
   - component: {fileID: 229546742}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (4)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -4566,7 +4566,7 @@ GameObject:
   - component: {fileID: 247000942}
   - component: {fileID: 247000944}
   - component: {fileID: 247000943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (20)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -4698,7 +4698,7 @@ GameObject:
   - component: {fileID: 248884164}
   - component: {fileID: 248884166}
   - component: {fileID: 248884165}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (9)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -4857,7 +4857,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 252105699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4890,7 +4890,7 @@ GameObject:
   - component: {fileID: 253492708}
   - component: {fileID: 253492710}
   - component: {fileID: 253492709}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (10)-sq2
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -5181,7 +5181,7 @@ GameObject:
   - component: {fileID: 267370643}
   - component: {fileID: 267370645}
   - component: {fileID: 267370644}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (5)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -5309,7 +5309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 267926796}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spikes (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5353,7 +5353,7 @@ GameObject:
   - component: {fileID: 270411086}
   - component: {fileID: 270411088}
   - component: {fileID: 270411087}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (1)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -5483,7 +5483,7 @@ GameObject:
   - component: {fileID: 273515300}
   - component: {fileID: 273515302}
   - component: {fileID: 273515301}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (1)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -5534,7 +5534,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -5613,7 +5613,7 @@ GameObject:
   - component: {fileID: 275675134}
   - component: {fileID: 275675136}
   - component: {fileID: 275675135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (4)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -5664,7 +5664,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -5822,7 +5822,7 @@ GameObject:
   - component: {fileID: 278058063}
   - component: {fileID: 278058065}
   - component: {fileID: 278058064}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (5)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -6098,7 +6098,7 @@ GameObject:
   - component: {fileID: 345197604}
   - component: {fileID: 345197603}
   - component: {fileID: 345197602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (21)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -6228,7 +6228,7 @@ GameObject:
   - component: {fileID: 345212376}
   - component: {fileID: 345212378}
   - component: {fileID: 345212377}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (1)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -6279,7 +6279,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -6462,7 +6462,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 357448029}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7511,7 +7511,7 @@ GameObject:
   - component: {fileID: 402946084}
   - component: {fileID: 402946086}
   - component: {fileID: 402946085}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (2)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -7641,7 +7641,7 @@ GameObject:
   - component: {fileID: 407977904}
   - component: {fileID: 407977906}
   - component: {fileID: 407977905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (6)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -7771,7 +7771,7 @@ GameObject:
   - component: {fileID: 409710732}
   - component: {fileID: 409710734}
   - component: {fileID: 409710733}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (1)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -8443,7 +8443,7 @@ GameObject:
   - component: {fileID: 456768233}
   - component: {fileID: 456768235}
   - component: {fileID: 456768234}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (7)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -8571,7 +8571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 458079857}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8766,7 +8766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 476691043}
   - component: {fileID: 476691044}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spikes
   m_TagString: Shocks
   m_Icon: {fileID: 0}
@@ -8830,7 +8830,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.23534101, y: -0.4573057}
@@ -9706,7 +9706,7 @@ GameObject:
   - component: {fileID: 521693017}
   - component: {fileID: 521693019}
   - component: {fileID: 521693018}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (4)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -10554,7 +10554,7 @@ GameObject:
   - component: {fileID: 581116465}
   - component: {fileID: 581116467}
   - component: {fileID: 581116466}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (21)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -10684,7 +10684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 581529289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spikes (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11061,7 +11061,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 613716053}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spikes (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11270,7 +11270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 626118223}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spikes (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11608,7 +11608,7 @@ GameObject:
   - component: {fileID: 637366468}
   - component: {fileID: 637366470}
   - component: {fileID: 637366469}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -11738,7 +11738,7 @@ GameObject:
   - component: {fileID: 642589159}
   - component: {fileID: 642589161}
   - component: {fileID: 642589160}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (2)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -11789,7 +11789,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -11866,7 +11866,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 653043144}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12048,7 +12048,7 @@ GameObject:
   - component: {fileID: 672152631}
   - component: {fileID: 672152633}
   - component: {fileID: 672152632}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (4)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -12338,7 +12338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 695765759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12371,7 +12371,7 @@ GameObject:
   - component: {fileID: 708781758}
   - component: {fileID: 708781760}
   - component: {fileID: 708781759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (8)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -12422,7 +12422,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -12501,7 +12501,7 @@ GameObject:
   - component: {fileID: 713086696}
   - component: {fileID: 713086698}
   - component: {fileID: 713086697}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (24)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -12632,7 +12632,7 @@ GameObject:
   - component: {fileID: 714603489}
   - component: {fileID: 714603488}
   - component: {fileID: 714603487}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (20)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -12762,7 +12762,7 @@ GameObject:
   - component: {fileID: 719535927}
   - component: {fileID: 719535929}
   - component: {fileID: 719535928}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (8)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -12891,7 +12891,7 @@ GameObject:
   m_Component:
   - component: {fileID: 735608109}
   - component: {fileID: 735608110}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallSpike4
   m_TagString: Shocks
   m_Icon: {fileID: 0}
@@ -12946,7 +12946,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.3578085, y: 0.03345575}
@@ -13639,7 +13639,7 @@ GameObject:
   - component: {fileID: 775871961}
   - component: {fileID: 775871963}
   - component: {fileID: 775871962}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (11)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -13774,7 +13774,7 @@ GameObject:
   - component: {fileID: 779117749}
   - component: {fileID: 779117751}
   - component: {fileID: 779117750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (29)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -13903,7 +13903,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 779325080}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13936,7 +13936,7 @@ GameObject:
   - component: {fileID: 779547800}
   - component: {fileID: 779547802}
   - component: {fileID: 779547801}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (8)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -13987,7 +13987,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -14150,7 +14150,7 @@ GameObject:
   - component: {fileID: 786065915}
   - component: {fileID: 786065917}
   - component: {fileID: 786065916}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (9)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -14933,7 +14933,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 826829506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14966,7 +14966,7 @@ GameObject:
   - component: {fileID: 831403882}
   - component: {fileID: 831403884}
   - component: {fileID: 831403883}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (8)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -15017,7 +15017,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -15226,7 +15226,7 @@ GameObject:
   - component: {fileID: 839402248}
   - component: {fileID: 839402247}
   - component: {fileID: 839402246}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (18)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -15534,7 +15534,7 @@ GameObject:
   - component: {fileID: 856270157}
   - component: {fileID: 856270159}
   - component: {fileID: 856270158}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (5)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -15585,7 +15585,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -15794,7 +15794,7 @@ GameObject:
   - component: {fileID: 868710095}
   - component: {fileID: 868710097}
   - component: {fileID: 868710096}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (2)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -16194,7 +16194,7 @@ GameObject:
   - component: {fileID: 888249211}
   - component: {fileID: 888249213}
   - component: {fileID: 888249212}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -16473,7 +16473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 903127974}
   - component: {fileID: 903127975}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spike4
   m_TagString: Shocks
   m_Icon: {fileID: 0}
@@ -16526,7 +16526,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 253.71999, y: 2.5224748}
@@ -16782,7 +16782,7 @@ GameObject:
   - component: {fileID: 921451082}
   - component: {fileID: 921451084}
   - component: {fileID: 921451083}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (19)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -17805,8 +17805,8 @@ Transform:
   m_GameObject: {fileID: 958158436}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.50842303, y: 0.2840712, z: 0}
-  m_LocalScale: {x: 0.14241396, y: 0.016946202, z: 1}
+  m_LocalPosition: {x: 0.50842303, y: 0.273, z: 0}
+  m_LocalScale: {x: 0.16866875, y: 0.016946202, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 493330340}
@@ -17824,7 +17824,7 @@ GameObject:
   - component: {fileID: 960141149}
   - component: {fileID: 960141151}
   - component: {fileID: 960141150}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (6)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -17875,7 +17875,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -17952,7 +17952,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 963811986}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18016,7 +18016,7 @@ GameObject:
   - component: {fileID: 971650821}
   - component: {fileID: 971650823}
   - component: {fileID: 971650822}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (3)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -18067,7 +18067,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -18604,7 +18604,7 @@ GameObject:
   - component: {fileID: 1022826754}
   - component: {fileID: 1022826753}
   - component: {fileID: 1022826752}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (23)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -18860,7 +18860,7 @@ GameObject:
   - component: {fileID: 1037063969}
   - component: {fileID: 1037063971}
   - component: {fileID: 1037063970}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (18)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -19103,7 +19103,7 @@ GameObject:
   - component: {fileID: 1048791918}
   - component: {fileID: 1048791920}
   - component: {fileID: 1048791919}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (14)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -19426,8 +19426,8 @@ Transform:
   m_GameObject: {fileID: 1079664318}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.5084174, y: -0.15529314, z: 0}
-  m_LocalScale: {x: 0.7378965, y: 0.017020648, z: 1}
+  m_LocalPosition: {x: 0.5084174, y: -0.166, z: 0}
+  m_LocalScale: {x: 0.71022534, y: 0.017020648, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 440791467}
@@ -19705,7 +19705,7 @@ GameObject:
   - component: {fileID: 1091237066}
   - component: {fileID: 1091237068}
   - component: {fileID: 1091237067}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (7)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -19833,7 +19833,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1093742453}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19871,7 +19871,7 @@ GameObject:
   - component: {fileID: 1104102334}
   - component: {fileID: 1104102336}
   - component: {fileID: 1104102335}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (10)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -20000,7 +20000,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1104213654}
   - component: {fileID: 1104213655}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallSpike2
   m_TagString: Shocks
   m_Icon: {fileID: 0}
@@ -20057,7 +20057,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.39948508, y: 0.4720698}
@@ -20214,7 +20214,7 @@ GameObject:
   - component: {fileID: 1108244904}
   - component: {fileID: 1108244906}
   - component: {fileID: 1108244905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -20556,7 +20556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1110113380}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20587,7 +20587,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1111326332}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spikes (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20759,7 +20759,7 @@ GameObject:
   - component: {fileID: 1118692686}
   - component: {fileID: 1118692688}
   - component: {fileID: 1118692687}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (7)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -20810,7 +20810,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -20887,7 +20887,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1133116240}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21264,8 +21264,8 @@ Transform:
   m_GameObject: {fileID: 1152319369}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.224, y: -0.40142843, z: 0}
-  m_LocalScale: {x: 0.20530018, y: 0.016397554, z: 1}
+  m_LocalPosition: {x: -0.224, y: -0.409, z: 0}
+  m_LocalScale: {x: 0.17963766, y: 0.016397554, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1182546860}
@@ -21574,7 +21574,7 @@ GameObject:
   - component: {fileID: 1173437987}
   - component: {fileID: 1173437989}
   - component: {fileID: 1173437988}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (2)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -21704,7 +21704,7 @@ GameObject:
   - component: {fileID: 1181445909}
   - component: {fileID: 1181445911}
   - component: {fileID: 1181445910}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (12)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -21962,7 +21962,7 @@ GameObject:
   - component: {fileID: 1189316849}
   - component: {fileID: 1189316851}
   - component: {fileID: 1189316850}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -22013,7 +22013,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -22179,7 +22179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1194402644}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22212,7 +22212,7 @@ GameObject:
   - component: {fileID: 1195380928}
   - component: {fileID: 1195380930}
   - component: {fileID: 1195380929}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (9)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -22263,7 +22263,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -22508,7 +22508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db3513819dd84e708c7134cb6a7d692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalDuration: 60
+  totalDuration: 35
   dangerTime: 10
   blinkInterval: 0.3
   normalColor: {r: 0, g: 1, b: 0, a: 1}
@@ -22904,7 +22904,7 @@ GameObject:
   - component: {fileID: 1233954373}
   - component: {fileID: 1233954375}
   - component: {fileID: 1233954374}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (9)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -23039,7 +23039,7 @@ GameObject:
   - component: {fileID: 1244859753}
   - component: {fileID: 1244859755}
   - component: {fileID: 1244859754}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (17)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -23449,7 +23449,7 @@ GameObject:
   - component: {fileID: 1273917532}
   - component: {fileID: 1273917534}
   - component: {fileID: 1273917533}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (23)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -23869,7 +23869,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1289755460}
   - component: {fileID: 1289755461}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spike
   m_TagString: Shocks
   m_Icon: {fileID: 0}
@@ -23922,7 +23922,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 3.2621684, y: 2.5454795}
@@ -24108,7 +24108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1291693775}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24399,7 +24399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1314099159}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24430,7 +24430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1314243587}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24574,7 +24574,7 @@ GameObject:
   - component: {fileID: 1325105209}
   - component: {fileID: 1325105208}
   - component: {fileID: 1325105207}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (24)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -24703,7 +24703,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1327368349}
   - component: {fileID: 1327368350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spike1
   m_TagString: Shocks
   m_Icon: {fileID: 0}
@@ -24756,7 +24756,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 96.88835, y: 2.5577888}
@@ -24783,7 +24783,7 @@ GameObject:
   - component: {fileID: 1332164687}
   - component: {fileID: 1332164689}
   - component: {fileID: 1332164688}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (8)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -24912,7 +24912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1332878108}
   - component: {fileID: 1332878109}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallSpikes
   m_TagString: Shocks
   m_Icon: {fileID: 0}
@@ -24968,7 +24968,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.8852463, y: 0.11301041}
@@ -25378,7 +25378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToHide1: {fileID: 1987263911}
   objectToHide2: {fileID: 0}
-  isHold: 0
+  isHold: 1
 --- !u!1 &1364512388
 GameObject:
   m_ObjectHideFlags: 0
@@ -26097,7 +26097,7 @@ GameObject:
   - component: {fileID: 1389962582}
   - component: {fileID: 1389962584}
   - component: {fileID: 1389962583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (4)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -26148,7 +26148,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -26311,7 +26311,7 @@ GameObject:
   - component: {fileID: 1398363814}
   - component: {fileID: 1398363816}
   - component: {fileID: 1398363815}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (3)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -26446,7 +26446,7 @@ GameObject:
   - component: {fileID: 1414413321}
   - component: {fileID: 1414413323}
   - component: {fileID: 1414413322}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (9)-sq2
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -26576,7 +26576,7 @@ GameObject:
   - component: {fileID: 1418188563}
   - component: {fileID: 1418188565}
   - component: {fileID: 1418188564}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (2)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -26627,7 +26627,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -26836,7 +26836,7 @@ GameObject:
   - component: {fileID: 1422712660}
   - component: {fileID: 1422712662}
   - component: {fileID: 1422712661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (3)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -26964,7 +26964,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1437085170}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26997,7 +26997,7 @@ GameObject:
   - component: {fileID: 1446157425}
   - component: {fileID: 1446157427}
   - component: {fileID: 1446157426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (10)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -27473,7 +27473,7 @@ GameObject:
   - component: {fileID: 1460035365}
   - component: {fileID: 1460035364}
   - component: {fileID: 1460035363}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (17)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -27603,7 +27603,7 @@ GameObject:
   - component: {fileID: 1468299561}
   - component: {fileID: 1468299563}
   - component: {fileID: 1468299562}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (5)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -27733,7 +27733,7 @@ GameObject:
   - component: {fileID: 1475106984}
   - component: {fileID: 1475106986}
   - component: {fileID: 1475106985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (3)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -27784,7 +27784,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -27863,7 +27863,7 @@ GameObject:
   - component: {fileID: 1475341753}
   - component: {fileID: 1475341755}
   - component: {fileID: 1475341754}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (26)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -27994,7 +27994,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1475424713}
   - component: {fileID: 1475424714}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spike3
   m_TagString: Shocks
   m_Icon: {fileID: 0}
@@ -28047,10 +28047,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 156.04898, y: 2.4504857}
+  m_Offset: {x: 156.04898, y: 2.5544481}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -28061,7 +28061,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 15.619629, y: 1.8096133}
+  m_Size: {x: 15.619629, y: 2.017538}
   m_EdgeRadius: 0
 --- !u!1 &1483147719
 GameObject:
@@ -28074,7 +28074,7 @@ GameObject:
   - component: {fileID: 1483147720}
   - component: {fileID: 1483147722}
   - component: {fileID: 1483147721}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (8)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -28125,7 +28125,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -28204,7 +28204,7 @@ GameObject:
   - component: {fileID: 1483814064}
   - component: {fileID: 1483814066}
   - component: {fileID: 1483814065}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (9)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -28255,7 +28255,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -28597,7 +28597,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1505649439}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28765,7 +28765,7 @@ GameObject:
   - component: {fileID: 1528012919}
   - component: {fileID: 1528012921}
   - component: {fileID: 1528012920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (5)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -28895,7 +28895,7 @@ GameObject:
   - component: {fileID: 1529338250}
   - component: {fileID: 1529338249}
   - component: {fileID: 1529338248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (25)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -29256,7 +29256,7 @@ GameObject:
   - component: {fileID: 1548589220}
   - component: {fileID: 1548589222}
   - component: {fileID: 1548589221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (1)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -29307,7 +29307,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -29861,7 +29861,7 @@ GameObject:
   - component: {fileID: 1579664888}
   - component: {fileID: 1579664890}
   - component: {fileID: 1579664889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (8)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -30230,7 +30230,7 @@ GameObject:
   - component: {fileID: 1612716447}
   - component: {fileID: 1612716449}
   - component: {fileID: 1612716448}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (2)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -30281,7 +30281,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -30360,7 +30360,7 @@ GameObject:
   - component: {fileID: 1615545181}
   - component: {fileID: 1615545183}
   - component: {fileID: 1615545182}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (7)-sq2
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -30944,7 +30944,7 @@ GameObject:
   - component: {fileID: 1643522040}
   - component: {fileID: 1643522042}
   - component: {fileID: 1643522041}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (16)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -31140,7 +31140,7 @@ GameObject:
   - component: {fileID: 1648988962}
   - component: {fileID: 1648988964}
   - component: {fileID: 1648988963}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (2)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -31400,7 +31400,7 @@ GameObject:
   - component: {fileID: 1665455796}
   - component: {fileID: 1665455798}
   - component: {fileID: 1665455797}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (22)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -31616,7 +31616,7 @@ GameObject:
   - component: {fileID: 1683668710}
   - component: {fileID: 1683668712}
   - component: {fileID: 1683668711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (5)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -31667,7 +31667,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -31931,7 +31931,7 @@ GameObject:
   - component: {fileID: 1697998181}
   - component: {fileID: 1697998183}
   - component: {fileID: 1697998182}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (1)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -33156,7 +33156,7 @@ GameObject:
   - component: {fileID: 1748457980}
   - component: {fileID: 1748457982}
   - component: {fileID: 1748457981}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (2)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -33207,7 +33207,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -33286,7 +33286,7 @@ GameObject:
   - component: {fileID: 1752150763}
   - component: {fileID: 1752150765}
   - component: {fileID: 1752150764}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (4)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -33337,7 +33337,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -33416,7 +33416,7 @@ GameObject:
   - component: {fileID: 1766115426}
   - component: {fileID: 1766115428}
   - component: {fileID: 1766115427}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -33467,7 +33467,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -33708,7 +33708,7 @@ GameObject:
   - component: {fileID: 1774946152}
   - component: {fileID: 1774946154}
   - component: {fileID: 1774946153}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (7)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -34167,7 +34167,7 @@ GameObject:
   - component: {fileID: 1810918211}
   - component: {fileID: 1810918213}
   - component: {fileID: 1810918212}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (6)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -34753,7 +34753,7 @@ GameObject:
   - component: {fileID: 1833362135}
   - component: {fileID: 1833362137}
   - component: {fileID: 1833362136}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (7)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -34958,7 +34958,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1838364661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34989,7 +34989,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1845643198}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35022,7 +35022,7 @@ GameObject:
   - component: {fileID: 1849236795}
   - component: {fileID: 1849236797}
   - component: {fileID: 1849236796}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -35073,7 +35073,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -35157,7 +35157,7 @@ GameObject:
   - component: {fileID: 1856145131}
   - component: {fileID: 1856145133}
   - component: {fileID: 1856145132}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (3)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -35208,7 +35208,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -35388,7 +35388,7 @@ GameObject:
   - component: {fileID: 1862325018}
   - component: {fileID: 1862325020}
   - component: {fileID: 1862325019}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (6)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -35976,7 +35976,7 @@ GameObject:
   - component: {fileID: 1882483013}
   - component: {fileID: 1882483015}
   - component: {fileID: 1882483014}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -36236,7 +36236,7 @@ GameObject:
   - component: {fileID: 1891730526}
   - component: {fileID: 1891730528}
   - component: {fileID: 1891730527}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (5)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -36287,7 +36287,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -36366,7 +36366,7 @@ GameObject:
   - component: {fileID: 1892067075}
   - component: {fileID: 1892067077}
   - component: {fileID: 1892067076}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (3)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -37001,11 +37001,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8437432972127044640, guid: 8ac8c37a8f89c44ed8d0c60fb1ced52f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.26
+      value: -6.31
       objectReference: {fileID: 0}
     - target: {fileID: 8437432972127044640, guid: 8ac8c37a8f89c44ed8d0c60fb1ced52f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.3
+      value: 6.97
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37106,7 +37106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1934108890}
   - component: {fileID: 1934108891}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallSpike3
   m_TagString: Shocks
   m_Icon: {fileID: 0}
@@ -37160,7 +37160,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.25365207, y: 0.22196987}
@@ -37535,7 +37535,7 @@ GameObject:
   - component: {fileID: 1963239529}
   - component: {fileID: 1963239531}
   - component: {fileID: 1963239530}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (28)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -38136,7 +38136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2004081434}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38169,7 +38169,7 @@ GameObject:
   - component: {fileID: 2004357237}
   - component: {fileID: 2004357239}
   - component: {fileID: 2004357238}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (6)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -38220,7 +38220,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -38297,7 +38297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2006685750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38330,7 +38330,7 @@ GameObject:
   - component: {fileID: 2019795935}
   - component: {fileID: 2019795937}
   - component: {fileID: 2019795936}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (3)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -38381,7 +38381,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -38722,7 +38722,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2033070807}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39072,7 +39072,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2055983915}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spikes (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39116,7 +39116,7 @@ GameObject:
   - component: {fileID: 2056746550}
   - component: {fileID: 2056746552}
   - component: {fileID: 2056746551}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (25)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -39331,7 +39331,7 @@ GameObject:
   - component: {fileID: 2067867644}
   - component: {fileID: 2067867643}
   - component: {fileID: 2067867642}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (19)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -39697,7 +39697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2078173179}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39728,7 +39728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2083118914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spikes (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40415,7 +40415,7 @@ GameObject:
   - component: {fileID: 2107597189}
   - component: {fileID: 2107597191}
   - component: {fileID: 2107597190}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (6)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -40466,7 +40466,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -40746,7 +40746,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2119781084}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41125,7 +41125,7 @@ GameObject:
   - component: {fileID: 2126970641}
   - component: {fileID: 2126970643}
   - component: {fileID: 2126970642}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (5)
   m_TagString: Shock
   m_Icon: {fileID: 0}
@@ -41176,7 +41176,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.21133333}
@@ -41253,7 +41253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2132447928}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41628,7 +41628,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2141961363}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41760,7 +41760,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143690755}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0.03, y: 0.12, z: 1.3603929}
   m_LocalScale: {x: 19.139214, y: 19.042057, z: 1}
   m_ConstrainProportionsScale: 0
@@ -41780,7 +41780,7 @@ Transform:
   - {fileID: 1955766579}
   - {fileID: 2022134913}
   m_Father: {fileID: 1893168048}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &2143690757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41857,7 +41857,7 @@ GameObject:
   - component: {fileID: 2144035231}
   - component: {fileID: 2144035233}
   - component: {fileID: 2144035232}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle (4)
   m_TagString: Shock
   m_Icon: {fileID: 0}

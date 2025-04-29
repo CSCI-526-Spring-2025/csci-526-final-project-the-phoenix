@@ -141,7 +141,12 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Boulder"))
         {
             livesController.LoseLife();
-            LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player", GetComponent<Collider>().gameObject.tag);
+            LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player", "Boulder");
+        }
+        if (collision.gameObject.CompareTag("Shocks"))
+        {
+            livesController.LoseLife();
+            LevelManager.Instance.TrackPlayerDeath(SceneManager.GetActiveScene().name, transform.position, "player", "Shocks");
         }
     }
 
