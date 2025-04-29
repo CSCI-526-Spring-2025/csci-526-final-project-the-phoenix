@@ -763,6 +763,7 @@ MonoBehaviour:
   effectSpawnPoints:
   - {fileID: 400002, guid: cafecd3fc3b761c45bb1553f35cf5c96, type: 3}
   - {fileID: 400002, guid: cafecd3fc3b761c45bb1553f35cf5c96, type: 3}
+  winText: {fileID: 0}
 --- !u!4 &339136755 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2102331829962260643, guid: 8ac8c37a8f89c44ed8d0c60fb1ced52f, type: 3}
@@ -3406,6 +3407,7 @@ MonoBehaviour:
   - {fileID: 1174019998}
   - {fileID: 0}
   - {fileID: 0}
+  winText: {fileID: 0}
 --- !u!1001 &1498142747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3781,6 +3783,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4741194825788875771, guid: 5a3648d84987440e6978b5ef3cc40b99, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level5
+      objectReference: {fileID: 0}
     - target: {fileID: 6403866931542399591, guid: 5a3648d84987440e6978b5ef3cc40b99, type: 3}
       propertyPath: m_Pivot.x
       value: 0
