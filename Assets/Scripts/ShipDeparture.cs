@@ -10,6 +10,8 @@ public class ShipDeparture : MonoBehaviour
     public GameObject launchEffectPrefab;       // Drag Explosion prefab here
     public Transform[] effectSpawnPoints;       // Drag all 3 EffectSpawnPoints here
 
+    public GameObject winText;
+
     public void StartFlyAndLoad(GameObject player)
     {   
         Debug.Log("Starting fly and load sequence");
@@ -40,7 +42,27 @@ public class ShipDeparture : MonoBehaviour
         LevelManager.Instance.TrackCloneUsageData(SceneManager.GetActiveScene().name);
 
         // Load next level
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        LoadNextLevel();
+    }
+
+    void LoadNextLevel()
+    {
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            winText.SetActive(true);
+            StartCoroutine(ReturnToStartScreen());
+        }
+    }
+
+    IEnumerator ReturnToStartScreen()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(0);
     }
 
     void Update()

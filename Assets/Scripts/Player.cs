@@ -210,19 +210,6 @@ public class Player : MonoBehaviour
             spriteTransform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
-    void LoadNextLevel()
-    {
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-        {
-            SceneManager.LoadScene(nextSceneIndex);
-        }
-        else
-        {
-            winText.SetActive(true);
-        }
-    }
-
     void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
